@@ -1,11 +1,7 @@
 import classes from "./Loader.module.css";
 import { CircularProgress } from "@mui/material";
 
-type LoaderTypes = {
-  dimensions?: string;
-};
-
-const Loader = ({ dimensions }: LoaderTypes) => {
+const Loader = () => {
   return (
     <div className={classes.container}>
       <CircularProgress

@@ -7,7 +7,6 @@ type InputProps = {
   type?: string;
   label?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onChange2?: any;
   onBlur?: () => void;
   value?: string;
   isRequired?: boolean;
@@ -23,8 +22,8 @@ type InputProps = {
   setState?: Dispatch<SetStateAction<string>>;
   onKeyup?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   onFocus?: () => void;
-  min?: any;
-  max?: any;
+  min?: number;
+  max?: number;
 };
 
 const Input = ({
@@ -79,7 +78,7 @@ const Input = ({
             }
             if (onBlur) onBlur();
           }}
-          onFocus={(e) => {
+          onFocus={() => {
             if (onFocus) {
               onFocus();
             }

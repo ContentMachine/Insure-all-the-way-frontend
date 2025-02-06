@@ -26,7 +26,7 @@ const Header = () => {
 
   // Effects
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
       const removeChildrenHandler = (e: any) => {
         if (
           headerDropdownRef?.current &&

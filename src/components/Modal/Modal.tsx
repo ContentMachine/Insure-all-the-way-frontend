@@ -16,8 +16,10 @@ const ModalOverlay = (props: any) => {
   );
 };
 
-const backdropContainer = document.getElementById("backdrop");
-const modalOverlay = document.getElementById("modal-overlay");
+const backdropContainer =
+  typeof document !== "undefined" && document.getElementById("backdrop");
+const modalOverlay =
+  typeof document !== "undefined" && document.getElementById("modal-overlay");
 
 const Modal = (props: any) => {
   return (
