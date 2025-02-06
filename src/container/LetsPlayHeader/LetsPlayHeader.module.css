@@ -1,0 +1,92 @@
+.container {
+  padding: 3rem 200px;
+}
+
+.container > h2 {
+  font-family: General Sans;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -1px;
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.productsSection {
+  display: flex;
+  gap: 2rem;
+}
+
+.productsSection > div {
+  flex-basis: 500px;
+  padding: 0px 1.5rem;
+}
+
+.productsSection > div:not(.productsSection > div:last-child) {
+  border-right: 2px solid var(--grey5);
+}
+
+.productsSection > div > h4 {
+  font-family: General Sans;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 150%;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 1rem;
+}
+
+.productsSection > div > a {
+  display: block;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.productsSection > div > a:hover {
+  background-color: var(--grey1);
+}
+
+.productsSection > div > a > div:nth-child(2) > h5 {
+  font-family: General Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 0.5rem;
+}
+
+.productsSection > div > a > div:nth-child(2) > p {
+  font-family: General Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 0.5rem;
+  color: var(--grey4);
+}
+
+.contactSection > img {
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.contactSection > p {
+  font-family: General Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 1rem;
+}

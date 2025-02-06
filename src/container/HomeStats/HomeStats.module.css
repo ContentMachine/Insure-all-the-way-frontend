@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  gap: 120px;
+  padding: 137px 121px;
+  background-color: var(--grey1);
+}
+
+.container > div {
+  flex: 1;
+}
+
+.container > div:first-child > div {
+  display: flex;
+}
+
+.info {
+  flex: 1;
+  padding: 40px;
+}
+
+.info > h4 {
+  font-family: General Sans;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 86.4px;
+  text-align: left;
+  color: var(--black);
+}
+
+.info > p {
+  font-family: General Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: var(--grey4);
+}
+
+.container > div:nth-child(2) > h2 {
+  font-family: General Sans;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 86.4px;
+  letter-spacing: -1px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.container > div:nth-child(2) > ul {
+  margin-bottom: 60px;
+  list-style-type: none;
+}
+
+.container > div:nth-child(2) > ul > li {
+  font-family: General Sans;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: left;
+  color: var(--grey4);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container > div:nth-child(2) > ul > li > span {
+  display: flex;
+  align-items: center;
+}

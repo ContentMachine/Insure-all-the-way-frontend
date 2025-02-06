@@ -1,0 +1,55 @@
+.container {
+  margin: 100px 120px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  padding: 135px 57px;
+  gap: 193px;
+  background-color: var(--blue4);
+  color: var(--white);
+  position: relative;
+}
+
+.imageContainer {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  height: 100%;
+  border-radius: 32px 0 0 32px;
+  width: 60%;
+}
+
+.imageContainer > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 32px 0 0 32px;
+}
+
+.container > h4,
+.container > div:not(.imageContainer) {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.container > h4 {
+  font-family: General Sans;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 87px;
+  letter-spacing: -1px;
+  text-align: left;
+}
+
+.container > div > p {
+  font-family: General Sans;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 2rem;
+}

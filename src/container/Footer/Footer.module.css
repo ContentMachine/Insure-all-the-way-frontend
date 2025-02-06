@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 125px;
+  padding: 50px 100px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.container > p,
+.container > a {
+  font-family: General Sans;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.container > a:nth-child(2) {
+  margin-left: auto;
+}

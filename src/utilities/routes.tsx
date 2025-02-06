@@ -1,0 +1,156 @@
+import Car from "@/assets/svgIcons/Car";
+import Health from "@/assets/svgIcons/Health";
+import Play from "@/assets/svgIcons/Play";
+import LetsPlayHeader from "@/container/LetsPlayHeader/LetsPlayHeader";
+import ProductHeader from "@/container/ProductHeader/ProductHeader";
+
+export const routes = Object.freeze({
+  BASE_URL: "/",
+  SIGN_IN: "/sign-in",
+  SIGN_UP: "/sign-up",
+  CONTACT_US: "/contact-us",
+  INDIVIDUAL_AND_FAMILY_HMO: "/individual-and-family-hmo",
+  CORPORATE_HMO: "/corporate-hmo",
+  THIRD_PARTY_MOTOR_INSURANCE: "/third-party-motor-insurance",
+  ENHANCED_THIRD_PARTY_MOTOR_INSURANCE: "/enhanced-third-party-motor-insurance",
+  COMPREHENSIVE_MOTOR_INSTRANCE: "/comprehensive-motor-insurance",
+  FLEET_MOTOR_INSURANCE: "/fleet-motor-insurance",
+  HEALTH_AND_INSURANCE_FRIENDLY_MATCH: "/health-and-insurance-friendly-match",
+  THE_TECH_TITANS: "/the-tech-titans",
+  PRIVACY_POLICY: "/privacy-policy",
+  TERMS_AND_CONDITIONS: "/terms-and-conditions",
+});
+
+export const headerRoutes = [
+  {
+    title: "Products",
+    isActive: false,
+    image: null,
+    children: [
+      {
+        title: "Health Insurance",
+        children: [
+          {
+            title: "Individual & Family HMO",
+            route: routes.INDIVIDUAL_AND_FAMILY_HMO,
+            icon: <Health color="#d4a5e6" />,
+            description:
+              "Get a health cover designed to suit your specific needs, and enjoy access to quality healthcare and superior service.",
+          },
+
+          {
+            title: "Corporate HMO",
+            route: routes.CORPORATE_HMO,
+            icon: <Health color="#f5b7b1" />,
+            description:
+              "Providing Quality Health Insurance For Corporate & Small Businesses",
+          },
+        ],
+        route: null,
+        icon: null,
+        description: null,
+        image:
+          "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384655/cld-sample.jpg",
+      },
+      {
+        title: "Motor Insurance",
+        children: [
+          {
+            title: "Third Party Motor Insurance",
+            route: routes.THIRD_PARTY_MOTOR_INSURANCE,
+            icon: <Car color="#1b3a57" />,
+            description:
+              "Providing Quality Health Insurance For Corporate & Small Businesses",
+          },
+
+          {
+            title: "Enhanced Third Party Motor Insurance",
+            route: routes.ENHANCED_THIRD_PARTY_MOTOR_INSURANCE,
+            icon: <Car color="#3a506b" />,
+            description:
+              "Drive confidently with coverage for damage, flood, fire, and theft.",
+          },
+          {
+            title: "Comprehensive Motor Insurance",
+            route: routes.COMPREHENSIVE_MOTOR_INSTRANCE,
+            icon: <Car color="#000000" />,
+            description:
+              "Comprehensive Motor Insurance covers loss or damage from fire, theft, vandalism, accident, or collision, including legal liability for third-party injury or property damage.",
+          },
+          {
+            title: "Fleet Motor Insurance",
+            route: routes.FLEET_MOTOR_INSURANCE,
+            icon: <Car color="#f8e8a2" />,
+            description:
+              "With our fleet insurance, you can cover your entire fleet of business vehicles. The policy allows you to insure all vehicles under a single policy rather than separately, and it allows you to either insure all drivers or assign names to all drivers.",
+          },
+        ],
+        route: null,
+        icon: null,
+        description: null,
+        image:
+          "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384645/samples/ecommerce/car-interior-design.jpg",
+      },
+      {
+        title: "Property Insurance",
+        children: [
+          {
+            title: "Building",
+            route: routes.THIRD_PARTY_MOTOR_INSURANCE,
+            icon: <Car color="#1b3a57" />,
+            description:
+              "Providing Quality Health Insurance For Corporate & Small Businesses",
+          },
+
+          {
+            title: "Electronics & Gadgets",
+            route: routes.ENHANCED_THIRD_PARTY_MOTOR_INSURANCE,
+            icon: <Car color="#3a506b" />,
+            description:
+              "Drive confidently with coverage for damage, flood, fire, and theft.",
+          },
+        ],
+        route: null,
+        icon: null,
+        description: null,
+        image:
+          "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384645/samples/ecommerce/leather-bag-gray.jpg",
+      },
+    ],
+    route: null,
+    component: <ProductHeader />,
+  },
+  {
+    title: "Contact Us",
+    route: routes.CONTACT_US,
+    children: null,
+    isActive: false,
+    component: null,
+  },
+  {
+    title: "Let's Play",
+    route: null,
+    isActive: false,
+    component: <LetsPlayHeader />,
+    children: [
+      {
+        title: "Health & Insurance Friendly Match",
+        route: routes.HEALTH_AND_INSURANCE_FRIENDLY_MATCH,
+        children: null,
+        icon: <Play color="#f5b7b1" />,
+        description: "Test",
+        image:
+          "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384645/samples/ecommerce/car-interior-design.jpg",
+      },
+      {
+        title: "The Tech Titans",
+        route: routes.THE_TECH_TITANS,
+        children: null,
+        icon: <Play color="#f8e8a2" />,
+        description: "Test",
+        image:
+          "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384645/samples/ecommerce/car-interior-design.jpg",
+      },
+    ],
+  },
+];

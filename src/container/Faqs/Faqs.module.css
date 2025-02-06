@@ -1,0 +1,49 @@
+.container {
+  padding: 141px 120px;
+  display: flex;
+  align-items: stretch;
+  gap: 120px;
+}
+
+.container > div:nth-child(1) {
+  flex-basis: 60%;
+}
+
+.container > div:nth-child(2) {
+  flex-basis: 40%;
+}
+
+.container > div:nth-child(2) > h4 {
+  font-family: General Sans;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 52px;
+  letter-spacing: -1px;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.container > div:nth-child(2) > p {
+  font-family: General Sans;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  margin-bottom: 2rem;
+  color: var(--grey4);
+}
+
+.container > div:nth-child(2) > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container > div:nth-child(2) > div > div {
+  margin: 0;
+  flex: 1;
+}
+
+.container > div:nth-child(2) > button {
+  margin-top: 32px;
+}

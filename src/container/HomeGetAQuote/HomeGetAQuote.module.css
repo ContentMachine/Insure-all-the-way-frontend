@@ -1,0 +1,30 @@
+.container {
+  padding: 122px 100px;
+  background-color: var(--biege);
+}
+
+.container > h4 {
+  font-family: General Sans;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 86.4px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.container > p {
+  font-family: General Sans;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: center;
+  color: var(--grey4);
+}
+
+.container > div {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  margin-top: 3rem;
+  gap: 20px;
+}

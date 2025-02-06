@@ -1,0 +1,51 @@
+.insuranceCard {
+  border-radius: 40px;
+  width: 400px;
+  height: 324px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.insuranceCard > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background: none;
+  transition: all 0.8s ease-in-out;
+}
+
+.insuranceCard > button {
+  position: relative;
+  top: 60%;
+}
+
+.insuranceCard:hover > button {
+  top: 20%;
+}
+
+.insuranceCard:hover > div {
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0),
+    hsla(0, 0%, 100%, 0) 20%,
+    rgba(24, 24, 24, 0.5)
+  );
+}
+
+.container > p {
+  font-family: General Sans;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 37.8px;
+  text-align: center;
+  margin-top: 1rem;
+}
