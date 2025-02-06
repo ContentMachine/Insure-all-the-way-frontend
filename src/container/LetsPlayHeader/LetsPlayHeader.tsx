@@ -10,8 +10,8 @@ const LetsPlayHeader = () => {
       <div className={classes.productsSection}>
         {headerRoutes[headerRoutes?.length - 1].children?.map((datum, i) => {
           return (
-            <div>
-              <Link href={datum.route as string} key={i}>
+            <div key={i}>
+              <Link href={datum.route as string}>
                 <div>
                   <span>{datum?.icon}</span>
                 </div>

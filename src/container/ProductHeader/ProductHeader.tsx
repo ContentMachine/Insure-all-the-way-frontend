@@ -1,8 +1,6 @@
 import { headerRoutes } from "@/utilities/routes";
 import classes from "./ProductHeader.module.css";
 import Link from "next/link";
-import Image from "next/image";
-import Button from "@/components/Button/Button";
 
 const ProductHeader = () => {
   return (

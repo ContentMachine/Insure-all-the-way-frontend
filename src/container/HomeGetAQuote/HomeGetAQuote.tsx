@@ -12,8 +12,12 @@ const HomeGetAQuote = () => {
       <p>If it's a unique circumstance, give us a call</p>
 
       <div>
-        {insuranceProducts?.map((data) => (
-          <InsuranceCard title={data?.title} backgroundImage={data?.image} />
+        {insuranceProducts?.map((data, i) => (
+          <InsuranceCard
+            title={data?.title}
+            backgroundImage={data?.image}
+            key={i}
+          />
         ))}
       </div>
     </section>

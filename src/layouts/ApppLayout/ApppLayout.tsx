@@ -1,7 +1,7 @@
 "use client";
 
 import Header from "@/container/Header/Header";
-import React, { useState } from "react";
+import React from "react";
 import classes from "./ApppLayout.module.css";
 import Footer from "@/container/Footer/Footer";
 import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";

@@ -3,7 +3,6 @@ import classes from "./Faqs.module.css";
 import Button from "@/components/Button/Button";
 import FaqComponent from "@/components/FaqComponent/FaqComponent";
 import { faqs } from "@/utilities/faqs";
-import ArrowForward from "@/assets/svgIcons/ArrowForward";
 import ArrowRight from "@/assets/svgIcons/ArrowRight";
 
 const Faqs = () => {

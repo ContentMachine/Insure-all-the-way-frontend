@@ -18,9 +18,6 @@ const HomeParters = () => {
   // Refs
   const carouselRef = useRef<HTMLDivElement | null>(null);
 
-  // State
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   useEffect(() => {
     const carousel = carouselRef.current;
     let scrollAmount = 0;

@@ -1,6 +1,5 @@
 import Input from "@/components/Input/Input";
 import Logo from "@/components/Logo/Logo";
-import Image from "next/image";
 import React from "react";
 import classes from "./PolicyReminderForm.module.css";
 import Button from "@/components/Button/Button";

@@ -4,7 +4,7 @@ export const capitalize = (data: string) => {
 
 export const capitalizeEachWord = (text: string) => {
   const destructuredStringArray = text.split(" ");
-  let capitalizedString = [];
+  const capitalizedString = [];
 
   for (let i = 0; i < destructuredStringArray.length; i++) {
     capitalizedString.push(capitalize(destructuredStringArray[i]));

@@ -1,4 +1,3 @@
-import Onboarding from "@/assets/svgIcons/Onboarding";
 import classes from "./AuthLayout.module.css";
 import Image from "next/image";
 

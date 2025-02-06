@@ -1,5 +1,3 @@
-import Image from "next/image";
-import loaderGif from "../../assets/Gifs/loader.gif";
 import classes from "./Loader.module.css";
 import { CircularProgress } from "@mui/material";
 

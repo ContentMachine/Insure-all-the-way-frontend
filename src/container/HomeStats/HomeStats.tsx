@@ -1,6 +1,4 @@
-import Button from "@/components/Button/Button";
 import classes from "./HomeStats.module.css";
-import ArrowRight from "@/assets/svgIcons/ArrowRight";
 import CheckCircle from "@/assets/svgIcons/CheckCircle";
 
 const features = [
@@ -32,8 +30,8 @@ const HomeStats = () => {
         </h2>
 
         <ul>
-          {features?.map((data) => (
-            <li>
+          {features?.map((data, i) => (
+            <li key={i}>
               <span>
                 <CheckCircle />
               </span>
