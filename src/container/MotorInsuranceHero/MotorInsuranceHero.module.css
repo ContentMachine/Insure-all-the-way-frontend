@@ -106,3 +106,7 @@
   left: -25px;
   bottom: -30px;
 }
+
+.buttonSection {
+  gap: 2rem;
+}

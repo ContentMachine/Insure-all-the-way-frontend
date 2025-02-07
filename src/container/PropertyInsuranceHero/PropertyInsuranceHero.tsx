@@ -6,6 +6,8 @@ import {
   MotorInsuranceHeroDecoration2,
   MotorInsuranceHeroDecoration3,
 } from "@/assets/svgIcons/MotorInsuranceHeroDecorations";
+import Phone from "@/assets/svgIcons/Phone";
+import Draft from "@/assets/svgIcons/Draft";
 
 const PropertyInsuranceHero = () => {
   return (
@@ -19,9 +21,15 @@ const PropertyInsuranceHero = () => {
           deserves the best protection.
         </p>
 
-        <div>
-          <Button>Get Started</Button>
-          <Button type="null">Choose a Plan</Button>
+        <div className={classes.buttonSection}>
+          <Button>
+            <Phone />
+            <span>Speak to an Agent</span>
+          </Button>
+          <Button type="null">
+            <span>Choose a Plan </span>
+            <Draft />
+          </Button>
         </div>
       </div>
 

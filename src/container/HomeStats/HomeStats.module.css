@@ -1,7 +1,8 @@
 .container {
   display: flex;
+  align-items: center;
   gap: 120px;
-  padding: 137px 121px;
+  padding: 27px 121px;
   background-color: var(--grey1);
 }
 
@@ -11,14 +12,21 @@
 
 .container > div:first-child > div {
   display: flex;
+  gap: 32px;
 }
 
 .info {
   flex: 1;
-  padding: 40px;
+  padding: 30px;
+  border: 2px solid var(--grey7);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.info > h4 {
+.info > div > h4 {
   font-family: General Sans;
   font-size: 64px;
   font-weight: 600;
@@ -27,13 +35,24 @@
   color: var(--black);
 }
 
-.info > p {
+.info > div > p {
   font-family: General Sans;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   text-align: left;
   color: var(--grey4);
+}
+
+.info > div:nth-child(2) {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--blue);
 }
 
 .container > div:nth-child(2) > h2 {
@@ -47,7 +66,7 @@
 }
 
 .container > div:nth-child(2) > ul {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
   list-style-type: none;
 }
 

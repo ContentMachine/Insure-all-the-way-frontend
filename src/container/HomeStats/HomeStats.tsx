@@ -1,5 +1,7 @@
+import HandShake from "@/assets/svgIcons/HandShake";
 import classes from "./HomeStats.module.css";
 import CheckCircle from "@/assets/svgIcons/CheckCircle";
+import Reward from "@/assets/svgIcons/Reward";
 
 const features = [
   "Competitive Rates",
@@ -13,13 +15,23 @@ const HomeStats = () => {
       <div>
         <div>
           <div className={classes.info}>
-            <h4>8</h4>
-            <p>Strategic Partners</p>
+            <div>
+              <h4>8</h4>
+              <p>Strategic Partners</p>
+            </div>
+            <div>
+              <HandShake />
+            </div>
           </div>
 
           <div className={classes.info}>
-            <h4>21+</h4>
-            <p>Added Value Services </p>
+            <div>
+              <h4>21+</h4>
+              <p>Added Value Services </p>
+            </div>
+            <div>
+              <Reward />
+            </div>
           </div>
         </div>
       </div>

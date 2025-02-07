@@ -6,6 +6,8 @@ import {
   MotorInsuranceHeroDecoration3,
 } from "@/assets/svgIcons/MotorInsuranceHeroDecorations";
 import classes from "../MotorInsuranceHero/MotorInsuranceHero.module.css";
+import Phone from "@/assets/svgIcons/Phone";
+import Draft from "@/assets/svgIcons/Draft";
 
 const HealthInsuranceHero = () => {
   return (
@@ -18,9 +20,15 @@ const HealthInsuranceHero = () => {
           Cover your family from uncertainity with reliable health insurance.
         </p>
 
-        <div>
-          <Button>Get Started</Button>
-          <Button type="null">Choose a Plan</Button>
+        <div className={classes.buttonSection}>
+          <Button>
+            <Phone />
+            <span>Speak to an Agent</span>
+          </Button>
+          <Button type="null">
+            <span>Choose a Plan </span>
+            <Draft />
+          </Button>
         </div>
       </div>
 
@@ -31,9 +39,9 @@ const HealthInsuranceHero = () => {
           width={300}
           alt="Motor Insurance"
         />
-        <MotorInsuranceHeroDecoration1 />
-        <MotorInsuranceHeroDecoration2 />
-        <MotorInsuranceHeroDecoration3 />
+        <MotorInsuranceHeroDecoration1 color="#a7c7e7" />
+        <MotorInsuranceHeroDecoration2 color="#a7c7e7" />
+        <MotorInsuranceHeroDecoration3 color="#a7c7e7" />
       </div>
     </section>
   );
