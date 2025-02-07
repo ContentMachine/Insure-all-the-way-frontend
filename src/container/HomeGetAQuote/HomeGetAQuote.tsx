@@ -7,8 +7,12 @@ const insuranceProducts = headerRoutes[0].children;
 const HomeGetAQuote = () => {
   return (
     <section className={classes.container}>
-      <h4>Get a Quote</h4>
-      <p>Click on one of the prducts below to get an instant quote. </p>
+      <h4>
+        <hr />
+        Get a Quote
+        <hr />
+      </h4>
+      <p>Click on one of the products below to get an instant quote. </p>
       <p>If it's a unique circumstance, give us a call</p>
 
       <div>

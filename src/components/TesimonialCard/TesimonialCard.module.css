@@ -7,7 +7,7 @@
 }
 
 .container:hover {
-  background-color: var(--blue);
+  background-color: var(--grey4);
   color: var(--white);
 }
 

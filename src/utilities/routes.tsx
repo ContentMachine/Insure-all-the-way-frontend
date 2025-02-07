@@ -53,7 +53,7 @@ export const headerRoutes = [
         icon: null,
         description: null,
         image:
-          "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384655/cld-sample.jpg",
+          "https://res.cloudinary.com/dfilepe0f/image/upload/v1738947903/Health_Insurance_Hero_Image_txsl9f.svg",
       },
       {
         title: "Motor Insurance",
@@ -92,7 +92,7 @@ export const headerRoutes = [
         icon: null,
         description: null,
         image:
-          "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384645/samples/ecommerce/car-interior-design.jpg",
+          "https://res.cloudinary.com/dfilepe0f/image/upload/v1738947903/Car_Insurance_Hero_Image_t3gbim.svg",
       },
       {
         title: "Property Insurance",

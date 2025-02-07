@@ -8,7 +8,6 @@ import TesimonialCard from "@/components/TesimonialCard/TesimonialCard";
 
 const HomeTestimonoals = () => {
   // States
-  const [active, setIsActive] = useState(false);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
@@ -63,7 +62,7 @@ const HomeTestimonoals = () => {
   return (
     <section className={classes.container}>
       <div className={classes.header}>
-        <h4>What Our Clients Said about us</h4>
+        <h4>What Our Clients Say About Us...</h4>
 
         <div
           className={isAtStart ? classes?.inActive : classes?.active}

@@ -38,7 +38,7 @@ const HomeStats = () => {
 
       <div>
         <h2>
-          Your Satisfaction Is <br /> Our Priority!
+          Your Satisfaction <br /> Is Our Priority!
         </h2>
 
         <ul>
