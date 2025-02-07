@@ -1,13 +1,14 @@
 .container {
-  margin: 100px 120px;
+  margin: 70px 120px;
   border-radius: 32px;
   display: flex;
   align-items: center;
   padding: 135px 57px;
   gap: 193px;
-  background-color: var(--blue4);
-  color: var(--white);
+  background-color: var(--blue);
+  color: var(--black);
   position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .imageContainer {
@@ -41,6 +42,7 @@
   line-height: 87px;
   letter-spacing: -1px;
   text-align: left;
+  color: var(--black);
 }
 
 .container > div > p {

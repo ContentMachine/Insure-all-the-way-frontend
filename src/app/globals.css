@@ -81,6 +81,7 @@
   --coral: #f5b7b1;
   --biege: #f3eacb;
   --yellow: #edd014;
+  --yellowWihOpacity: #edd01480;
   --grey: #f0f4f8;
   --white: #fff;
   --white1: #e1e8ed;
@@ -90,8 +91,10 @@
   --blue4: #3561ff;
   --blue5: #f8f9ff;
   --black: #000000;
+  --black2: #2f4f4f;
   --grey1: #f6f6f6;
   --grey2: #909090;
+  --grey2WithOpacity: #9090901f;
   --grey3: #787878;
   --grey4: #717171;
   --grey5: #ebebeb;

@@ -10,6 +10,7 @@ import Image from "next/image";
 import logo from "../../assets/images/logo.png";
 import { activeToggler } from "@/helpers/activeHandlers";
 import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
+import Logo from "@/components/Logo/Logo";
 
 const Header = () => {
   // States
@@ -50,9 +51,7 @@ const Header = () => {
 
   return (
     <header className={classes.container}>
-      <Link href={routes.BASE_URL}>
-        <Image src={logo} alt="Insure All The Way Logo" />
-      </Link>
+      <Logo />
 
       <nav>
         {navItemsState?.map((data, i) => {

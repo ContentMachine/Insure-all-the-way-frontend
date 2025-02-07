@@ -26,15 +26,16 @@
   border-right: 2px solid var(--grey5);
 }
 
-.productsSection > div > h4 {
+.productsSection > div > a {
   font-family: General Sans;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 150%;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   margin-bottom: 1rem;
+  color: var(--black2);
 }
 
 .productsSection > div > a {

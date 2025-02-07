@@ -4,7 +4,14 @@ import React from "react";
 
 type ButtonPropTypes = {
   children: React.ReactNode;
-  type?: "primary" | "secondary" | "tertiary" | "null" | "invalid" | "yellow";
+  type?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "null"
+    | "invalid"
+    | "yellow"
+    | "bordered";
   className?: string;
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -34,6 +41,8 @@ const Button = ({
           ? classes.null
           : type === "invalid"
           ? classes.invalid
+          : type === "bordered"
+          ? classes.bordered
           : classes.primary
       } ${className}`}
       onClick={onClick}

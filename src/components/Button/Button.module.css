@@ -16,6 +16,7 @@
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 67.49px 84.37px 0px #a6a6a61a;
   border-radius: calc(infinity * 1px);
+  border-radius: 10px;
   min-width: 100px;
 }
 
@@ -49,6 +50,12 @@
   background-color: var(--white);
   color: var(--black);
   border: none;
+}
+
+.bordered {
+  background-color: transparent;
+  color: var(--black);
+  border: 2px solid var(--black);
 }
 
 .null {

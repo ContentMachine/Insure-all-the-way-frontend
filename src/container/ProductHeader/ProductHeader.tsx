@@ -11,10 +11,12 @@ const ProductHeader = () => {
         {headerRoutes[0].children?.map((data, i) => {
           return (
             <div key={i}>
-              <h4>{data?.title.toUpperCase()}</h4>
+              <Link href={data?.route as string}>
+                {data?.title.toUpperCase()}
+              </Link>
               {data?.children?.map((datum, j) => {
                 return (
-                  <Link href={datum.route} key={j}>
+                  <Link href={`${data?.route}/${datum.route}`} key={j}>
                     <div>
                       <span>{datum?.icon}</span>
                     </div>

@@ -19,6 +19,9 @@ export const routes = Object.freeze({
   THE_TECH_TITANS: "/the-tech-titans",
   PRIVACY_POLICY: "/privacy-policy",
   TERMS_AND_CONDITIONS: "/terms-and-conditions",
+  HEALTH_INSURANCE: "/health-insurance",
+  PROPERTY_INSURANCE: "/property-insurance",
+  MOTOR_INSURANCE: "/motor-insurance",
 });
 
 export const headerRoutes = [
@@ -46,7 +49,7 @@ export const headerRoutes = [
               "Providing Quality Health Insurance For Corporate & Small Businesses",
           },
         ],
-        route: null,
+        route: routes.HEALTH_INSURANCE,
         icon: null,
         description: null,
         image:
@@ -85,7 +88,7 @@ export const headerRoutes = [
               "With our fleet insurance, you can cover your entire fleet of business vehicles. The policy allows you to insure all vehicles under a single policy rather than separately, and it allows you to either insure all drivers or assign names to all drivers.",
           },
         ],
-        route: null,
+        route: routes.MOTOR_INSURANCE,
         icon: null,
         description: null,
         image:
@@ -110,7 +113,7 @@ export const headerRoutes = [
               "Drive confidently with coverage for damage, flood, fire, and theft.",
           },
         ],
-        route: null,
+        route: routes.PROPERTY_INSURANCE,
         icon: null,
         description: null,
         image:

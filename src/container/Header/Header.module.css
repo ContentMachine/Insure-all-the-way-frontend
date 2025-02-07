@@ -8,17 +8,6 @@
   position: relative;
 }
 
-.container > a {
-  display: block;
-  height: 65px;
-  width: 100px;
-}
-
-.container > a > img {
-  height: 100%;
-  width: 100%;
-}
-
 .container > nav {
   display: flex;
   align-items: center;
