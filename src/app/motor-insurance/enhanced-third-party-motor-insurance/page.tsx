@@ -1,8 +1,14 @@
+import Loader from "@/components/Loader/Loader";
 import EnhancedThirdPartyMotorInsurance from "@/container/EnhancedThirdPartyMotorInsurance/EnhancedThirdPartyMotorInsurance";
-import React from "react";
+import React, { Suspense } from "react";
 
 const page = () => {
-  return <EnhancedThirdPartyMotorInsurance />;
+  return (
+    <Suspense fallback={<Loader />}>
+      {" "}
+      <EnhancedThirdPartyMotorInsurance />
+    </Suspense>
+  );
 };
 
 export default page;

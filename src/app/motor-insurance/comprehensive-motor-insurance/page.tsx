@@ -1,8 +1,13 @@
+import Loader from "@/components/Loader/Loader";
 import ComprehensiveMotorInsurance from "@/container/ComprehensiveMotorInsurance/ComprehensiveMotorInsurance";
-import React from "react";
+import React, { Suspense } from "react";
 
 const page = () => {
-  return <ComprehensiveMotorInsurance />;
+  return (
+    <Suspense fallback={<Loader />}>
+      <ComprehensiveMotorInsurance />
+    </Suspense>
+  );
 };
 
 export default page;
