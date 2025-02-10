@@ -16,13 +16,17 @@
 }
 
 .question > div {
-  height: 24px;
-  width: 24px;
+  height: 32px;
+  width: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--blue);
   border-radius: 50%;
+}
+
+.question:hover > div {
+  scale: 1.1;
 }
 
 .answer {

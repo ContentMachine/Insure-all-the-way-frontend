@@ -17,7 +17,7 @@
 .container > div {
   display: flex;
   align-items: center;
-  gap: 72px;
+  gap: 32px;
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;

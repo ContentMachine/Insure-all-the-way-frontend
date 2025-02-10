@@ -10,6 +10,10 @@
   flex: 1;
 }
 
+.container > div:first-child {
+  order: 1;
+}
+
 .container > div:first-child > div {
   display: flex;
   gap: 32px;

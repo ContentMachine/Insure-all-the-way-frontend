@@ -62,6 +62,10 @@
   transition: all 0.2s ease-in-out;
 }
 
+.item:nth-child(even) > div:nth-child(2) > img {
+  border: 23px solid var(--blueWIthOpacity);
+}
+
 .item:hover > div:nth-child(2) > img {
   scale: 1.05;
   border: 23px solid var(--grey2WithOpacity);
