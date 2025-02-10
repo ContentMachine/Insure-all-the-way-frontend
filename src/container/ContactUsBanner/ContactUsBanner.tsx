@@ -1,6 +1,7 @@
 import Button from "@/components/Button/Button";
 import classes from "./ContactUsBanner.module.css";
 import Image from "next/image";
+import Phone from "@/assets/svgIcons/Phone";
 
 type ContactUsBannerTypes = {
   title?: string;
@@ -26,7 +27,10 @@ const ContactUsBanner = ({ title, caption }: ContactUsBannerTypes) => {
           {caption ||
             "Ready to transform your digital dresence? Let's create magic together! book our services now!"}
         </p>
-        <Button type="tertiary">Book Call</Button>
+        <Button type="tertiary">
+          <Phone />
+          <span>Book Call</span>
+        </Button>
       </div>
     </section>
   );
