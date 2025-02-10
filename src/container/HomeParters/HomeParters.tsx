@@ -5,10 +5,11 @@ import classes from "./HomeParters.module.css";
 import { useEffect, useRef, useState } from "react";
 
 const partnerLogos = [
-  "https://res.cloudinary.com/dfilepe0f/image/upload/v1738773530/AXA-Logo_xrps32.svg",
-  "https://res.cloudinary.com/dfilepe0f/image/upload/v1738773529/ng-nem-logo_sp3ywk.webp",
-  "https://res.cloudinary.com/dfilepe0f/image/upload/v1738773532/coronation_insurance_logo_xzplbm.jpg",
-  "https://res.cloudinary.com/dfilepe0f/image/upload/v1738773529/staco_kciyfj.jpg",
+  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739176279/AXA-Logo_rzdpth.svg",
+  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739176279/NEM_logo-white-resized_korbgm.svg",
+  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739176279/staco-logo-2_hhyjib.svg",
+  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739176279/coronation-300x33_w7ulin.svg",
+  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739176279/IEI_j1osku.svg",
 ];
 
 const HomeParters = () => {

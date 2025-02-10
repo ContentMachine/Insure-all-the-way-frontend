@@ -6,7 +6,7 @@ import Loader from "../Loader/Loader";
 import { CircularProgress } from "@mui/material";
 
 export type DropdownProps = {
-  title: string | React.ReactNode;
+  title?: string | React.ReactNode;
   options: string[] | undefined;
   selected?: string | undefined | any;
   setSelected?: React.Dispatch<React.SetStateAction<string | undefined | any>>;
@@ -119,7 +119,9 @@ const Dropdown = (props: DropdownProps) => {
             }
           }}
         >
-          {props?.selected || props?.title}
+          {props?.selected ||
+            props?.title ||
+            `Select ${props.label?.toLowerCase()}`}
           <svg
             width="16"
             height="16"

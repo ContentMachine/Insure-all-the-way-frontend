@@ -1,12 +1,14 @@
-import RateCard from "@/components/RateCard/RateCard";
-import classes from "./ThirdPartyMotorInsuranceHero.module.css";
+"use client";
 
-const ThirdPartyMotorInsuranceHero = () => {
+import RateCard from "@/components/RateCard/RateCard";
+import classes from "./EnhancedThirdPartyMotorInsuranceHero.module.css";
+
+const EnhancedThirdPartyMotorInsuranceHero = () => {
   return (
     <section className={classes.container}>
       <h1>
-        You are 5 minutes away from getting your{" "}
-        <span> Third Party Motor Insurance!</span>
+        You are 15 minutes away from getting your{" "}
+        <span> Enhanced Third Party Motor Insurance!</span>
       </h1>
       <p>
         This insurance policy protects you from any damage or liability you
@@ -24,4 +26,4 @@ const ThirdPartyMotorInsuranceHero = () => {
   );
 };
 
-export default ThirdPartyMotorInsuranceHero;
+export default EnhancedThirdPartyMotorInsuranceHero;

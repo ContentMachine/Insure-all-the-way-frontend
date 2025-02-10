@@ -27,26 +27,22 @@
   text-align: center;
 }
 
-.container > form {
-  margin: 4rem auto;
-  width: 60%;
-  padding: 4rem 2rem;
-  border-radius: 14px;
-  box-shadow: #edd0142c 0px 5px 15px;
-  background-color: var(--white);
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.container > form > div:not(.container > form > div:last-child),
-.container > div > div:not(.container > div > div:last-child) {
+.container
+  > section
+  > div
+  > form
+  > div:not(.container > form > div:last-child, .buttonSection),
+.container
+  > section
+  > div
+  > div
+  > div:not(.container > div > div:last-child, .buttonSection) {
   flex-basis: calc(50% - 2rem);
 }
 
 .container > form > h4,
-.container > form > div:last-child {
+.container > form > div:last-child,
+.buttonSection {
   flex-basis: 100%;
 }
 
@@ -61,4 +57,34 @@
   text-align: center;
   text-align: left;
   margin: 2rem 0;
+}
+
+.info > h4 {
+  font-family: General Sans;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -1px;
+  text-align: left;
+  text-underline-position: from-font;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.info > p {
+  font-family: General Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -1px;
+  text-align: left;
+  color: var(--grey4);
+}
+
+.buttonSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  flex-basis: 100%;
 }

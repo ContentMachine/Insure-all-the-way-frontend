@@ -28,7 +28,7 @@
 }
 
 .container > div > img {
-  width: 273px;
-  height: 188px;
+  min-width: 273px;
+  height: 118px;
   flex-shrink: 0;
 }

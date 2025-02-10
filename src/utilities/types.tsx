@@ -16,3 +16,12 @@ export type insuranceTypes = {
   list: null | string[];
   image: string;
 };
+
+export type navItemTypes = {
+  title: string;
+  route?: string;
+  isActive?: boolean;
+  description?: string;
+  id: string;
+  isBordered?: boolean;
+};

@@ -1,6 +1,9 @@
+"use client";
+
 import Check from "@/assets/svgIcons/Check";
 import Button from "../Button/Button";
 import classes from "./RateCard.module.css";
+import { useRouter } from "next/navigation";
 
 const features = [
   "3gb free",
@@ -10,6 +13,9 @@ const features = [
 ];
 
 const RateCard = () => {
+  // Router
+  const router = useRouter();
+
   return (
     <div className={classes.container}>
       <h4>Starter</h4>
@@ -19,7 +25,14 @@ const RateCard = () => {
       </p>
       <h3>$200.00</h3>
       <span>per annum</span>
-      <Button type="bordered">Choose this plan</Button>
+      <Button
+        type="bordered"
+        onClick={() => {
+          router.push("#insurance-form");
+        }}
+      >
+        Choose this plan
+      </Button>
       <ul>
         {features.map((data) => (
           <li key={data}>

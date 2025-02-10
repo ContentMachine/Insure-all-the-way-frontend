@@ -7,7 +7,7 @@
   }
 }
 .container {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .container > label {
@@ -21,7 +21,7 @@
 
 .container > span:nth-child(2) {
   color: var(--red);
-  font-family: "General Sans";
+  font-family: General Sans;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -31,7 +31,6 @@
 .input {
   position: relative;
   display: block;
-  margin: 12px 0;
 }
 
 .input > span {
@@ -43,33 +42,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: po "General Sans";
+  cursor: po General Sans;
 }
 
-.input > input {
+.input > textarea {
   display: block;
   width: 100%;
-  padding: 14px;
-  font-family: "General Sans";
+  padding: 16px;
+  font-family: General Sans;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
   margin: 5px 0;
-  border-radius: calc(infinity * 1px);
-  border-radius: 10px;
+  border-radius: 12px;
   animation: appear 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   border: 1px solid var(--grey4);
   color: var(--black);
   background: var(--white);
   outline: 1px solid transparent;
+  resize: none;
+  min-height: 150px;
 }
 
-.input input:focus {
+.input textarea:focus {
   outline: 1px solid var(--yellow);
 }
 
-.input input:focus {
+.input textarea:focus {
   border: 1px solid #fff;
 }
 
@@ -82,18 +82,19 @@
   color: #ff6166;
 }
 
-.input > input::placeholder {
-  font-family: "General Sans";
+.input > textarea::placeholder {
+  color: #8897ad;
+  font-family: General Sans;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
-  color: var(--grey6);
+  color: var(--geist-color-secondary-geist-secondary, #888888);
 }
 
 .errorMessage {
   color: #ff6166;
-  font-family: "General Sans";
+  font-family: General Sans;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -103,7 +104,7 @@
 }
 
 .tip {
-  font-family: "General Sans";
+  font-family: General Sans;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -112,9 +113,9 @@
 }
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
-  .input > input {
+  .input > textarea {
     padding: 12px;
-    font-family: "General Sans";
+    font-family: General Sans;
     font-size: 14px;
     line-height: 23px;
     border-radius: 5px;
@@ -136,16 +137,16 @@
 }
 
 @media screen and (max-width: 767px) and (max-width: 1023px) {
-  .input > input {
+  .input > textarea {
     padding: 12px;
-    font-family: "General Sans";
+    font-family: General Sans;
     font-size: 14px;
     line-height: 23px;
     border-radius: 5px;
   }
 
   .container > label {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 25px;
   }
 

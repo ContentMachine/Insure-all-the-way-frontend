@@ -6,7 +6,7 @@ import Button from "@/components/Button/Button";
 
 const ThirdPartyInsuranceForm = () => {
   return (
-    <section className={classes.container}>
+    <section className={classes.container} id="insurance-form">
       <div className={classes.header}>
         <h4>Third Party Insurance Form</h4>
         <p>
@@ -26,9 +26,33 @@ const ThirdPartyInsuranceForm = () => {
           ]}
           title="Select"
         />
-        <Input label="Registration Number" placeholder="Eg: 12346" />
-        <Input label="Chasis Number" placeholder="Eg: 12346" />
-        <Input label="Vehicle Colour" placeholder="Eg: Red" />
+        <Input
+          label="Registration Number"
+          placeholder="Eg: 12346"
+          type="number"
+        />
+        <Input label="Chasis Number" placeholder="Eg: 12346" type="number" />
+
+        <Dropdown
+          label="Vehicle Colour"
+          options={[
+            "White",
+            "Black",
+            "Gray",
+            "Silver",
+            "Blue",
+            "Red",
+            "Brown",
+            "Green",
+            "Orange",
+            "Biege",
+            "Purple",
+            "Gold",
+            "Yellow",
+          ]}
+          title="Select"
+        />
+
         <Dropdown
           label="Do you require assistance with vehicle license and/or road worthiness"
           options={["Yes", "No"]}
@@ -48,10 +72,51 @@ const ThirdPartyInsuranceForm = () => {
         <Input label="Address" placeholder="No. 4, B Close, A State" />
         <Dropdown
           label="State"
-          options={["FCT", "Lagos"]}
+          options={[
+            "Abia",
+            "Adamawa",
+            "Akwa Ibom",
+            "Anambra",
+            "Bauchi",
+            "Bayelsa",
+            "Benue",
+            "Borno",
+            "Cross River",
+            "Delta",
+            "Ebonyi",
+            "Edo",
+            "Ekiti",
+            "Enugu",
+            "FCT - Abuja",
+            "Gombe",
+            "Imo",
+            "Jigawa",
+            "Kaduna",
+            "Kano",
+            "Katsina",
+            "Kebbi",
+            "Kogi",
+            "Kwara",
+            "Lagos",
+            "Nasarawa",
+            "Niger",
+            "Ogun",
+            "Ondo",
+            "Osun",
+            "Oyo",
+            "Plateau",
+            "Rivers",
+            "Sokoto",
+            "Taraba",
+            "Yobe",
+            "Zamfara",
+          ]}
           title="Select State"
         />
-        <Button>Submit</Button>
+
+        <div>
+          <Button>Submit</Button>
+        </div>
       </form>
     </section>
   );

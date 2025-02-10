@@ -16,7 +16,7 @@ const ProductHeader = () => {
               </Link>
               {data?.children?.map((datum, j) => {
                 return (
-                  <Link href={`${data?.route}/${datum.route}`} key={j}>
+                  <Link href={`${data?.route}${datum.route}`} key={j}>
                     <div>
                       <span>{datum?.icon}</span>
                     </div>
