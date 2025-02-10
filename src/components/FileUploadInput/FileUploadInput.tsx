@@ -1,7 +1,7 @@
 "use client";
 
 import classes from "./FileUploadInput.module.css";
-import upload from "../../assets/Images/upload.svg";
+import upload from "../../assets/images/upload.svg";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import Close from "@/assets/svgIcons/Close";
