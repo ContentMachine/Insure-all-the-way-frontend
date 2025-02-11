@@ -1,0 +1,65 @@
+.container {
+  padding: 0 100px 100px 100px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header > p {
+  font-family: General Sans;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0px;
+  color: var(--yellow);
+}
+
+.header > h2 {
+  font-family: General Sans;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+  letter-spacing: 0px;
+}
+
+.partnerSection {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.partnerSection > div {
+  flex: 1;
+}
+
+.partnerSection > div > img {
+  width: 100%;
+  max-height: 83px;
+  margin-bottom: 3rem;
+}
+
+.partner {
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.partner > button {
+  margin-inline: auto;
+}
+
+.partner:nth-child(1) {
+  background-color: #fef0c3;
+}
+
+.partner:nth-child(2) {
+  background-color: #fee6dc;
+}
+
+.partner:nth-child(3) {
+  background-color: #dff7ea;
+}
+
+.partner:nth-child(4) {
+  background-color: var(--coral);
+}

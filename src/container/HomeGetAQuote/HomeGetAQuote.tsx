@@ -21,6 +21,7 @@ const HomeGetAQuote = () => {
             title={data?.title}
             backgroundImage={data?.image}
             key={i}
+            route={data?.route}
           />
         ))}
       </div>

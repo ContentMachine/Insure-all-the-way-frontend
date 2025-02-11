@@ -3,6 +3,7 @@ import classes from "./ThirdPartyInsuranceForm.module.css";
 import Input from "@/components/Input/Input";
 import Dropdown from "@/components/Dropdown/Dropdown";
 import Button from "@/components/Button/Button";
+import { states } from "@/utilities/states";
 
 const ThirdPartyInsuranceForm = () => {
   return (
@@ -33,25 +34,7 @@ const ThirdPartyInsuranceForm = () => {
         />
         <Input label="Chasis Number" placeholder="Eg: 12346" type="number" />
 
-        <Dropdown
-          label="Vehicle Colour"
-          options={[
-            "White",
-            "Black",
-            "Gray",
-            "Silver",
-            "Blue",
-            "Red",
-            "Brown",
-            "Green",
-            "Orange",
-            "Biege",
-            "Purple",
-            "Gold",
-            "Yellow",
-          ]}
-          title="Select"
-        />
+        <Dropdown label="Vehicle Colour" options={states} title="Select" />
 
         <Dropdown
           label="Do you require assistance with vehicle license and/or road worthiness"

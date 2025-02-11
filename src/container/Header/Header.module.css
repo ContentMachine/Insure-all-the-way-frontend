@@ -65,3 +65,10 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: var(--white);
 }
+
+.hamburger {
+  display: none;
+}
+
+@media screen and (min-height: 767px) {
+}

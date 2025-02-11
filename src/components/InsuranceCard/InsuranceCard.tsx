@@ -1,12 +1,23 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import Button from "../Button/Button";
 import classes from "./InsuranceCard.module.css";
 
 type InsuranceCardTypes = {
   backgroundImage: string;
   title: string;
+  route: string;
 };
 
-const InsuranceCard = ({ backgroundImage, title }: InsuranceCardTypes) => {
+const InsuranceCard = ({
+  backgroundImage,
+  title,
+  route,
+}: InsuranceCardTypes) => {
+  // Router
+  const router = useRouter();
+
   return (
     <div className={classes.container}>
       <div
@@ -19,7 +30,14 @@ const InsuranceCard = ({ backgroundImage, title }: InsuranceCardTypes) => {
         }}
       >
         <div></div>
-        <Button type="secondary">View Details</Button>
+        <Button
+          type="secondary"
+          onClick={() => {
+            router.push(route);
+          }}
+        >
+          View Details
+        </Button>
       </div>
 
       <p>{title || "No title"}</p>

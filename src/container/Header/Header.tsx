@@ -6,11 +6,10 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ArrowDown from "@/assets/svgIcons/ArrowDown";
 import Button from "@/components/Button/Button";
-import Image from "next/image";
-import logo from "../../assets/images/logo.png";
 import { activeToggler } from "@/helpers/activeHandlers";
 import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
 import Logo from "@/components/Logo/Logo";
+import Hamburger from "@/assets/svgIcons/Hamburger";
 
 const Header = () => {
   // States
@@ -94,6 +93,10 @@ const Header = () => {
         ref={headerDropdownRef}
       >
         {activeNavItem?.component}
+      </div>
+
+      <div className={classes.hamburger}>
+        <Hamburger />
       </div>
     </header>
   );

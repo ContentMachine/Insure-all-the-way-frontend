@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  gap: 4rem;
+  padding: 3rem 100px 3rem 100px;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.container > section {
+  flex: 1;
+  height: 100%;
+}
+
+.container > form {
+  flex-basis: 600px;
+}
