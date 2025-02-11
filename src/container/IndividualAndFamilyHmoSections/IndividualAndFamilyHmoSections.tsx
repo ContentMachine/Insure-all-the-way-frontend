@@ -3,7 +3,7 @@ import classes from "./IndividualAndFamilyHmoSections.module.css";
 
 const sections = [
   {
-    title: "Plan that works for you",
+    title: "Plans that works for you",
     caption:
       "Depending on your requirements, we have monthly, quarterly, and yearly payment plans.",
     image:
