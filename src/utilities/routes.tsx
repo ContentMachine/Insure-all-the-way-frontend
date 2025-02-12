@@ -22,6 +22,8 @@ export const routes = Object.freeze({
   HEALTH_INSURANCE: "/health-insurance",
   PROPERTY_INSURANCE: "/property-insurance",
   MOTOR_INSURANCE: "/motor-insurance",
+  DASHBOARD: "/dashboard",
+  POLICIES: "/policies",
 });
 
 export const headerRoutes = [
@@ -155,5 +157,18 @@ export const headerRoutes = [
           "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384645/samples/ecommerce/car-interior-design.jpg",
       },
     ],
+  },
+];
+
+export const dashboardRoutes = [
+  {
+    title: "Dashboard",
+    route: routes.DASHBOARD,
+    properties: ["isProtected"],
+  },
+  {
+    title: "Policies",
+    route: routes.POLICIES,
+    properties: ["isProtected"],
   },
 ];

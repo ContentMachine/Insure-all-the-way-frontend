@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  padding-block: 1rem;
+}
+
+.container > section:first-child {
+  flex-basis: 354px;
+}
+
+.container > section:nth-child(2) {
+  flex: 1;
+}

@@ -3,8 +3,13 @@ import classes from "../PolicyReminderForm/PolicyReminderForm.module.css";
 import Logo from "@/components/Logo/Logo";
 import Input from "@/components/Input/Input";
 import Button from "@/components/Button/Button";
+import { useRouter } from "next/navigation";
+import { routes } from "@/utilities/routes";
 
 const SignIn = () => {
+  // Router
+  const router = useRouter();
+
   return (
     <AuthLayout>
       <div className={classes.container}>
@@ -17,7 +22,14 @@ const SignIn = () => {
         <Input label="Email" />
         <Input label="Password" type="password" />
 
-        <Button>Sign In</Button>
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            router.push(routes.DASHBOARD);
+          }}
+        >
+          Sign In
+        </Button>
       </div>
     </AuthLayout>
   );

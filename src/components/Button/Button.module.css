@@ -72,7 +72,13 @@
 .invalid {
   border: none;
   color: var(--black);
-  background: var(--grey2);
+  background: var(--grey6);
+}
+
+.delete {
+  border: none;
+  color: var(--white);
+  background: var(--red);
 }
 
 .icon {

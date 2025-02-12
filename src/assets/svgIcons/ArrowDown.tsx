@@ -1,12 +1,16 @@
 import React from "react";
 
-const ArrowDown = () => {
+type ArrowDownTypes = {
+  dimensions?: string;
+};
+
+const ArrowDown = ({ dimensions }: ArrowDownTypes) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="50px"
+      height={dimensions || "50px"}
       viewBox="0 -960 960 960"
-      width="24px"
+      width={dimensions || "24px"}
       fill="#5f6368"
     >
       <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />

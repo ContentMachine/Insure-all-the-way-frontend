@@ -11,7 +11,8 @@ type ButtonPropTypes = {
     | "null"
     | "invalid"
     | "yellow"
-    | "bordered";
+    | "bordered"
+    | "delete";
   className?: string;
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -43,6 +44,8 @@ const Button = ({
           ? classes.invalid
           : type === "bordered"
           ? classes.bordered
+          : type === "delete"
+          ? classes.delete
           : classes.primary
       } ${className}`}
       onClick={onClick}

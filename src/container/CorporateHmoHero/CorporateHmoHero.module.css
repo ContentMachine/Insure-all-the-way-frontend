@@ -1,91 +1,43 @@
 .container {
-  padding: 100px 100px 81px 100px;
-  text-align: center;
-  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 80px 100px;
+  gap: 40px;
 }
 
-.container > h1 {
+.container > div {
+  flex: 1;
+  margin-top: 2rem;
+}
+
+.container > div:nth-child(1) > h1 {
   font-family: General Sans;
   font-size: 50px;
   font-weight: 600;
   line-height: 120%;
   letter-spacing: -3px;
-  text-underline-position: from-font;
   margin: 2rem auto;
 }
 
-.container > h1 > span {
-  display: block;
+.container > div:nth-child(1) > h1 > span {
   color: var(--yellow);
+  display: block;
 }
 
-.container > p {
+.container > div:first-child > p {
   font-family: General Sans;
   font-size: 20px;
   font-weight: 500;
-  line-height: 150%;
-  text-underline-position: from-font;
+  line-height: 120%;
   text-align: left;
-  text-decoration-skip-ink: none;
-  width: 750px;
-  margin: 0 auto;
+  margin-bottom: 3rem;
+  width: 700px;
   color: var(--grey4);
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
 }
 
-.container > p > svg {
-  flex-shrink: 0;
-}
-
-.container > img {
-  width: 800px;
-  height: 400px;
-  margin-top: 3rem;
+.container > div:nth-child(2) > img {
+  width: 596px;
+  height: 522px;
   object-fit: cover;
-}
-
-.rateSection {
-  margin-top: 4rem;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 3rem;
-}
-
-.container > div:nth-child(4) {
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  position: absolute;
-  right: -5%;
-  bottom: -5%;
-  background: radial-gradient(
-    circle,
-    rgba(237, 208, 20, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  z-index: 1;
-}
-
-.container > div:last-child {
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  position: absolute;
-  left: -7%;
-  top: 30%;
-  background: radial-gradient(
-    circle,
-    rgba(167, 199, 231, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  z-index: -1;
-}
-
-.container > button {
-  margin-inline: auto;
-  margin-top: 2rem;
+  border-radius: 10px;
 }

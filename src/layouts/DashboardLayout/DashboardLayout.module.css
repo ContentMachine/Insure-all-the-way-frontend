@@ -1,0 +1,10 @@
+.container {
+  height: 100svh;
+  padding-block: 54px;
+  padding-inline: 168px;
+  position: relative;
+}
+
+.container > section {
+  min-height: calc(100vh - 54px - var(--headerHeight));
+}

@@ -9,7 +9,6 @@ const sections = [
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1739276724/settings-1-150x150_fyaa96.png",
   },
-
   {
     title: "Payment made easy",
     caption: "Simply enter your card details and pay online.",
@@ -23,7 +22,6 @@ const sections = [
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1739276724/heart_upja59.png",
   },
 ];
-
 const IndividualAndFamilyHmoSections = () => {
   return (
     <section className={classes.container}>

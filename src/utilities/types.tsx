@@ -25,3 +25,8 @@ export type navItemTypes = {
   id: string;
   isBordered?: boolean;
 };
+
+export type tableOptionsType = {
+  text: string;
+  action: () => void;
+};

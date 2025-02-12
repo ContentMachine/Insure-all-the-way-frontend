@@ -9,6 +9,10 @@
   padding: 1rem 2rem;
   border-radius: 10px;
   box-shadow: 5px 4px 30px 0px #0000001a;
+  transition: all 0.2s ease-in-out;
+}
+
+.container > div:not(.corporate-1, .corporate-2, .corporate-3, .corporate-4) {
   background-color: var(--white);
 }
 
@@ -34,4 +38,47 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0px;
+}
+
+.corporate-1 {
+  background-color: var(--white1);
+}
+
+.corporate-1:hover {
+  box-shadow: var(--white1) -5px 5px, var(--white1) -10px 10px,
+    var(--white1) -15px 15px, #e1e8ed60 -20px 20px, #e1e8ed54 -25px 25px;
+}
+
+.corporate-2 {
+  background-color: var(--biege);
+}
+
+.corporate-2:hover {
+  box-shadow: var(--biege) -5px 5px, var(--biege) -10px 10px,
+    var(--biege) -15px 15px, #f3eacb60 -20px 20px, #f3eacb54 -25px 25px;
+}
+
+.corporate-3 {
+  background-color: var(--blue);
+}
+
+.corporate-3:hover {
+  box-shadow: var(--blue) -5px 5px, var(--blue) -10px 10px,
+    var(--blue) -15px 15px, #a7c7e760 -20px 20px, #a7c7e754 -25px 25px;
+}
+
+.corporate-4 {
+  background-color: var(--grey6);
+}
+
+.corporate-4:hover {
+  box-shadow: var(--grey6) -5px 5px, var(--grey6) -10px 10px,
+    var(--grey6) -15px 15px, #ababab60 -20px 20px, #ababab54 -25px 25px;
+}
+
+.container
+  > div:not(.corporate-1, .corporate-2, .corporate-3, .corporate-4):hover {
+  box-shadow: var(--blue) -5px 5px, var(--blue) -10px 10px,
+    var(--blue) -15px 15px, #a7c7e760 -20px 20px,
+    var(--blueWIthOpacity) -25px 25px;
 }
