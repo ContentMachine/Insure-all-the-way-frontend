@@ -71,4 +71,21 @@
 }
 
 @media screen and (min-height: 767px) {
+  .container {
+    height: 88px;
+
+    padding: 1rem;
+  }
+
+  .container > nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .buttonSection {
+    display: none;
+  }
 }

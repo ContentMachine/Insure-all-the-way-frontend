@@ -58,7 +58,11 @@ const Table = ({ header, data, headers, options }: TableType) => {
       {modals.info && (
         <Modal
           onClick={() => setAllModalsFalse(setModals)}
-          body={<PolicyInformationModalBody />}
+          body={
+            <PolicyInformationModalBody
+              onClose={() => setAllModalsFalse(setModals)}
+            />
+          }
         />
       )}
       <div>
@@ -85,7 +89,8 @@ const Table = ({ header, data, headers, options }: TableType) => {
                     <span className={`${classes?.tableBody}`}>
                       <span
                         className={classes.button}
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation();
                           activeToggler(rowIndex, dataState, setDataState);
                         }}
                       >

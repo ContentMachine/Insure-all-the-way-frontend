@@ -32,3 +32,34 @@
   height: 118px;
   flex-shrink: 0;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 2rem 16px;
+  }
+
+  .container > h4 {
+    font-size: 28px;
+
+    margin-bottom: 52px;
+  }
+
+  .container > div {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .container > div::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container > div > img {
+    min-width: 173px;
+    height: 78px;
+    flex-shrink: 0;
+  }
+}
