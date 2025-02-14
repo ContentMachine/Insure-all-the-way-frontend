@@ -1,6 +1,7 @@
+"use client";
+
 import DashboardLayout from "@/layouts/DashboardLayout/DashboardLayout";
 import React from "react";
-import DashboardMain from "../DashboardMain/DashboardMain";
 import SectionsHeader from "@/components/SectionsHeader/SectionsHeader";
 import DashboardPoliciesSummary from "../DashboardPoliciesSummary/DashboardPoliciesSummary";
 import classes from "./Policies.module.css";
