@@ -6,11 +6,13 @@ import { motorInsuranceTypes } from "@/utilities/motorInsurance";
 import ContactUsBanner from "../ContactUsBanner/ContactUsBanner";
 import Faqs from "../Faqs/Faqs";
 import classes from "./MotorInsurance.module.css";
+import MotorInsurancePlans from "../MotorInsurancePlans/MotorInsurancePlans";
 
 const MotorInsurance = () => {
   return (
     <ApppLayout>
       <MotorInsuranceHero />
+      <MotorInsurancePlans />
       <InsuranceTypes data={motorInsuranceTypes} />
       <div className={classes.contact}>
         <ContactUsBanner

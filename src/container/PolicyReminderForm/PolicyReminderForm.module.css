@@ -47,3 +47,18 @@
 .container > button {
   margin-top: 2rem;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .container > a {
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .container > button {
+    width: 100%;
+  }
+}

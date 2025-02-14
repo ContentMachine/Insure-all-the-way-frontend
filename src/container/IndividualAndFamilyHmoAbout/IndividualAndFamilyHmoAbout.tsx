@@ -10,7 +10,7 @@ const IndividualAndFamilyHmoAbout = () => {
       <div className={classes.container}>
         <div>
           <Image
-            src="https://res.cloudinary.com/dfilepe0f/image/upload/v1739285082/Frame_795_ddxvm6.svg"
+            src="https://res.cloudinary.com/dfilepe0f/image/upload/v1739547124/Patient-centered_Care_i3pae7.svg"
             width={540}
             height={600}
             alt="About"

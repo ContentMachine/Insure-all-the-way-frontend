@@ -47,6 +47,7 @@ export const headerRoutes = [
             title: "Corporate HMO",
             route: routes.CORPORATE_HMO,
             icon: <Health color="#f5b7b1" />,
+
             description:
               "Providing Quality Health Insurance For Corporate & Small Businesses",
           },
@@ -54,11 +55,13 @@ export const headerRoutes = [
         route: routes.HEALTH_INSURANCE,
         icon: null,
         description: null,
+        isActive: false,
         image:
           "https://res.cloudinary.com/dfilepe0f/image/upload/v1738947903/Health_Insurance_Hero_Image_txsl9f.svg",
       },
       {
         title: "Motor Insurance",
+        isActive: false,
         children: [
           {
             title: "Third Party Motor Insurance",
@@ -66,6 +69,7 @@ export const headerRoutes = [
             icon: <Car color="#1b3a57" />,
             description:
               "Providing Quality Health Insurance For Corporate & Small Businesses",
+            isActive: false,
           },
 
           {
@@ -74,6 +78,7 @@ export const headerRoutes = [
             icon: <Car color="#3a506b" />,
             description:
               "Drive confidently with coverage for damage, flood, fire, and theft.",
+            isActive: false,
           },
           {
             title: "Comprehensive Motor Insurance",
@@ -81,6 +86,7 @@ export const headerRoutes = [
             icon: <Car color="#000000" />,
             description:
               "Comprehensive Motor Insurance covers loss or damage from fire, theft, vandalism, accident, or collision, including legal liability for third-party injury or property damage.",
+            isActive: false,
           },
           {
             title: "Fleet Motor Insurance",
@@ -88,6 +94,7 @@ export const headerRoutes = [
             icon: <Car color="#f8e8a2" />,
             description:
               "With our fleet insurance, you can cover your entire fleet of business vehicles. The policy allows you to insure all vehicles under a single policy rather than separately, and it allows you to either insure all drivers or assign names to all drivers.",
+            isActive: false,
           },
         ],
         route: routes.MOTOR_INSURANCE,
@@ -105,6 +112,7 @@ export const headerRoutes = [
             icon: <Car color="#1b3a57" />,
             description:
               "Providing Quality Health Insurance For Corporate & Small Businesses",
+            isActive: false,
           },
 
           {
@@ -113,9 +121,11 @@ export const headerRoutes = [
             icon: <Car color="#3a506b" />,
             description:
               "Drive confidently with coverage for damage, flood, fire, and theft.",
+            isActive: false,
           },
         ],
         route: routes.PROPERTY_INSURANCE,
+        isActive: false,
         icon: null,
         description: null,
         image:
@@ -146,6 +156,7 @@ export const headerRoutes = [
         description: "Test",
         image:
           "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384645/samples/ecommerce/car-interior-design.jpg",
+        isActive: false,
       },
       {
         title: "The Tech Titans",
@@ -155,6 +166,7 @@ export const headerRoutes = [
         description: "Test",
         image:
           "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384645/samples/ecommerce/car-interior-design.jpg",
+        isActive: false,
       },
     ],
   },

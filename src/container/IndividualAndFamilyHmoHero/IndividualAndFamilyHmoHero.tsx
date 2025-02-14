@@ -19,7 +19,7 @@ const IndividualAndFamilyHmoHero = () => {
       </div>
       <div>
         <Image
-          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1739275891/Group_76_zmpvh8.svg"
+          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1739547123/Idividual_and_Family_HMO_tr4ixz.svg"
           width={500}
           height={500}
           alt="Hero Image"

@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/Button/Button";
 import classes from "./MotorInsuranceHero.module.css";
 import Image from "next/image";
@@ -8,8 +10,12 @@ import {
 } from "@/assets/svgIcons/MotorInsuranceHeroDecorations";
 import Phone from "@/assets/svgIcons/Phone";
 import Draft from "@/assets/svgIcons/Draft";
+import { useRouter } from "next/navigation";
 
 const MotorInsuranceHero = () => {
+  // Router
+  const router = useRouter();
+
   return (
     <section className={classes.container}>
       <div>
@@ -25,7 +31,7 @@ const MotorInsuranceHero = () => {
             <Phone />
             <span>Speak to an Agent</span>
           </Button>
-          <Button type="null">
+          <Button type="null" onClick={() => router.push("#plans")}>
             <span>Choose a Plan </span>
             <Draft />
           </Button>
@@ -37,6 +43,7 @@ const MotorInsuranceHero = () => {
           src="https://res.cloudinary.com/dfilepe0f/image/upload/v1738947903/Car_Insurance_Hero_Image_t3gbim.svg"
           height={500}
           width={300}
+          layout="responsive"
           alt="Motor Insurance"
         />
         <MotorInsuranceHeroDecoration1 />

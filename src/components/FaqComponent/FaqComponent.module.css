@@ -13,6 +13,7 @@
   font-weight: 500;
   line-height: 36px;
   text-align: left;
+  gap: 1rem;
 }
 
 .question > div {
@@ -38,4 +39,38 @@
   text-align: left;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: General Sans;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: left;
+  }
+
+  .question > div {
+    height: 32px;
+    width: 32px;
+
+    border-radius: 50%;
+  }
+
+  .question:hover > div {
+    scale: 1.1;
+  }
+
+  .answer {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }

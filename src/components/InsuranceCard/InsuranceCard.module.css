@@ -50,3 +50,30 @@
   margin-top: 1rem;
   color: var(--grey4);
 }
+
+@media screen and (max-width: 767px) {
+  .insuranceCard {
+    border-radius: 20px;
+    width: 100%;
+    height: 304px;
+    background-position: top center;
+  }
+
+  .insuranceCard > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background: none;
+    transition: all 0.8s ease-in-out;
+  }
+
+  .container > p {
+    font-family: General Sans;
+    font-size: 24px;
+    line-height: 120%;
+    margin-top: 1rem;
+  }
+}

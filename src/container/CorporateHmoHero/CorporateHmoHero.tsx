@@ -22,7 +22,7 @@ const CorporateHmoHero = () => {
       </div>
       <div>
         <Image
-          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1737384646/samples/imagecon-group.jpg"
+          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1739547124/Patient-centered_Care_i3pae7.svg"
           width={800}
           height={400}
           alt="Corporate HMO"

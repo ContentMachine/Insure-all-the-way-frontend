@@ -1,6 +1,7 @@
 .container {
   min-height: 100svh;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 .container > header {

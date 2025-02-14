@@ -21,3 +21,15 @@
 .container > a:nth-child(2) {
   margin-left: auto;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    gap: 2rem;
+    padding: 2rem 1rem;
+    flex-direction: column;
+  }
+
+  .container > a:nth-child(2) {
+    margin-left: 0;
+  }
+}

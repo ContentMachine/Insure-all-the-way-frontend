@@ -82,3 +82,21 @@
     var(--blue) -15px 15px, #a7c7e760 -20px 20px,
     var(--blueWIthOpacity) -25px 25px;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 38px;
+    padding: 2rem 1rem;
+  }
+
+  .container > div {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 5px 4px 30px 0px #0000001a;
+    transition: all 0.2s ease-in-out;
+  }
+}

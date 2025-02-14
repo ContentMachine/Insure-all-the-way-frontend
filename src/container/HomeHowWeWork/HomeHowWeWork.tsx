@@ -42,7 +42,7 @@ const HomeHowWeWork = () => {
         </p>
 
         <Image
-          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1738770602/howWeWork_fuqwhg.svg"
+          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1739547123/how_It_Works_lzblpu.svg"
           alt="How we work"
           width={487}
           height={311}

@@ -4,9 +4,9 @@ import Button from "@/components/Button/Button";
 
 const partners = [
   "https://res.cloudinary.com/dfilepe0f/image/upload/v1739176279/AXA-Logo_rzdpth.svg",
-  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739278616/reliance_zt5fco.png",
-  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739278616/hygeia_yt5km9.png",
-  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739278616/leadway_sjxko3.png",
+  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739547763/Reliance_HMO_tluw93.svg",
+  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739547763/Hygeia_HMO_hwgk0t.svg",
+  "https://res.cloudinary.com/dfilepe0f/image/upload/v1739547765/Leadway_kkq3xh.svg",
 ];
 
 const IndividualAndFamilyHmoPartners = () => {

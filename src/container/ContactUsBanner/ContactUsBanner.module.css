@@ -55,3 +55,41 @@
   text-decoration-skip-ink: none;
   margin-bottom: 2rem;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin: 32px;
+    border-radius: 20px;
+
+    flex-direction: column;
+    padding: 32px 16px;
+    gap: 32px;
+  }
+
+  .imageContainer {
+    width: 100%;
+  }
+
+  .imageContainer > img {
+    border-radius: 20px 0 0 20px;
+  }
+
+  .container > h4,
+  .container > div:not(.imageContainer) {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container > h4 {
+    font-size: 32px;
+    line-height: 120%;
+  }
+
+  .container > div > p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    margin-bottom: 2rem;
+  }
+}

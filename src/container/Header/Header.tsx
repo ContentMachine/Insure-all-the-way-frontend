@@ -10,16 +10,29 @@ import { activeToggler } from "@/helpers/activeHandlers";
 import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
 import Logo from "@/components/Logo/Logo";
 import Hamburger from "@/assets/svgIcons/Hamburger";
+import Sidenav from "../SideNav/SideNav";
 
 const Header = () => {
   // States
   const [navItemsState, setNavItemsState] = useState(headerRoutes);
 
-  // Utils
-  const activeNavItem = navItemsState?.find((data) => data?.isActive);
-
   // Refs
   const headerDropdownRef = useRef<HTMLDivElement | null>(null);
+  const sideNavRef = useRef<HTMLDivElement | null>(null);
+
+  // Utils
+  const activeNavItem = navItemsState?.find((data) => data?.isActive);
+  const handleSidenavOpen = () => {
+    if (sideNavRef?.current) {
+      sideNavRef.current.style.width = "100vw";
+    }
+  };
+
+  const handleSidenavClose = () => {
+    if (sideNavRef?.current) {
+      sideNavRef.current.style.width = "0%";
+    }
+  };
 
   // Hooks
   const { updateSearchParams } = useUpdateSearchParams();
@@ -96,7 +109,11 @@ const Header = () => {
       </div>
 
       <div className={classes.hamburger}>
-        <Hamburger />
+        <Hamburger onClick={handleSidenavOpen} />
+      </div>
+
+      <div className={classes.sidenav} ref={sideNavRef}>
+        <Sidenav onClose={handleSidenavClose} />
       </div>
     </header>
   );

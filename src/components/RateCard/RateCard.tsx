@@ -12,24 +12,29 @@ const features = [
   "Best for personal vehicles.",
 ];
 
-const RateCard = () => {
+type RateCardTypes = {
+  theme?: string;
+};
+
+const RateCard = ({ theme }: RateCardTypes) => {
   // Router
   const router = useRouter();
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} style={{ border: `2px solid ${theme}` }}>
       <h4>Starter</h4>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ullam
         adipisci temporibus
       </p>
-      <h3>$200.00</h3>
+      <h3 style={{ color: theme }}>$200.00</h3>
       <span>per annum</span>
       <Button
         type="bordered"
         onClick={() => {
           router.push("#insurance-form");
         }}
+        style={{ background: theme, border: theme }}
       >
         Choose this plan
       </Button>

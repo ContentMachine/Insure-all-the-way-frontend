@@ -37,3 +37,27 @@
   text-align: left;
   color: var(-grey4);
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .container > h4 {
+    font-size: 24px;
+    line-height: 140%;
+    margin-bottom: 10px;
+  }
+
+  .container > p:nth-child(2) {
+    font-size: 18px;
+    line-height: 140%;
+    margin-bottom: 16px;
+  }
+
+  .container > p:nth-child(3) {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}

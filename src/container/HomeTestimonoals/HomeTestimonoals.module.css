@@ -63,3 +63,42 @@
   flex-grow: 0;
   scroll-snap-align: start;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 32px 16px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .header > h4 {
+    font-family: General Sans;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -1px;
+    text-align: left;
+    flex-basis: 100%;
+  }
+
+  .header > div {
+    width: 65px;
+    height: 65px;
+  }
+
+  .header > div:nth-child(2) {
+    margin-left: auto;
+  }
+
+  .testimonials > div {
+    flex-basis: 313px;
+    max-height: 432px;
+    gap: 19px;
+  }
+}

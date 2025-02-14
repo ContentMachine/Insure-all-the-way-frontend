@@ -1,6 +1,6 @@
 import { CircularProgress } from "@mui/material";
 import classes from "./Button.module.css";
-import React from "react";
+import React, { CSSProperties } from "react";
 
 type ButtonPropTypes = {
   children: React.ReactNode;
@@ -19,6 +19,7 @@ type ButtonPropTypes = {
   loading?: boolean;
   icon?: React.ReactNode;
   id?: string;
+  style?: CSSProperties;
 };
 
 const Button = ({
@@ -30,6 +31,7 @@ const Button = ({
   className,
   icon,
   id,
+  style,
 }: ButtonPropTypes) => {
   return (
     <button
@@ -51,6 +53,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       id={id}
+      style={style}
     >
       {loading ? (
         <CircularProgress
