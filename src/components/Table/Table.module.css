@@ -91,3 +91,48 @@
 .options > span:hover {
   background-color: var(--grey);
 }
+
+@media screen and (max-width: 767px) {
+  .tableHeaderContainer {
+    display: flex;
+    border-bottom: 1px solid var(--grey);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .tableBodyContainer {
+    display: flex;
+  }
+
+  .tableBodyContainer:not(.tableBodyContainer:last-child) {
+    border-bottom: 1px solid var(--grey);
+  }
+
+  .tableHeader,
+  .tableBody {
+    flex: 1;
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+  }
+
+  .tableHeader:not(
+      .tableHeader:nth-child(1),
+      .tableHeader:nth-child(2),
+      .tableHeader:last-child
+    ),
+  .tableBody:not(
+      .tableBody:nth-child(1),
+      .tableBody:nth-child(2),
+      .tableBody:last-child
+    ) {
+    display: none;
+    padding: 0rem;
+  }
+
+  .tableBodyContainer:hover {
+    background-color: var(--grey);
+  }
+
+  .options {
+    right: 0;
+  }
+}

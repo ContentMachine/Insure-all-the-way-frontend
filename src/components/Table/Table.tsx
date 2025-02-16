@@ -5,7 +5,7 @@ import classes from "./Table.module.css";
 import ArrowDown from "@/assets/svgIcons/ArrowDown";
 import { modalGenericType, tableOptionsType } from "@/utilities/types";
 import { useEffect, useRef, useState } from "react";
-import { activeToggler, activeTogglerRestAll } from "@/helpers/activeHandlers";
+import { activeToggler } from "@/helpers/activeHandlers";
 import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
 import Modal from "../Modal/Modal";
 import PolicyInformationModalBody from "@/container/PolicyInformationModalBody/PolicyInformationModalBody";

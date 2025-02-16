@@ -14,3 +14,21 @@
   color: var(--black);
   margin-bottom: 2rem;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    border-radius: 1px solid var(--grey2);
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    flex-shrink: 0;
+    overflow-y: auto;
+  }
+
+  .container > h2 {
+    font-family: General Sans;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--black);
+    margin-bottom: 2rem;
+  }
+}
