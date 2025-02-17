@@ -7,6 +7,7 @@ import Footer from "@/container/Footer/Footer";
 import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
 import Modal from "@/components/Modal/Modal";
 import Auth from "@/container/Auth/Auth";
+import ContactUsModalBody from "@/container/ContactUsModalBody/ContactUsModalBody";
 
 type ApppLayoutTypes = {
   children: React.ReactNode;
@@ -35,12 +36,18 @@ const ApppLayout = ({ children, className }: ApppLayoutTypes) => {
         />
       )}
 
-      {auth && (
+      {contactUs && (
         <Modal
           onClick={() => {
-            updateSearchParams("auth", undefined, "delete");
+            updateSearchParams("contact-us", undefined, "delete");
           }}
-          body={<Auth />}
+          body={
+            <ContactUsModalBody
+              onClose={() => {
+                updateSearchParams("contact-us", undefined, "delete");
+              }}
+            />
+          }
         />
       )}
     </main>

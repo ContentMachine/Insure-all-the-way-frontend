@@ -46,6 +46,11 @@
   color: var(--black);
 }
 
+.container > h4 > span {
+  display: block;
+  color: var(--white);
+}
+
 .container > div > p {
   font-family: General Sans;
   font-size: 20px;

@@ -1,19 +1,31 @@
 import Phone from "@/assets/svgIcons/Phone";
 import classes from "./ContactUsModalBody.module.css";
 import Close from "@/assets/svgIcons/Close";
+import Whatsapp from "@/assets/svgIcons/Keyboard";
 
-const ContactUsModalBody = () => {
+type ContactUsModalBodyTypes = {
+  onClose: () => void;
+};
+
+const ContactUsModalBody = ({ onClose }: ContactUsModalBodyTypes) => {
   return (
     <div className={classes.container}>
-      <Close />
+      <h4>How would you like to contact us?</h4>
+      <Close onClick={onClose} />
       <div>
         <Phone />
-        <span>Call an Agent</span>
+        <span>
+          <a href="tel:+2348095016666">Call an Agent</a>
+        </span>
       </div>
 
       <div>
-        <Phone />
-        <span>Text an Agent</span>
+        <Whatsapp />
+        <span>
+          <a href="https://wa.link/achd56" rel="noreferrer" target="_blank">
+            Text an Agent
+          </a>
+        </span>
       </div>
     </div>
   );

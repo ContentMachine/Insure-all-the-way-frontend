@@ -1,9 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import classes from "./HomeHero.module.css";
 import Input from "@/components/Input/Input";
 import Button from "@/components/Button/Button";
 
 const HomeHero = () => {
+  // Utils
+  const isMobile =
+    typeof window !== "undefined" && window.innerWidth < 767 ? true : false;
+
   return (
     <section className={classes.container}>
       <div>
@@ -22,7 +28,11 @@ const HomeHero = () => {
       </div>
       <div>
         <Image
-          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1738933352/IATW_Hero_Image_new_gwxbwj.svg"
+          src={
+            isMobile
+              ? "https://res.cloudinary.com/dfilepe0f/image/upload/v1739811414/IATW_Hero_Image_Mobile_efczyq.svg"
+              : "https://res.cloudinary.com/dfilepe0f/image/upload/v1738933352/IATW_Hero_Image_new_gwxbwj.svg"
+          }
           alt="Hero Image"
           width={500}
           height={500}

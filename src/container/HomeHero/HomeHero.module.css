@@ -88,9 +88,14 @@
     font-size: 18px;
   }
 
+  .container > div:nth-child(2) {
+    height: 0px;
+  }
+
   .container > div:nth-child(2) > img {
     width: 100%;
-    min-height: auto;
+    min-height: 70%;
+    object-fit: cover;
   }
 
   .textSection {

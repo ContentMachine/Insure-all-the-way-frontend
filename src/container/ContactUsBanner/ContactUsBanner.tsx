@@ -17,7 +17,11 @@ const ContactUsBanner = ({ title, caption }: ContactUsBannerTypes) => {
   const router = useRouter();
   return (
     <section className={classes.container}>
-      <h4>{title || "Any Questions? Give Us a Call"}</h4>
+      <h4
+        dangerouslySetInnerHTML={{
+          __html: title || "Any Questions? <span>Give us a call.</span>",
+        }}
+      ></h4>
 
       <div className={classes.imageContainer}>
         <Image
@@ -33,14 +37,9 @@ const ContactUsBanner = ({ title, caption }: ContactUsBannerTypes) => {
           {caption ||
             "Ready to transform your digital dresence? Let's create magic together! book our services now!"}
         </p>
-        <Button
-          type="tertiary"
-          onClick={() => {
-            router.push(routes.CONTACT_US);
-          }}
-        >
+        <Button type="tertiary">
           <Phone />
-          <span>Call Us</span>
+          <a href="tel:+2348095016666">Call Us</a>
         </Button>
       </div>
     </section>

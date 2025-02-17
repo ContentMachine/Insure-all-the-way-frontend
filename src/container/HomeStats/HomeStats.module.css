@@ -145,7 +145,7 @@
 
   .container > div:nth-child(2) > h2 {
     font-size: 40px;
-    line-height: 140%;
+    line-height: 100%;
     margin-bottom: 20px;
   }
 
