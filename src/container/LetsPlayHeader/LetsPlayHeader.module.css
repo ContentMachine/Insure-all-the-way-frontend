@@ -10,6 +10,10 @@
   letter-spacing: -1px;
   text-align: left;
   margin-bottom: 3rem;
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
 }
 
 .productsSection {
@@ -48,7 +52,8 @@
   transition: all 0.2s ease-in-out;
 }
 
-.productsSection > div > a:hover {
+.productsSection > div > a:hover,
+.container > h2:hover {
   background-color: var(--grey1);
 }
 

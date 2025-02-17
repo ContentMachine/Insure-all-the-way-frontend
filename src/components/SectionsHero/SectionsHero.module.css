@@ -1,0 +1,96 @@
+.container {
+  min-height: 450px;
+  padding-top: calc(var(--headerHeight) + 2rem);
+  text-align: center;
+  padding-bottom: 2rem;
+  position: relative;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0),
+    hsla(0, 0%, 100%, 0) 20%,
+    rgba(24, 24, 24, 0.5)
+  );
+  height: 100%;
+  z-index: 0;
+}
+
+.container > p {
+  font-family: General Sans;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--black);
+  max-width: 70%;
+  margin: auto;
+  display: none;
+}
+
+.container > h2 {
+  font-family: General Sans;
+  position: relative;
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--white);
+  z-index: 1;
+  max-width: 70%;
+  /* display: none; */
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    min-height: 100px;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container > h2 {
+    font-family: General Sans;
+    position: relative;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: auto;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .container {
+    min-height: 100px;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container > h2 {
+    font-family: General Sans;
+    position: relative;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: auto;
+  }
+}

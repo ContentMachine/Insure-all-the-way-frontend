@@ -70,3 +70,22 @@ export const healthInsuranceTypes = [
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Co-workers-having-lunch-1280x854-1_c1y64v.jpg",
   },
 ];
+
+export const letsPlay = [
+  {
+    title: "Health and Insurance Friendly Match  ",
+    route: routes.HEALTH_AND_INSURANCE_FRIENDLY_MATCH,
+    descriptions: null,
+    list: null,
+    image:
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Health-Banners-50.50-a-1_c399vk.jpg",
+  },
+  {
+    title: "The Tech Titans Tournament",
+    route: routes.THE_TECH_TITANS,
+    descriptions: null,
+    list: null,
+    image:
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Co-workers-having-lunch-1280x854-1_c1y64v.jpg",
+  },
+];

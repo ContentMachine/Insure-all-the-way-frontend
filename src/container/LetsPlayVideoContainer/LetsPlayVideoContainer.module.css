@@ -1,0 +1,19 @@
+.container {
+  text-align: center;
+  padding: 40px 100px;
+}
+
+.container > iframe {
+  min-width: 800px;
+  min-height: 500px;
+  border-radius: 10px;
+}
+
+.container > h4 {
+  font-family: General Sans;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 150%;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}

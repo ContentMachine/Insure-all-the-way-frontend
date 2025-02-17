@@ -24,6 +24,7 @@ export const routes = Object.freeze({
   MOTOR_INSURANCE: "/motor-insurance",
   DASHBOARD: "/dashboard",
   POLICIES: "/policies",
+  LETS_PLAY: "/lets-play",
 });
 
 export const headerRoutes = [
@@ -144,7 +145,7 @@ export const headerRoutes = [
   },
   {
     title: "Let's Play",
-    route: null,
+    route: routes.LETS_PLAY,
     isActive: false,
     component: <LetsPlayHeader />,
     children: [

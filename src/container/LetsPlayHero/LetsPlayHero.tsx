@@ -1,39 +1,28 @@
-"use client";
-
 import Button from "@/components/Button/Button";
+import classes from "./LetsPlayHero.module.css";
+import Play from "@/assets/svgIcons/Play";
 import Image from "next/image";
 import {
   MotorInsuranceHeroDecoration1,
   MotorInsuranceHeroDecoration2,
   MotorInsuranceHeroDecoration3,
 } from "@/assets/svgIcons/MotorInsuranceHeroDecorations";
-import classes from "../MotorInsuranceHero/MotorInsuranceHero.module.css";
-import Phone from "@/assets/svgIcons/Phone";
-import Draft from "@/assets/svgIcons/Draft";
-import { useRouter } from "next/navigation";
 
-const HealthInsuranceHero = () => {
-  // ROuter
-  const router = useRouter();
-
+const LetsPlayHero = () => {
   return (
     <section className={classes.container}>
       <div>
-        <h1>
-          Health is Wealth <span>Invest In Yours Today</span>
-        </h1>
+        <h1>Why We Do It...</h1>
         <p>
-          Cover your family from uncertainity with reliable health insurance.
+          Health is a good idea, living an active lifestyle is better! That’s
+          why we routinely organise and participate in health related events.
+          Let’s not just talk about good health, let’s be about good health.
         </p>
 
         <div className={classes.buttonSection}>
           <Button>
-            <Phone />
-            <span>Speak to an Agent</span>
-          </Button>
-          <Button type="null" onClick={() => router.push("#types")}>
-            <span>Choose a Plan </span>
-            <Draft />
+            <Play />
+            <span>Look at our Events</span>
           </Button>
         </div>
       </div>
@@ -53,4 +42,4 @@ const HealthInsuranceHero = () => {
   );
 };
 
-export default HealthInsuranceHero;
+export default LetsPlayHero;

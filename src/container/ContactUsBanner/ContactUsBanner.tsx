@@ -1,7 +1,11 @@
+"use client";
+
 import Button from "@/components/Button/Button";
 import classes from "./ContactUsBanner.module.css";
 import Image from "next/image";
 import Phone from "@/assets/svgIcons/Phone";
+import { useRouter } from "next/navigation";
+import { routes } from "@/utilities/routes";
 
 type ContactUsBannerTypes = {
   title?: string;
@@ -9,6 +13,8 @@ type ContactUsBannerTypes = {
 };
 
 const ContactUsBanner = ({ title, caption }: ContactUsBannerTypes) => {
+  // ROuter
+  const router = useRouter();
   return (
     <section className={classes.container}>
       <h4>{title || "Have Questions? Speak to us"}</h4>
@@ -27,7 +33,12 @@ const ContactUsBanner = ({ title, caption }: ContactUsBannerTypes) => {
           {caption ||
             "Ready to transform your digital dresence? Let's create magic together! book our services now!"}
         </p>
-        <Button type="tertiary">
+        <Button
+          type="tertiary"
+          onClick={() => {
+            router.push(routes.CONTACT_US);
+          }}
+        >
           <Phone />
           <span>Book Call</span>
         </Button>

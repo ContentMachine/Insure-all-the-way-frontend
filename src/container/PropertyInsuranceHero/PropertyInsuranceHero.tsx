@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/Button/Button";
 import classes from "../MotorInsuranceHero/MotorInsuranceHero.module.css";
 import Image from "next/image";
@@ -8,8 +10,11 @@ import {
 } from "@/assets/svgIcons/MotorInsuranceHeroDecorations";
 import Phone from "@/assets/svgIcons/Phone";
 import Draft from "@/assets/svgIcons/Draft";
+import { useRouter } from "next/navigation";
 
 const PropertyInsuranceHero = () => {
+  // Router
+  const router = useRouter();
   return (
     <section className={classes.container}>
       <div>
@@ -26,7 +31,7 @@ const PropertyInsuranceHero = () => {
             <Phone />
             <span>Speak to an Agent</span>
           </Button>
-          <Button type="null">
+          <Button type="null" onClick={() => router.push("#types")}>
             <span>Choose a Plan </span>
             <Draft />
           </Button>

@@ -16,7 +16,7 @@ const InsuranceTypes = ({ data }: InsuranceTypesTypes) => {
   const router = useRouter();
 
   return (
-    <section className={classes.container}>
+    <section className={classes.container} id="types">
       {data?.map((item) => {
         return (
           <div key={item.title} className={classes.item}>
