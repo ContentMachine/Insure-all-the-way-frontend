@@ -15,7 +15,7 @@ const ContactUsModalBody = ({ onClose }: ContactUsModalBodyTypes) => {
       <div>
         <Phone />
         <span>
-          <a href="tel:+2348095016666">Call an Agent</a>
+          <a href="tel:+2348098016666">Call an Agent</a>
         </span>
       </div>
 

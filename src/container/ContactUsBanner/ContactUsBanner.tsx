@@ -39,7 +39,7 @@ const ContactUsBanner = ({ title, caption }: ContactUsBannerTypes) => {
         </p>
         <Button type="tertiary">
           <Phone />
-          <a href="tel:+2348095016666">Call Us</a>
+          <a href="tel:+2348098016666">Call Us</a>
         </Button>
       </div>
     </section>
