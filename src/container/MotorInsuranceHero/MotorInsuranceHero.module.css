@@ -127,15 +127,12 @@
     width: 100%;
   }
 
-  .container > div:nth-child(2) {
-    flex-basis: 100%;
-  }
-
   .container > div > h1 {
     font-size: 40px;
     font-weight: 600;
     line-height: 130%;
     margin-block: 1rem;
+    letter-spacing: -3px;
   }
 
   .container > div > p,
@@ -149,12 +146,19 @@
   .container > div:first-child > div {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    gap: 1rem;
     margin-top: 2rem;
   }
 
-  .container > div:nth-child(2) {
-    height: 300px;
+  .container > div:first-child > div > button {
     width: 100%;
+  }
+
+  .container > div:nth-child(2) {
+    height: 400px;
+    width: 90%;
+    flex-basis: 400px;
   }
 
   .container > div:nth-child(2) > img {

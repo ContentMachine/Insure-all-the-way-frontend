@@ -11,7 +11,7 @@ const MotorInsurancePlans = () => {
 
       <div className={classes.plansContainer}>
         <RateCard theme="#a7c7e7" />
-        <RateCard theme="#d4a5e6" />
+        <RateCard theme="#ababab" />
         <RateCard theme="#edd014" />
       </div>
     </section>

@@ -17,7 +17,7 @@ const ContactUsBanner = ({ title, caption }: ContactUsBannerTypes) => {
   const router = useRouter();
   return (
     <section className={classes.container}>
-      <h4>{title || "Have Questions? Speak to us"}</h4>
+      <h4>{title || "Any Questions? Give Us a Call"}</h4>
 
       <div className={classes.imageContainer}>
         <Image
@@ -40,7 +40,7 @@ const ContactUsBanner = ({ title, caption }: ContactUsBannerTypes) => {
           }}
         >
           <Phone />
-          <span>Book Call</span>
+          <span>Call Us</span>
         </Button>
       </div>
     </section>

@@ -24,6 +24,7 @@
   align-items: center;
   background-color: var(--blue);
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .question:hover > div {

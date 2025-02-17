@@ -11,10 +11,14 @@ import classes from "../MotorInsuranceHero/MotorInsuranceHero.module.css";
 import Phone from "@/assets/svgIcons/Phone";
 import Draft from "@/assets/svgIcons/Draft";
 import { useRouter } from "next/navigation";
+import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
 
 const HealthInsuranceHero = () => {
   // ROuter
   const router = useRouter();
+
+  // Hooks
+  const { updateSearchParams } = useUpdateSearchParams();
 
   return (
     <section className={classes.container}>
@@ -27,7 +31,11 @@ const HealthInsuranceHero = () => {
         </p>
 
         <div className={classes.buttonSection}>
-          <Button>
+          <Button
+            onClick={() => {
+              updateSearchParams("contact-us", "true", "set");
+            }}
+          >
             <Phone />
             <span>Speak to an Agent</span>
           </Button>

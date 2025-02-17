@@ -20,7 +20,7 @@ const Faqs = () => {
         })}
       </div>
       <div>
-        <h4>How we can help you?</h4>
+        <h4>How can we help you?</h4>
         <p>
           Follow our newsletter. We will regulary update our latest project and
           availability.

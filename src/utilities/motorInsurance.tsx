@@ -60,7 +60,7 @@ export const healthInsuranceTypes = [
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Health-Banners-50.50-a-1_c399vk.jpg",
   },
   {
-    title: "Corporate <br /> HMO ",
+    title: "Corporate & Group <br /> HMO ",
     route: routes.CORPORATE_HMO,
     descriptions: [
       "Our plans are for 29 people, for SMEs, cooperative societies, or small groups. In addition, we also offer plans designed for companies with a large workforce as well as associations.",

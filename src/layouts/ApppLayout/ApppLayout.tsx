@@ -19,12 +19,22 @@ const ApppLayout = ({ children, className }: ApppLayoutTypes) => {
 
   // Router
   const auth = updateSearchParams("auth", undefined, "get");
+  const contactUs = updateSearchParams("contact-us", undefined, "get");
 
   return (
     <main className={classes.container}>
       <Header />
       <section className={className}>{children}</section>
       <Footer />
+      {auth && (
+        <Modal
+          onClick={() => {
+            updateSearchParams("auth", undefined, "delete");
+          }}
+          body={<Auth />}
+        />
+      )}
+
       {auth && (
         <Modal
           onClick={() => {

@@ -3,7 +3,7 @@
   border-radius: 32px;
   display: flex;
   align-items: center;
-  padding: 135px 57px;
+  padding: 135px 77px;
   gap: 193px;
   background-color: var(--blue);
   color: var(--black);
@@ -26,6 +26,7 @@
   height: 100%;
   width: 100%;
   border-radius: 32px 0 0 32px;
+  object-fit: cover;
 }
 
 .container > h4,
@@ -60,8 +61,8 @@
   .container {
     margin: 32px;
     border-radius: 20px;
-
     flex-direction: column;
+    align-items: flex-start;
     padding: 32px 16px;
     gap: 32px;
   }
@@ -71,7 +72,7 @@
   }
 
   .imageContainer > img {
-    border-radius: 20px 0 0 20px;
+    border-radius: 20px 20px 20px 20px;
   }
 
   .container > h4,

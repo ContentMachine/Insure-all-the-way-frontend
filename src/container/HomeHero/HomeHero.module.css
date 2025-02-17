@@ -66,8 +66,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
-    padding: 32px;
+    gap: 0px;
+    padding: 32px 16px;
   }
 
   .container > div {
@@ -78,7 +78,7 @@
     font-family: General Sans;
     font-size: 48px;
     line-height: 120%;
-    letter-spacing: -4px;
+    letter-spacing: -2px;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }

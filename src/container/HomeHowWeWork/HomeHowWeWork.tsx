@@ -4,12 +4,13 @@ import Policy from "@/assets/svgIcons/Policy";
 import RequestQuote from "@/assets/svgIcons/RequestQuote";
 import SpeakWithRep from "@/assets/svgIcons/SpeakWithRep";
 import Shield from "@/assets/svgIcons/Shield";
+import Umbrella from "@/assets/svgIcons/Umbrella";
 
 const howWeWorkList = [
   {
     title: "Choose a Policy",
     description: "Pick a policy that best suits your needs.",
-    icon: <Policy />,
+    icon: <Shield />,
   },
   {
     title: "Get a Quote",
@@ -26,7 +27,7 @@ const howWeWorkList = [
   {
     title: "Get Covered",
     description: "Once payment has been made, your policy will be sent to you.",
-    icon: <Shield />,
+    icon: <Umbrella />,
   },
 ];
 
@@ -34,7 +35,7 @@ const HomeHowWeWork = () => {
   return (
     <section className={classes.container}>
       <div>
-        <h2>How it Works</h2>
+        <h2>How We Work</h2>
         <p>
           We believe that the best way to create successful marketing campaigns
           is to work closely with our clients to understand their goals and

@@ -8,12 +8,14 @@ type InsuranceCardTypes = {
   backgroundImage: string;
   title: string;
   route: string;
+  color?: string;
 };
 
 const InsuranceCard = ({
   backgroundImage,
   title,
   route,
+  color,
 }: InsuranceCardTypes) => {
   // Router
   const router = useRouter();
@@ -40,7 +42,9 @@ const InsuranceCard = ({
         </Button>
       </div>
 
-      <p>{title || "No title"}</p>
+      <p style={{ borderColor: `${color || "green"}` }}>
+        {title || "No title"}
+      </p>
     </div>
   );
 };

@@ -10,8 +10,8 @@
 
 @media screen and (max-width: 767px) {
   .container > section:nth-child(2) {
-    position: static;
-    bottom: 0px;
+    position: relative;
+    bottom: 40px;
     z-index: 1;
   }
 }

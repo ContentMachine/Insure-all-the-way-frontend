@@ -23,3 +23,23 @@
   color: var(--grey4);
   width: 80%;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding-block: 2rem;
+  }
+
+  .container > h1 {
+    font-size: 32px;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+  }
+
+  .container > p {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    width: 90%;
+  }
+}

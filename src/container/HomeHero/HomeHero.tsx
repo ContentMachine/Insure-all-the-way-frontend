@@ -11,8 +11,8 @@ const HomeHero = () => {
           <span>Insurance</span> With A Difference
         </h1>
         <p>
-          Insure All The Way provides you with quality insurance products and
-          services
+          <b>Insure All The Way</b> provides you with quality insurance products
+          and services
         </p>
 
         <form className={classes.textSection}>

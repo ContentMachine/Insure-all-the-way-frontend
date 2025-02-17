@@ -3,6 +3,7 @@ import classes from "./HomeGetAQuote.module.css";
 import InsuranceCard from "@/components/InsuranceCard/InsuranceCard";
 
 const insuranceProducts = headerRoutes[0].children;
+const colors = ["#edd014", "rgb(212, 47, 47)", "#717171"];
 
 const HomeGetAQuote = () => {
   return (
@@ -22,6 +23,7 @@ const HomeGetAQuote = () => {
             backgroundImage={data?.image}
             key={i}
             route={data?.route}
+            color={colors[i]}
           />
         ))}
       </div>

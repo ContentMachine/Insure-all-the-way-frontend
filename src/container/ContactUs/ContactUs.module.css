@@ -14,3 +14,19 @@
 .container > form {
   flex-basis: 800px;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    gap: 0rem;
+    padding: 2rem 1rem;
+  }
+
+  .container > section {
+    flex: 1;
+    height: 100%;
+  }
+
+  .container > form {
+    flex-basis: 100%;
+  }
+}

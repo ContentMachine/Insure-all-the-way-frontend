@@ -12,6 +12,10 @@
   transition: all 0.2s ease-in-out;
 }
 
+.sectionBox:nth-child(1) {
+  opacity: 1;
+}
+
 .container > div:not(.corporate-1, .corporate-2, .corporate-3, .corporate-4) {
   background-color: var(--white);
 }
@@ -29,7 +33,7 @@
   font-size: 20px;
   line-height: 30px;
   letter-spacing: 0px;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
 }
 
 .container > div > p {
@@ -44,40 +48,45 @@
   background-color: var(--white1);
 }
 
-.corporate-1:hover {
-  box-shadow: var(--white1) -5px 5px, var(--white1) -10px 10px,
-    var(--white1) -15px 15px, #e1e8ed60 -20px 20px, #e1e8ed54 -25px 25px;
+.sectionBox:nth-child(1).visible {
+  box-shadow: #e1e8ed -5px 5px, #e1e8edcc -10px 10px, #e1e8eda1 -15px 15px,
+    #e1e8ed60 -20px 20px, #e1e8ed54 -25px 25px;
 }
 
 .corporate-2 {
   background-color: var(--biege);
 }
 
-.corporate-2:hover {
-  box-shadow: var(--biege) -5px 5px, var(--biege) -10px 10px,
-    var(--biege) -15px 15px, #f3eacb60 -20px 20px, #f3eacb54 -25px 25px;
+.sectionBox:nth-child(2).visible {
+  box-shadow: #f3eacb -5px 5px, #f3eacbe5 -10px 10px, #f3eacbab -15px 15px,
+    #f3eacb60 -20px 20px, #f3eacb54 -25px 25px;
 }
 
 .corporate-3 {
   background-color: var(--blue);
 }
 
-.corporate-3:hover {
-  box-shadow: var(--blue) -5px 5px, var(--blue) -10px 10px,
-    var(--blue) -15px 15px, #a7c7e760 -20px 20px, #a7c7e754 -25px 25px;
+.sectionBox:nth-child(3).visible {
+  box-shadow: #a7c7e7 -5px 5px, #a7c7e7d7 -10px 10px, #a7c7e7a4 -15px 15px,
+    #a7c7e760 -20px 20px, #a7c7e754 -25px 25px;
 }
 
 .corporate-4 {
   background-color: var(--grey6);
 }
 
-.corporate-4:hover {
-  box-shadow: var(--grey6) -5px 5px, var(--grey6) -10px 10px,
-    var(--grey6) -15px 15px, #ababab60 -20px 20px, #ababab54 -25px 25px;
+.sectionBox:nth-child(4).visible {
+  box-shadow: var(--grey6) -5px 5px, #abababce -10px 10px, #ababab8f -15px 15px,
+    #ababab60 -20px 20px, #ababab54 -25px 25px;
 }
 
 .container
-  > div:not(.corporate-1, .corporate-2, .corporate-3, .corporate-4):hover {
+  > .sectionBox:not(
+    .corporate-1,
+    .corporate-2,
+    .corporate-3,
+    .corporate-4
+  ):hover {
   box-shadow: var(--blue) -5px 5px, var(--blue) -10px 10px,
     var(--blue) -15px 15px, #a7c7e760 -20px 20px,
     var(--blueWIthOpacity) -25px 25px;
@@ -89,7 +98,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 38px;
-    padding: 2rem 1rem;
+    padding: 0rem 1rem;
   }
 
   .container > div {

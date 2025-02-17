@@ -10,7 +10,7 @@ export const routes = Object.freeze({
   SIGN_UP: "/sign-up",
   CONTACT_US: "/contact-us",
   INDIVIDUAL_AND_FAMILY_HMO: "/individual-and-family-hmo",
-  CORPORATE_HMO: "/corporate-hmo",
+  CORPORATE_HMO: "/corporate-and-group-hmo",
   THIRD_PARTY_MOTOR_INSURANCE: "/third-party-motor-insurance",
   ENHANCED_THIRD_PARTY_MOTOR_INSURANCE: "/enhanced-third-party-motor-insurance",
   COMPREHENSIVE_MOTOR_INSTRANCE: "/comprehensive-motor-insurance",
@@ -45,7 +45,7 @@ export const headerRoutes = [
           },
 
           {
-            title: "Corporate HMO",
+            title: "Corporate & Grpup HMO",
             route: routes.CORPORATE_HMO,
             icon: <Health color="#f5b7b1" />,
 
