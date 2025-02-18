@@ -37,12 +37,6 @@ export const data = [
     agent: "Eniola Martins",
     status: "Active",
   },
-  {
-    policyHeld: "Davido's Assurance",
-    expirationDate: "18th June, 2025",
-    agent: "Eniola Martins",
-    status: "Active",
-  },
 ];
 
 const DashboardMain = () => {

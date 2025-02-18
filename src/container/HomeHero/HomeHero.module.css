@@ -95,7 +95,7 @@
   .container > div:nth-child(2) > img {
     width: 100%;
     min-height: 70%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .textSection {

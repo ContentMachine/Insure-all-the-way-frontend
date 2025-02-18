@@ -130,9 +130,9 @@
   .container > div > h1 {
     font-size: 40px;
     font-weight: 600;
-    line-height: 130%;
+    line-height: 100%;
     margin-block: 1rem;
-    letter-spacing: -3px;
+    letter-spacing: -2px;
   }
 
   .container > div > p,

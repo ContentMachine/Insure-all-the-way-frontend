@@ -37,7 +37,7 @@ export const motorInsuranceTypes = [
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1738920159/Car-Insurance-Banner-a-e1673007271251_npbmqe.jpg",
   },
   {
-    title: "Fleet <br />Motor Insurance",
+    title: "Fleet Motor Insurance",
     route: routes.ENHANCED_THIRD_PARTY_MOTOR_INSURANCE,
     descriptions: [
       "With our fleet insurance, you can cover your entire fleet of business vehicles. The policy allows you to insure all vehicles under a single policy rather than separately, and it allows you to either insure all drivers or assign names to all drivers.",

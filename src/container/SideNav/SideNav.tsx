@@ -118,6 +118,7 @@ const Sidenav = ({ onClose }: SidenavTypes) => {
         onClick={() => {
           updateSearchParams("auth", "sign-in", "set");
         }}
+        type="secondary"
       >
         Sign In
       </Button>

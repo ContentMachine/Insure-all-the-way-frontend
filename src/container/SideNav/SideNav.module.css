@@ -17,9 +17,9 @@
 .container > nav > a {
   font-family: "General Sans";
   color: var(--black);
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 150%;
+  line-height: 130%;
   text-align: left;
   margin-bottom: 1rem;
 }
@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  column-gap: 1rem;
 }
 
 .moreOptions > svg {
@@ -39,7 +39,7 @@
 .children {
   font-family: "General Sans";
   color: var(--black);
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 150%;
   text-align: left;
