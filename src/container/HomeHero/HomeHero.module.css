@@ -35,6 +35,9 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
+.container > div:nth-child(2) {
+  height: auto;
+}
 
 .container > div:nth-child(2) > img {
   width: 100%;
@@ -71,7 +74,7 @@
   }
 
   .container > div {
-    flex: 1;
+    flex: auto;
   }
 
   .container > div:first-child > h1 {
@@ -89,13 +92,21 @@
   }
 
   .container > div:nth-child(2) {
-    height: 0px;
+    height: 350px;
+    overflow: hidden;
+    background-image: url("https://res.cloudinary.com/dfilepe0f/image/upload/v1739979253/IATW_Sub-banner_ww0ow0.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
   }
 
   .container > div:nth-child(2) > img {
     width: 100%;
-    min-height: 70%;
+    height: 100px;
     object-fit: contain;
+    border: 2px solid green;
+    display: none;
   }
 
   .textSection {
