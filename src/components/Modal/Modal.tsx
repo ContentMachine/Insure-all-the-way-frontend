@@ -39,9 +39,6 @@ const Modal = (props: any) => {
         <ModalOverlay
           header={props.header}
           body={props.body}
-          onClick={() => {
-            props?.onCLick();
-          }}
           style={props.style}
         />,
         modalOverlay || document.body

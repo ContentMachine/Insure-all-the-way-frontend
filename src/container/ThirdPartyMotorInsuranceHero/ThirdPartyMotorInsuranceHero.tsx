@@ -1,7 +1,23 @@
 import RateCard from "@/components/RateCard/RateCard";
 import classes from "./ThirdPartyMotorInsuranceHero.module.css";
+import {
+  policySubtypeType,
+  thirdPartyInsuranceFormTypes,
+} from "@/utilities/types";
+import Loader from "@/components/Loader/Loader";
+import { Dispatch, SetStateAction } from "react";
 
-const ThirdPartyMotorInsuranceHero = () => {
+type ThirdPartyMotorInsuranceHeroType = {
+  data: policySubtypeType;
+  loading: boolean;
+  setData: Dispatch<SetStateAction<thirdPartyInsuranceFormTypes>>;
+};
+
+const ThirdPartyMotorInsuranceHero = ({
+  data,
+  loading,
+  setData,
+}: ThirdPartyMotorInsuranceHeroType) => {
   return (
     <section className={classes.container}>
       <h1>
@@ -14,8 +30,25 @@ const ThirdPartyMotorInsuranceHero = () => {
       </p>
 
       <div className={classes.rateSection}>
-        <RateCard />
-        <RateCard />
+        {loading ? (
+          <Loader />
+        ) : (
+          data?.plans?.map((data) => {
+            return (
+              <RateCard
+                title={data?.name}
+                price={data?.price}
+                features={data?.features}
+                description={data?.description}
+                onClick={() =>
+                  setData((prevState) => {
+                    return { ...prevState, product: data?.name };
+                  })
+                }
+              />
+            );
+          })
+        )}
       </div>
 
       <div></div>

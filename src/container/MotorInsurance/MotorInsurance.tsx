@@ -1,5 +1,7 @@
+"use client";
+
 import ApppLayout from "@/layouts/ApppLayout/ApppLayout";
-import React from "react";
+import React, { useMemo } from "react";
 import MotorInsuranceHero from "../MotorInsuranceHero/MotorInsuranceHero";
 import InsuranceTypes from "@/components/InsuranceTypes/InsuranceTypes";
 import { motorInsuranceTypes } from "@/utilities/motorInsurance";
@@ -7,12 +9,24 @@ import ContactUsBanner from "../ContactUsBanner/ContactUsBanner";
 import Faqs from "../Faqs/Faqs";
 import classes from "./MotorInsurance.module.css";
 import MotorInsurancePlans from "../MotorInsurancePlans/MotorInsurancePlans";
+import { usePolicyType } from "@/hooks/usePolicies";
+import { policyType } from "@/utilities/types";
 
 const MotorInsurance = () => {
+  // Requests
+  const { isLoading, data: policyTypeData } = usePolicyType("motor-insurance");
+
+  const policy: policyType = useMemo(
+    () => policyTypeData?.data,
+    [policyTypeData]
+  );
+
+  console.log(policy);
+
   return (
     <ApppLayout>
       <MotorInsuranceHero />
-      <MotorInsurancePlans />
+      <MotorInsurancePlans plans={policy?.types} loading={isLoading} />
       <InsuranceTypes data={motorInsuranceTypes} />
       <div className={classes.contact}>
         <ContactUsBanner

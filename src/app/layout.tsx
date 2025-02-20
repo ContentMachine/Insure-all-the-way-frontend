@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ToastContextProvider } from "@/context/ToastContext";
+import UseSWRConfigProvider from "@/config/SWRConfig";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <UseSWRConfigProvider>
+          <ToastContextProvider>{children}</ToastContextProvider>
+        </UseSWRConfigProvider>
       </body>
     </html>
   );

@@ -11,6 +11,7 @@ const Close = ({ onClick }: CloseTypes) => {
       width="24px"
       fill="#5f6368"
       onClick={onClick}
+      style={{ cursor: "pointer" }}
     >
       <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
     </svg>

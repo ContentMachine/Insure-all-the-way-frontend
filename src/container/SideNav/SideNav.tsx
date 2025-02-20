@@ -49,9 +49,8 @@ const Sidenav = ({ onClose }: SidenavTypes) => {
                   {route?.children?.map((data, j) => {
                     if ((data?.children?.length as number) > 0) {
                       return (
-                        <Link
+                        <div
                           className={classes.moreOptions}
-                          href={data?.route}
                           key={j}
                           onClick={(e) => {
                             e.stopPropagation();
@@ -93,7 +92,7 @@ const Sidenav = ({ onClose }: SidenavTypes) => {
                               );
                             })}
                           </div>
-                        </Link>
+                        </div>
                       );
                     }
                     return (

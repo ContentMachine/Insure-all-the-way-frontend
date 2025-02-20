@@ -2,6 +2,7 @@
 
 import { Dispatch, SetStateAction, useState } from "react";
 import classes from "./Input.module.css";
+import { CircularProgress } from "@mui/material";
 
 type InputProps = {
   type?: string;
@@ -24,6 +25,7 @@ type InputProps = {
   onFocus?: () => void;
   min?: number;
   max?: number;
+  loading?: boolean;
 };
 
 const Input = ({
@@ -45,6 +47,7 @@ const Input = ({
   onFocus,
   min,
   max,
+  loading,
 }: InputProps) => {
   // States
   const [invalid, setInvalid] = useState(false);
@@ -89,6 +92,13 @@ const Input = ({
           min={min}
           max={max}
         />
+        {loading && (
+          <CircularProgress
+            size="1rem"
+            color="inherit"
+            style={{ color: "#a7c7e7" }}
+          />
+        )}
       </span>
       {(invalid || inValidCondition) && (
         <span className={classes.errorMessage}>

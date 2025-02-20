@@ -4,104 +4,294 @@ import Input from "@/components/Input/Input";
 import Dropdown from "@/components/Dropdown/Dropdown";
 import Button from "@/components/Button/Button";
 import { states } from "@/utilities/states";
+import {
+  modalGenericType,
+  requestType,
+  thirdPartyInsuranceFormTypes,
+} from "@/utilities/types";
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react";
+import { inputChangeHandler } from "@/helpers/inputChangeHandler";
+import { requestHandler } from "@/helpers/requestHandler";
+import useError from "@/hooks/useError";
+import moment from "moment";
+import { carColors } from "@/utilities/motorInsuranceData";
+import { areAllValuesFilled } from "@/helpers/validateObjectValues";
+import Modal from "@/components/Modal/Modal";
+import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
+import SuccessModalBody from "@/components/SuccessModalBody/SuccessModalBody";
+import PaymentModalBody from "../PaymentModalBody/PaymentModalBody";
 
-const ThirdPartyInsuranceForm = () => {
+type ThirdPartyInsuranceFormTypes = {
+  data: thirdPartyInsuranceFormTypes;
+  setData: Dispatch<SetStateAction<thirdPartyInsuranceFormTypes>>;
+};
+
+const ThirdPartyInsuranceForm = ({
+  data,
+  setData,
+}: ThirdPartyInsuranceFormTypes) => {
+  // States
+  const [vehicleColor, setVehicleColor] = useState("");
+  const [state, setState] = useState("");
+  const [roadWorthiness, setRoadWorthiness] = useState("");
+  const [title, setTitle] = useState("");
+  const [requestState, setRequestState] = useState<requestType>({
+    isLoading: false,
+    data: null,
+    error: null,
+  });
+  const [modals, setModals] = useState<modalGenericType>({
+    insuranceCreated: true,
+    payment: false,
+    paymentSuccess: false,
+  });
+
+  // Hooks
+  const { errorFlowFunction } = useError();
+
+  // Requests
+  const askNiidHandler = (regNumber: string) => {
+    requestHandler({
+      method: "POST",
+      url: "/scrape/ask-niid",
+      data: { policyNumber: regNumber },
+      state: requestState,
+      setState: setRequestState,
+      requestCleanup: false,
+      successFunction(res) {
+        console.log(res);
+      },
+      errorFunction(err) {
+        console.log(err);
+        errorFlowFunction(err);
+      },
+    });
+  };
+
+  // Utils
+  const existingThirdPartyPolicies = requestState?.data?.policyData?.filter(
+    (data: any) => data["type-of-cover"]?.toLowerCase() === "third party"
+  );
+
+  // Effects
+  useEffect(() => {
+    if (existingThirdPartyPolicies?.length > 0) {
+      const thirdPartyPolicy = existingThirdPartyPolicies[0];
+
+      setData((prevState) => {
+        return {
+          ...prevState,
+          startDate: moment(
+            thirdPartyPolicy["valid-from"],
+            "D MMMM YYYY"
+          ).format("YYYY-MM-DD"),
+          endDate: moment(thirdPartyPolicy["valid-to"], "D MMMM YYYY").format(
+            "YYYY-MM-DD"
+          ),
+          chasisNumber: thirdPartyPolicy["chassis-no"],
+        };
+      });
+    }
+  }, [requestState?.data]);
+
+  useEffect(() => {
+    if (vehicleColor) {
+      setData((prevState) => {
+        return { ...prevState, vehicleColor };
+      });
+    }
+
+    if (state) {
+      setData((prevState) => {
+        return { ...prevState, state };
+      });
+    }
+
+    if (roadWorthiness) {
+      setData((prevState) => {
+        return { ...prevState, roadWorthiness };
+      });
+    }
+
+    if (title) {
+      setData((prevState) => {
+        return { ...prevState, title };
+      });
+    }
+  }, [vehicleColor, state, roadWorthiness, title]);
+
   return (
-    <section className={classes.container} id="insurance-form">
-      <div className={classes.header}>
-        <h4>Third Party Insurance Form</h4>
-        <p>
-          Please ensure that all your information is correctly filled in,
-          failure to do so may render your policy void.
-        </p>
-      </div>
-
-      <form>
-        <Dropdown
-          label="Select Product"
-          options={[
-            "Third Party Private Car",
-            "Third Party Private Bus",
-            "Third Party Motorcycle",
-            "Third Party Only (Commercial)",
-          ]}
-          title="Select"
+    <>
+      {modals.insuranceCreated && (
+        <Modal
+          onClick={() => setAllModalsFalse(setModals)}
+          body={
+            <SuccessModalBody
+              title="Your Insurance Policy has been successfully created!"
+              caption="Please pay so we can walk you through the last step of this process"
+              onClose={() => setAllModalsFalse(setModals)}
+              onClick={() => {
+                setAllModalsFalse(setModals);
+                setModalTrue(setModals, "payment");
+              }}
+            />
+          }
         />
-        <Input
-          label="Registration Number"
-          placeholder="Eg: 12346"
-          type="number"
-        />
-        <Input label="Chasis Number" placeholder="Eg: 12346" type="number" />
+      )}
 
-        <Dropdown label="Vehicle Colour" options={states} title="Select" />
-
-        <Dropdown
-          label="Do you require assistance with vehicle license and/or road worthiness"
-          options={["Yes", "No"]}
-          title="Select"
+      {modals.payment && (
+        <Modal
+          onClick={() => setAllModalsFalse(setModals)}
+          body={
+            <PaymentModalBody
+              onSuccess={() => {
+                setAllModalsFalse(setModals);
+                setModalTrue(setModals, "success");
+              }}
+            />
+          }
         />
+      )}
 
-        <h4>Tell us About Yourself</h4>
-        <Dropdown
-          label="Title"
-          options={["Mr.", "Mrs.", "Miss"]}
-          title="Select"
+      {modals.success && (
+        <Modal
+          onClick={() => setAllModalsFalse(setModals)}
+          body={
+            <SuccessModalBody
+              title="Your have successfully applied for a Third Party Motor Insurance Policy!"
+              caption="Please check your mail to get your dashboard login details. Make sure you change your temporary password as soon as possible. "
+              onClose={() => setAllModalsFalse(setModals)}
+              onClick={() => {
+                setAllModalsFalse(setModals);
+              }}
+              buttontext="Okay"
+            />
+          }
         />
-        <Input label="First Name" placeholder="Eg: John" />
-        <Input label="Last Name" placeholder="Eg: Doe" />
-        <Input label="Email" placeholder="Eg: example@gmail.com" type="email" />
-        <Input label="Phone Number" placeholder="+234 12 345 6789" />
-        <Input label="Address" placeholder="No. 4, B Close, A State" />
-        <Dropdown
-          label="State"
-          options={[
-            "Abia",
-            "Adamawa",
-            "Akwa Ibom",
-            "Anambra",
-            "Bauchi",
-            "Bayelsa",
-            "Benue",
-            "Borno",
-            "Cross River",
-            "Delta",
-            "Ebonyi",
-            "Edo",
-            "Ekiti",
-            "Enugu",
-            "FCT - Abuja",
-            "Gombe",
-            "Imo",
-            "Jigawa",
-            "Kaduna",
-            "Kano",
-            "Katsina",
-            "Kebbi",
-            "Kogi",
-            "Kwara",
-            "Lagos",
-            "Nasarawa",
-            "Niger",
-            "Ogun",
-            "Ondo",
-            "Osun",
-            "Oyo",
-            "Plateau",
-            "Rivers",
-            "Sokoto",
-            "Taraba",
-            "Yobe",
-            "Zamfara",
-          ]}
-          title="Select State"
-        />
+      )}
 
-        <div>
-          <Button>Submit</Button>
+      <section className={classes.container} id="insurance-form">
+        <div className={classes.header}>
+          <h4>Third Party Insurance Form</h4>
+          <p>
+            Please ensure that all your information is correctly filled in,
+            failure to do so may render your policy void.
+          </p>
         </div>
-      </form>
-    </section>
+
+        <form>
+          <Input
+            label="Registration Number"
+            placeholder="Eg: 12346"
+            name="registrationNumber"
+            value={data?.registrationNumber}
+            onChange={(e) => inputChangeHandler(e, setData)}
+            onBlur={() => {
+              if (data?.registrationNumber) {
+                askNiidHandler(data?.registrationNumber);
+              }
+            }}
+            loading={requestState?.isLoading}
+          />
+          <Input
+            label="Chasis Number"
+            placeholder="Eg: 12346"
+            name="chasisNumber"
+            value={data?.chasisNumber}
+            onChange={(e) => inputChangeHandler(e, setData)}
+          />
+
+          <Dropdown
+            label="Vehicle Colour"
+            options={carColors}
+            title="Select"
+            selected={vehicleColor}
+            setSelected={setVehicleColor}
+          />
+
+          <Dropdown
+            label="Do you require assistance with vehicle license and/or road worthiness"
+            options={["Yes", "No"]}
+            title="Select"
+            selected={roadWorthiness}
+            setSelected={setRoadWorthiness}
+          />
+
+          <Input
+            label="Start Date"
+            name="startDate"
+            value={data?.startDate}
+            onChange={(e) => inputChangeHandler(e, setData)}
+            type="date"
+          />
+
+          <Input
+            label="End Date"
+            name="endDate"
+            value={data?.endDate}
+            onChange={(e) => inputChangeHandler(e, setData)}
+            type="date"
+            readOnly
+          />
+
+          <h4>Tell us About Yourself</h4>
+          <Dropdown
+            label="Title"
+            options={["Mr.", "Mrs.", "Miss"]}
+            title="Select"
+            selected={title}
+            setSelected={setTitle}
+          />
+          <Input
+            label="First Name"
+            placeholder="Eg: John"
+            name="firstName"
+            value={data?.firstName}
+            onChange={(e) => inputChangeHandler(e, setData)}
+          />
+          <Input
+            label="Last Name"
+            placeholder="Eg: Doe"
+            name="lastName"
+            value={data?.lastName}
+            onChange={(e) => inputChangeHandler(e, setData)}
+          />
+          <Input
+            label="Email"
+            placeholder="Eg: example@gmail.com"
+            type="email"
+            name="email"
+            value={data?.email}
+            onChange={(e) => inputChangeHandler(e, setData)}
+          />
+          <Input
+            label="Phone Number"
+            placeholder="+234 12 345 6789"
+            name="phoneNumber"
+            value={data?.phoneNumber}
+            onChange={(e) => inputChangeHandler(e, setData)}
+          />
+          <Input
+            label="Address"
+            placeholder="No. 4, B Close, A State"
+            name="address"
+            value={data?.address}
+            onChange={(e) => inputChangeHandler(e, setData)}
+          />
+          <Dropdown
+            label="State"
+            options={states}
+            title="Select State"
+            selected={state}
+            setSelected={setState}
+          />
+
+          <div>
+            <Button disabled={!areAllValuesFilled(data)}>Submit</Button>
+          </div>
+        </form>
+      </section>
+    </>
   );
 };
 
