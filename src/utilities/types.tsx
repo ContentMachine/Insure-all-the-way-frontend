@@ -68,3 +68,13 @@ export type thirdPartyInsuranceFormTypes = {
   startDate: string;
   endDate: string;
 };
+
+export type userType = {
+  email: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  firstLogin: string;
+  address: string;
+  state: string;
+};

@@ -38,16 +38,30 @@
   align-items: flex-end;
   flex-wrap: wrap;
   gap: 1.5rem;
+  position: relative;
 }
 
-.container > form > div:not(.container > form > div:last-child),
-.container > div > div:not(.container > div > div:last-child) {
+.container > form > div:not(.container > form > div:last-child, .alert),
+.container > div > div:not(.container > div > div:last-child, .alert) {
   flex-basis: calc(50% - 2rem);
 }
 
 .container > form > h4,
-.container > form > div:last-child {
+.container > form > div:last-child,
+.alert {
   flex-basis: 100%;
+}
+
+.alert > div {
+  border-radius: 10px;
+}
+
+.alert > div > div:nth-child(2) {
+  font-family: General Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.5px;
 }
 
 .container > form > h4 {
@@ -61,6 +75,26 @@
   text-align: center;
   text-align: left;
   margin: 2rem 0;
+}
+
+.loader {
+  background-color: #ffffffa1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 10rem;
+  font-family: General Sans;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 1rem auto;
+  text-align: center;
 }
 
 @media screen and (max-width: 767px) {

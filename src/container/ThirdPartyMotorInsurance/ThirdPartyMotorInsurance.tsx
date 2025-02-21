@@ -7,6 +7,7 @@ import ThirdPartyInsuranceForm from "../ThirdPartyInsuranceForm/ThirdPartyInsura
 import { usePolicyTypeBySubtype } from "@/hooks/usePolicies";
 import { requestType, thirdPartyInsuranceFormTypes } from "@/utilities/types";
 import { requestHandler } from "@/helpers/requestHandler";
+import useError from "@/hooks/useError";
 
 const ThirdPartyMotorInsurance = () => {
   // Requests
@@ -21,6 +22,12 @@ const ThirdPartyMotorInsurance = () => {
     data: null,
     error: null,
   });
+  const [thirdPartyFormDataFormdata, setThirdPartyFormDataFormdata] = useState(
+    new FormData()
+  );
+
+  // Hooks
+  const { errorFlowFunction } = useError();
 
   // Memos
   const policySubType = useMemo(() => data?.data, [data]);
@@ -43,20 +50,21 @@ const ThirdPartyMotorInsurance = () => {
       endDate: "",
     });
 
-  const [thirdPartyFormDataFormdata, setThirdPartyFormDataFormdata] = useState(
-    new FormData()
-  );
-
   // Requests
   const thirdPartySubmissionFormHandler = () => {
     requestHandler({
       url: "/policies/policy/motor-insurance/third-party-motor-insurance",
       method: "POST",
+      id: "submit-form",
       data: thirdPartyFormDataFormdata,
       state: requestState,
       setState: setRequestState,
       successFunction(res) {
-        console.log(response);
+        console.log(res);
+      },
+      errorFunction(err) {
+        console.log(err);
+        errorFlowFunction(err);
       },
     });
   };
@@ -65,7 +73,7 @@ const ThirdPartyMotorInsurance = () => {
   useEffect(() => {
     const subThirdPartyFormData = new FormData();
 
-    subThirdPartyFormData.append("product", thirdPartyFormData?.product);
+    subThirdPartyFormData.append("plan", thirdPartyFormData?.product);
     subThirdPartyFormData.append(
       "registrationNumber",
       thirdPartyFormData?.registrationNumber
@@ -89,16 +97,14 @@ const ThirdPartyMotorInsurance = () => {
     subThirdPartyFormData.append("firstName", thirdPartyFormData?.firstName);
     subThirdPartyFormData.append("lastName", thirdPartyFormData?.lastName);
     subThirdPartyFormData.append("email", thirdPartyFormData?.email);
-    subThirdPartyFormData.append(
-      "phoneNumber",
-      thirdPartyFormData?.phoneNumber
-    );
+    subThirdPartyFormData.append("phone", thirdPartyFormData?.phoneNumber);
     subThirdPartyFormData.append("address", thirdPartyFormData?.address);
     subThirdPartyFormData.append("startDate", thirdPartyFormData?.startDate);
     subThirdPartyFormData.append("endDate", thirdPartyFormData?.endDate);
+    subThirdPartyFormData.append("state", thirdPartyFormData?.state);
 
     setThirdPartyFormDataFormdata(subThirdPartyFormData);
-  }, [thirdPartyFormDataFormdata]);
+  }, [thirdPartyFormData]);
 
   return (
     <ApppLayout>
@@ -110,6 +116,9 @@ const ThirdPartyMotorInsurance = () => {
       <ThirdPartyInsuranceForm
         data={thirdPartyFormData}
         setData={setthirdPartyFormData}
+        onSubmit={thirdPartySubmissionFormHandler}
+        submitState={requestState}
+        setSubmitState={setRequestState}
       />
     </ApppLayout>
   );

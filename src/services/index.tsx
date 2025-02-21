@@ -1,16 +1,24 @@
 import { BASE_API_URL } from "@/config";
+import { LOCAL_STORAGE_AUTH_KEY } from "@/utilities/constants";
 import axios from "axios";
+
+const getToken = () => {
+  if (localStorage) {
+    return localStorage.getItem(LOCAL_STORAGE_AUTH_KEY);
+  }
+};
 
 const axiosInstance = axios.create({
   baseURL: BASE_API_URL,
   headers: {
     "Content-Type": "application/json",
+    Authorization: `Bearer ${getToken()}`,
   },
 });
 
 axiosInstance.interceptors.request.use((axiosConfig) => {
   if (!navigator.onLine) {
-    throw new Error("Please chech your internet connection");
+    throw new Error("Please check your internet connection");
   }
 
   return axiosConfig;

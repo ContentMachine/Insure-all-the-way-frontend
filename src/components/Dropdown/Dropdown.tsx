@@ -32,7 +32,9 @@ const Dropdown = (props: DropdownProps) => {
   const searchInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    setOptionsState(props.options);
+    if (props.options) {
+      setOptionsState(props.options);
+    }
   }, [props.options]);
 
   useEffect(() => {

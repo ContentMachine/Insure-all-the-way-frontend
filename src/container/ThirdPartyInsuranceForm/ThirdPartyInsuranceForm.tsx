@@ -20,15 +20,24 @@ import Modal from "@/components/Modal/Modal";
 import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
 import SuccessModalBody from "@/components/SuccessModalBody/SuccessModalBody";
 import PaymentModalBody from "../PaymentModalBody/PaymentModalBody";
+import Loader from "@/components/Loader/Loader";
+import { projectTime } from "@/helpers/projectTime";
+import { Alert } from "@mui/material";
 
 type ThirdPartyInsuranceFormTypes = {
   data: thirdPartyInsuranceFormTypes;
   setData: Dispatch<SetStateAction<thirdPartyInsuranceFormTypes>>;
+  onSubmit: () => void;
+  submitState: requestType;
+  setSubmitState: Dispatch<SetStateAction<requestType>>;
 };
 
 const ThirdPartyInsuranceForm = ({
   data,
   setData,
+  onSubmit,
+  submitState,
+  setSubmitState,
 }: ThirdPartyInsuranceFormTypes) => {
   // States
   const [vehicleColor, setVehicleColor] = useState("");
@@ -41,7 +50,7 @@ const ThirdPartyInsuranceForm = ({
     error: null,
   });
   const [modals, setModals] = useState<modalGenericType>({
-    insuranceCreated: true,
+    insuranceCreated: false,
     payment: false,
     paymentSuccess: false,
   });
@@ -54,6 +63,7 @@ const ThirdPartyInsuranceForm = ({
     requestHandler({
       method: "POST",
       url: "/scrape/ask-niid",
+      id: "ask-niid",
       data: { policyNumber: regNumber },
       state: requestState,
       setState: setRequestState,
@@ -63,7 +73,6 @@ const ThirdPartyInsuranceForm = ({
       },
       errorFunction(err) {
         console.log(err);
-        errorFlowFunction(err);
       },
     });
   };
@@ -72,6 +81,7 @@ const ThirdPartyInsuranceForm = ({
   const existingThirdPartyPolicies = requestState?.data?.policyData?.filter(
     (data: any) => data["type-of-cover"]?.toLowerCase() === "third party"
   );
+  const todaysDate = moment().format("YYYY-MM-DD");
 
   // Effects
   useEffect(() => {
@@ -81,11 +91,8 @@ const ThirdPartyInsuranceForm = ({
       setData((prevState) => {
         return {
           ...prevState,
-          startDate: moment(
-            thirdPartyPolicy["valid-from"],
-            "D MMMM YYYY"
-          ).format("YYYY-MM-DD"),
-          endDate: moment(thirdPartyPolicy["valid-to"], "D MMMM YYYY").format(
+
+          startDate: moment(thirdPartyPolicy["valid-to"], "D MMMM YYYY").format(
             "YYYY-MM-DD"
           ),
           chasisNumber: thirdPartyPolicy["chassis-no"],
@@ -93,6 +100,15 @@ const ThirdPartyInsuranceForm = ({
       });
     }
   }, [requestState?.data]);
+
+  useEffect(() => {
+    if (data?.startDate) {
+      const endDate = projectTime(data?.startDate, 1, "year");
+      setData((prevState) => {
+        return { ...prevState, endDate };
+      });
+    }
+  }, [data?.startDate]);
 
   useEffect(() => {
     if (vehicleColor) {
@@ -119,6 +135,12 @@ const ThirdPartyInsuranceForm = ({
       });
     }
   }, [vehicleColor, state, roadWorthiness, title]);
+
+  useEffect(() => {
+    if (submitState?.data && submitState?.id === "submit-form") {
+      setModalTrue(setModals, "insuranceCreated");
+    }
+  }, [submitState?.data]);
 
   return (
     <>
@@ -148,6 +170,7 @@ const ThirdPartyInsuranceForm = ({
                 setAllModalsFalse(setModals);
                 setModalTrue(setModals, "success");
               }}
+              data={data}
             />
           }
         />
@@ -180,6 +203,14 @@ const ThirdPartyInsuranceForm = ({
         </div>
 
         <form>
+          {requestState?.data && (
+            <div className={classes.alert}>
+              <Alert severity="warning">
+                It appears you have an existing Third Party Policy. We can begin
+                this renewal process!
+              </Alert>
+            </div>
+          )}
           <Input
             label="Registration Number"
             placeholder="Eg: 12346"
@@ -223,6 +254,7 @@ const ThirdPartyInsuranceForm = ({
             value={data?.startDate}
             onChange={(e) => inputChangeHandler(e, setData)}
             type="date"
+            min={todaysDate}
           />
 
           <Input
@@ -287,8 +319,27 @@ const ThirdPartyInsuranceForm = ({
           />
 
           <div>
-            <Button disabled={!areAllValuesFilled(data)}>Submit</Button>
+            <Button
+              disabled={!areAllValuesFilled(data)}
+              onClick={(e) => {
+                e.preventDefault();
+                onSubmit();
+              }}
+              loading={submitState?.isLoading}
+            >
+              {requestState?.data ? "Renew" : "Submit"}
+            </Button>
           </div>
+
+          {requestState?.isLoading && (
+            <div className={classes.loader}>
+              <Loader />
+              <p>
+                Checking to see if you have an existing third party insurance
+                policy...
+              </p>
+            </div>
+          )}
         </form>
       </section>
     </>

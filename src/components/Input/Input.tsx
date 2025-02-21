@@ -23,7 +23,7 @@ type InputProps = {
   setState?: Dispatch<SetStateAction<string>>;
   onKeyup?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   onFocus?: () => void;
-  min?: number;
+  min?: number | string | any;
   max?: number;
   loading?: boolean;
 };

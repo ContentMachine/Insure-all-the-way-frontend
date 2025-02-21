@@ -45,6 +45,7 @@ const ThirdPartyMotorInsuranceHero = ({
                     return { ...prevState, product: data?.name };
                   })
                 }
+                key={data?.name}
               />
             );
           })

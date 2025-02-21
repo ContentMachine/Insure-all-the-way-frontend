@@ -3,19 +3,21 @@
 import Logo from "@/components/Logo/Logo";
 import classes from "./DashboardHeader.module.css";
 import User from "@/assets/svgIcons/User";
-import { dashboardRoutes } from "@/utilities/routes";
+import { dashboardRoutes, routes } from "@/utilities/routes";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Logout from "@/assets/svgIcons/Logout";
 import { useEffect, useRef, useState } from "react";
 import Modal from "@/components/Modal/Modal";
 import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
 import { modalGenericType } from "@/utilities/types";
 import LogoutModalBody from "../LogoutModalBody/LogoutModalBody";
+import { LOCAL_STORAGE_AUTH_KEY } from "@/utilities/constants";
 
 const DashboardHeader = () => {
   // Router
   const pathname = usePathname();
+  const router = useRouter();
 
   // States
   const [showOptions, setShowOptions] = useState(false);
@@ -50,7 +52,17 @@ const DashboardHeader = () => {
     <>
       {modals?.logout && (
         <Modal
-          body={<LogoutModalBody />}
+          body={
+            <LogoutModalBody
+              onClose={() => {
+                setAllModalsFalse(setModals);
+              }}
+              onLogout={() => {
+                localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY);
+                router.push(routes?.BASE_URL);
+              }}
+            />
+          }
           onClick={() => {
             setAllModalsFalse(setModals);
           }}

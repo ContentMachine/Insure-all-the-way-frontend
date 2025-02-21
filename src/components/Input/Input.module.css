@@ -108,7 +108,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  color: #e63e21;
+  color: var(--grey4);
 }
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
