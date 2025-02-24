@@ -45,13 +45,13 @@
   cursor: pointer;
 }
 
-.container > svg:nth-child(4) {
+.decoration1 {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.container > svg:last-child {
+.decoration2 {
   position: absolute;
   bottom: 0;
   left: 0;

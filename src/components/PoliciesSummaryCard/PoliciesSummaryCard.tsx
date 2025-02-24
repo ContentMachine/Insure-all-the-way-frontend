@@ -40,8 +40,8 @@ const PoliciesSummaryCard = ({
           </button>
         </div>
       )}
-      <CardDecoration1 className="absolute top-0 right-0" />
-      <CardDecoration2 className="absolute bottom-0 left-0 z-0" />
+      <CardDecoration1 className={classes.decoration1} />
+      <CardDecoration2 className={classes.decoration2} />
     </div>
   );
 };

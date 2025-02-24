@@ -3,14 +3,37 @@ import classes from "./PolicyInformationModalBody.module.css";
 import Phone from "@/assets/svgIcons/Phone";
 import Close from "@/assets/svgIcons/Close";
 import Draft from "@/assets/svgIcons/Draft";
+import { useUserPolicyById } from "@/hooks/usePolicies";
+import { userPoliciesType } from "@/utilities/types";
+import { useMemo } from "react";
+import Loader from "@/components/Loader/Loader";
+import { structureWords } from "@/helpers/capitalize";
+import moment from "moment";
 
 type PolicyInformationModalBodyTypes = {
   onClose?: () => void;
+  id: string;
 };
 
 const PolicyInformationModalBody = ({
   onClose,
+  id,
 }: PolicyInformationModalBodyTypes) => {
+  // Requests
+  const { isLoading, data } = useUserPolicyById(id);
+
+  // MEmos
+  const policyInfo: userPoliciesType = useMemo(
+    () => data?.data?.policy,
+    [data]
+  );
+
+  console.log(data, "Infooo");
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <div className={classes.container}>
       <Close onClick={onClose} />
@@ -19,22 +42,22 @@ const PolicyInformationModalBody = ({
       <div className={classes.body}>
         <div>
           <h4>Policy Held</h4>
-          <p>N/A</p>
+          <p>{structureWords(policyInfo?.insuranceType)}</p>
         </div>
 
         <div>
           <h4>Expiration Date</h4>
-          <p>N/A</p>
+          <p>{moment(policyInfo?.endDate)?.format("Do MMMM, YYYY")}</p>
         </div>
 
         <div>
           <h4>Agent</h4>
-          <p>N/A</p>
+          <p>{policyInfo?.agent || "N/A"}</p>
         </div>
 
         <div>
           <h4>Status</h4>
-          <p>N/A</p>
+          <p>{policyInfo?.status || "N/A"}</p>
         </div>
       </div>
 

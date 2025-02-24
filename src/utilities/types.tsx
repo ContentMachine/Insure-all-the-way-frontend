@@ -78,3 +78,16 @@ export type userType = {
   address: string;
   state: string;
 };
+
+export type userPoliciesType = {
+  chasisNumber: string;
+  createdAt: string;
+  endDate: string;
+  insuranceType: string;
+  plan: string;
+  registrationNumber: string;
+  roadWorthiness: string;
+  startDate: string;
+  user: string;
+  _id: string;
+};

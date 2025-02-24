@@ -1,22 +1,29 @@
+import { userPoliciesType } from "@/utilities/types";
 import classes from "./PolicyReviewCard.module.css";
+import { capitalize, structureWords } from "@/helpers/capitalize";
+import moment from "moment";
 
-const PolicyReviewCard = () => {
+type PolicyReviewCardType = {
+  data: userPoliciesType;
+};
+
+const PolicyReviewCard = ({ data }: PolicyReviewCardType) => {
+  const difference = moment(data?.endDate).diff(data?.startDate, "d");
+
+  const percentageDifference = (difference / 365) * 100;
+  const progress = 100 - percentageDifference;
+
   return (
     <div className={classes.policyReview}>
-      <p>B</p>
+      <p>{capitalize(data?.insuranceType?.substring(0, 1))}</p>
       <div>
-        <h4>Third Party Motor Insurance</h4>
-        <p>₦100,000</p>
+        <h4>{structureWords(data?.insuranceType)}</h4>
       </div>
       <div>
-        <div style={{ width: `${80}%` }}></div>
+        <div style={{ width: `${progress}%` }}></div>
       </div>
     </div>
   );
 };
 
 export default PolicyReviewCard;
-
-// className="w-12 h-12 flex items-center justify-center bg-grey-300 rounded-full font-medium text-lg font-main"
-//  className="font-normal text-base font-main"
-// className="font-normal text-sm text-grey-200 font-main"

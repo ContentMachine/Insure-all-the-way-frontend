@@ -54,6 +54,7 @@ const SignIn = () => {
           localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, res?.data?.token);
         }
         setUser(res?.data?.user);
+
         router.push(routes.DASHBOARD);
       },
       errorFunction(err) {

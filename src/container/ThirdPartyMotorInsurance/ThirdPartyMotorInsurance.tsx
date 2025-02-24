@@ -54,6 +54,7 @@ const ThirdPartyMotorInsurance = () => {
   const thirdPartySubmissionFormHandler = () => {
     requestHandler({
       url: "/policies/policy/motor-insurance/third-party-motor-insurance",
+      isMultipart: true,
       method: "POST",
       id: "submit-form",
       data: thirdPartyFormDataFormdata,

@@ -11,8 +11,8 @@ import {
 } from "react";
 
 type AuthContextValuesType = {
-  user: userType;
-  setUser: Dispatch<SetStateAction<userType>>;
+  user: userType | null;
+  setUser: Dispatch<SetStateAction<userType | null>>;
   requestState: requestType;
 };
 
@@ -24,15 +24,7 @@ export const AuthContext = createContext({} as AuthContextValuesType);
 
 const AuthContextProvider = ({ children }: AuthContextProviderType) => {
   // States
-  const [user, setUser] = useState({
-    email: "",
-    firstName: "",
-    lastName: "",
-    phone: "",
-    firstLogin: "",
-    address: "",
-    state: "",
-  });
+  const [user, setUser] = useState<null | userType>(null);
   const [requestState, setRequestState] = useState<requestType>({
     isLoading: false,
     data: null,
@@ -47,7 +39,7 @@ const AuthContextProvider = ({ children }: AuthContextProviderType) => {
       state: requestState,
       setState: setRequestState,
       successFunction(res) {
-        console.log(res);
+        setUser(res?.data?.user);
       },
       errorFunction(err) {
         console.log(err);

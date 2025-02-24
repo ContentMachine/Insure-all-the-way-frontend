@@ -11,3 +11,21 @@ export const usePolicyTypeBySubtype = (type: string, subType: string) => {
 
   return useGetHook(url);
 };
+
+export const useUserPolicy = () => {
+  const url = `/policies/user/policy`;
+
+  return useGetHook(url);
+};
+
+export const useUserPolicyById = (id: string) => {
+  const url = `/policies/user/policy/${id}`;
+
+  return useGetHook(url);
+};
+
+export const useUserPoliciesStats = () => {
+  const url = `/policies/user/summary`;
+
+  return useGetHook(url);
+};

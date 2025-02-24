@@ -4,11 +4,14 @@ import GreetingComponent from "@/components/GreetingComponent/GreetingComponent"
 import classes from "./DashboardMain.module.css";
 import Table from "@/components/Table/Table";
 import DashboardPoliciesSummary from "../DashboardPoliciesSummary/DashboardPoliciesSummary";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Modal from "@/components/Modal/Modal";
 import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
-import { modalGenericType } from "@/utilities/types";
+import { modalGenericType, userPoliciesType } from "@/utilities/types";
 import ClaimsForm from "../ClaimsForm/ClaimsForm";
+import { useUserPolicy } from "@/hooks/usePolicies";
+import { structureWords } from "@/helpers/capitalize";
+import moment from "moment";
 
 export const headers = [
   "Policy Held",
@@ -39,11 +42,34 @@ export const data = [
   },
 ];
 
-const DashboardMain = () => {
+type DashboardMainTypes = {
+  userPolicies: userPoliciesType[];
+};
+
+const DashboardMain = ({ userPolicies }: DashboardMainTypes) => {
   // States
   const [modals, setModals] = useState<modalGenericType>({
     claims: false,
   });
+  const [policies, setPolicies] = useState([]);
+
+  // Effects
+  useEffect(() => {
+    if (userPolicies?.length > 0) {
+      const newUserPolicies = userPolicies?.map((data) => {
+        return {
+          policyHeld: structureWords(data?.insuranceType),
+          exporationDate: moment(data?.endDate)?.format("Do MMMM, YYYY"),
+          agent: "No agent",
+          status: data?.status || "pending",
+          isActive: false,
+          id: data?._id,
+        };
+      });
+
+      setPolicies(newUserPolicies as any);
+    }
+  }, [userPolicies]);
 
   // Utils
   const options = [
@@ -80,7 +106,7 @@ const DashboardMain = () => {
         <DashboardPoliciesSummary />
         <Table
           header="Policies"
-          data={data}
+          data={policies}
           headers={headers}
           options={options}
         />

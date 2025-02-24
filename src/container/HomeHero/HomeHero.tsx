@@ -31,7 +31,7 @@ const HomeHero = () => {
           src={
             isMobile
               ? "https://res.cloudinary.com/dfilepe0f/image/upload/v1739979253/IATW_Sub-banner_ww0ow0.svg"
-              : "https://res.cloudinary.com/dfilepe0f/image/upload/v1738933352/IATW_Hero_Image_new_gwxbwj.svg"
+              : "https://res.cloudinary.com/dfilepe0f/image/upload/v1740418277/IATW_Sub-banner_owq7qc.svg"
           }
           alt="Hero Image"
           width={500}

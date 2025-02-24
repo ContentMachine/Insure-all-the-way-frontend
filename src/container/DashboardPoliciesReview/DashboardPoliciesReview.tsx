@@ -1,16 +1,22 @@
 import PolicyReviewCard from "@/components/PolicyReviewCard/PolicyReviewCard";
 import classes from "./DashboardPoliciesReview.module.css";
+import { userPoliciesType } from "@/utilities/types";
+import { data } from "../DashboardMain/DashboardMain";
 
-const DashboardPoliciesReview = () => {
+type DashboardPoliciesReviewType = {
+  userPolicies: userPoliciesType[];
+};
+
+const DashboardPoliciesReview = ({
+  userPolicies,
+}: DashboardPoliciesReviewType) => {
   return (
     <section className={classes.container}>
       <h2>Existing Policies</h2>
 
-      <PolicyReviewCard />
-      <PolicyReviewCard />
-      <PolicyReviewCard />
-      <PolicyReviewCard />
-      <PolicyReviewCard />
+      {userPolicies?.map((data) => {
+        return <PolicyReviewCard data={data} key={data?._id} />;
+      })}
     </section>
   );
 };

@@ -1,8 +1,11 @@
 import { capitalize } from "@/helpers/capitalize";
 import classes from "./GreetingComponent.module.css";
+import { useContext } from "react";
+import { AuthContext } from "@/context/AuthContext";
 
 const GreetingComponent = () => {
-  //   Utils
+  //   Context
+  const { user } = useContext(AuthContext);
 
   const getCurrentHours = () => {
     const date = new Date();
@@ -17,13 +20,13 @@ const GreetingComponent = () => {
     }
   };
 
+  console.log(user, "Hm");
+
   return (
     <div>
       <section className={classes.container}>
         {getCurrentHours()}
-        <h4 className="font-main text-4xl font-normal text-black">
-          {capitalize("Eniola")}
-        </h4>
+        <h4>{capitalize(user?.firstName as string)}</h4>
       </section>
     </div>
   );

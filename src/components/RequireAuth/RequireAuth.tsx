@@ -16,17 +16,17 @@ const RequireAuth = ({ children }: RequireAuthTypes) => {
   // COntext
   const { requestState, user } = useContext(AuthContext);
 
-  console.log(user, "User");
-
   useEffect(() => {
-    if (!user) {
+    if (!requestState?.isLoading && !user && !requestState?.data) {
       router.push(routes.BASE_URL);
     }
-  }, []);
+  }, [user, requestState?.isLoading, requestState?.data]);
 
-  if (requestState?.isLoading) {
+  if (requestState?.isLoading || !requestState?.data) {
     return <Loader />;
   }
+
+  console.log(user, "User10000");
 
   return children;
 };
