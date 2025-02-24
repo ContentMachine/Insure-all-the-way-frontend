@@ -90,4 +90,6 @@ export type userPoliciesType = {
   startDate: string;
   user: string;
   _id: string;
+  status: string;
+  agent: "string";
 };
