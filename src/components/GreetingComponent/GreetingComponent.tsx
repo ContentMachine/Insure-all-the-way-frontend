@@ -1,3 +1,5 @@
+"use client";
+
 import { capitalize } from "@/helpers/capitalize";
 import classes from "./GreetingComponent.module.css";
 import { useContext } from "react";

@@ -1,7 +1,10 @@
 "use client";
 
 import { requestHandler } from "@/helpers/requestHandler";
+import { LOCAL_STORAGE_AUTH_KEY } from "@/utilities/constants";
+import { routes } from "@/utilities/routes";
 import { requestType, userType } from "@/utilities/types";
+import { useRouter } from "next/navigation";
 import {
   createContext,
   Dispatch,
@@ -14,6 +17,7 @@ type AuthContextValuesType = {
   user: userType | null;
   setUser: Dispatch<SetStateAction<userType | null>>;
   requestState: requestType;
+  logout: () => void;
 };
 
 type AuthContextProviderType = {
@@ -31,6 +35,9 @@ const AuthContextProvider = ({ children }: AuthContextProviderType) => {
     error: null,
   });
 
+  // ROuter
+  const router = useRouter();
+
   //   Requests
   const getUser = () => {
     requestHandler({
@@ -42,9 +49,16 @@ const AuthContextProvider = ({ children }: AuthContextProviderType) => {
         setUser(res?.data?.user);
       },
       errorFunction(err) {
-        console.log(err);
+        logout();
+        setUser(null);
       },
     });
+  };
+
+  const logout = () => {
+    localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY);
+    setUser(null);
+    router.push(routes.BASE_URL);
   };
 
   useEffect(() => {
@@ -52,7 +66,7 @@ const AuthContextProvider = ({ children }: AuthContextProviderType) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, setUser, requestState }}>
+    <AuthContext.Provider value={{ user, setUser, requestState, logout }}>
       {children}
     </AuthContext.Provider>
   );

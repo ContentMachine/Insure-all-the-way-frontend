@@ -7,12 +7,13 @@ import { dashboardRoutes, routes } from "@/utilities/routes";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Logout from "@/assets/svgIcons/Logout";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Modal from "@/components/Modal/Modal";
 import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
 import { modalGenericType } from "@/utilities/types";
 import LogoutModalBody from "../LogoutModalBody/LogoutModalBody";
 import { LOCAL_STORAGE_AUTH_KEY } from "@/utilities/constants";
+import { AuthContext } from "@/context/AuthContext";
 
 const DashboardHeader = () => {
   // Router
@@ -24,6 +25,9 @@ const DashboardHeader = () => {
   const [modals, setModals] = useState<modalGenericType>({
     logout: false,
   });
+
+  // Context
+  const { logout } = useContext(AuthContext);
 
   // ref
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -58,8 +62,7 @@ const DashboardHeader = () => {
                 setAllModalsFalse(setModals);
               }}
               onLogout={() => {
-                localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY);
-                router.push(routes?.BASE_URL);
+                logout();
               }}
             />
           }

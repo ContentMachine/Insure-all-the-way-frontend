@@ -6,8 +6,18 @@ import EnhancedThirdPartyMotorInsuranceForm2 from "./EnhancedThirdPartyMotorInsu
 import EnhancedThirdPartyMotorInsuranceForm3 from "./EnhancedThirdPartyMotorInsuranceForm3";
 import EnhancedThirdPartyMotorInsurancePreview from "./EnhancedThirdPartyMotorInsurancePreview";
 import EnhancedThirdPartyMotorInsuranceForm0 from "./EnhancedThirdPartyMotorInsuranceForm0";
+import { enhancedThirdPartyInsuranceFormTypes } from "@/utilities/types";
+import { Dispatch, SetStateAction } from "react";
 
-const EnhancedThirdPartyMotorInsuranceForm = () => {
+type EnhancedThirdPartyMotorInsuranceFormTypes = {
+  data: enhancedThirdPartyInsuranceFormTypes;
+  setData: Dispatch<SetStateAction<enhancedThirdPartyInsuranceFormTypes>>;
+};
+
+const EnhancedThirdPartyMotorInsuranceForm = ({
+  data,
+  setData,
+}: EnhancedThirdPartyMotorInsuranceFormTypes) => {
   // Hooks
   const { updateSearchParams } = useUpdateSearchParams();
 
@@ -24,18 +34,26 @@ const EnhancedThirdPartyMotorInsuranceForm = () => {
     "Make Payment",
   ];
 
+  console.log(data);
+
   let container;
 
   if (step === "2") {
-    container = <EnhancedThordPartyMortrInsuranceForm1 />;
+    container = (
+      <EnhancedThordPartyMortrInsuranceForm1 data={data} setData={setData} />
+    );
   } else if (step === "3") {
-    container = <EnhancedThirdPartyMotorInsuranceForm2 />;
+    container = (
+      <EnhancedThirdPartyMotorInsuranceForm2 data={data} setData={setData} />
+    );
   } else if (step === "4") {
     container = <EnhancedThirdPartyMotorInsuranceForm3 />;
   } else if (step === "5") {
     container = <EnhancedThirdPartyMotorInsurancePreview />;
   } else {
-    container = <EnhancedThirdPartyMotorInsuranceForm0 />;
+    container = (
+      <EnhancedThirdPartyMotorInsuranceForm0 data={data} setData={setData} />
+    );
   }
 
   return (
@@ -52,6 +70,27 @@ const EnhancedThirdPartyMotorInsuranceForm = () => {
         steps={[1, 2, 3, 4, 5]}
         title={sectionsHeaders[Number(step) - 1]}
         notShowButton={Number(step) > 4}
+        disabled={
+          step === "1"
+            ? !data?.firstName ||
+              !data?.lastName ||
+              !data?.email ||
+              !data?.phoneNumber
+            : step === "2"
+            ? !data?.makeOfVehicle ||
+              !data?.yearOfMake ||
+              !data?.modelOfVehicle ||
+              !data?.startDate ||
+              !data?.endDate ||
+              !data?.registrationNumber ||
+              !data?.engineNumber ||
+              !data?.chasisNumber ||
+              !data?.color ||
+              !data?.vehicleType
+            : step === "3"
+            ? !data?.proofOfOwnership || !data?.id
+            : true
+        }
       >
         {container}
       </StepLayout>

@@ -21,7 +21,7 @@ const Dashboard = () => {
   return (
     <DashboardLayout className={classes.container}>
       {isLoading ? (
-        <Loader />
+        <Loader className={classes.loader} />
       ) : (
         <>
           <DashboardPoliciesReview userPolicies={userPolicies} />

@@ -29,3 +29,9 @@ export const useUserPoliciesStats = () => {
 
   return useGetHook(url);
 };
+
+export const useCars = () => {
+  const url = `/externals/cars`;
+
+  return useGetHook(url);
+};

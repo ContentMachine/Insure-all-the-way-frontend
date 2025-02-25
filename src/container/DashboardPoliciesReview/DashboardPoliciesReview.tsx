@@ -1,7 +1,6 @@
 import PolicyReviewCard from "@/components/PolicyReviewCard/PolicyReviewCard";
 import classes from "./DashboardPoliciesReview.module.css";
 import { userPoliciesType } from "@/utilities/types";
-import { data } from "../DashboardMain/DashboardMain";
 
 type DashboardPoliciesReviewType = {
   userPolicies: userPoliciesType[];

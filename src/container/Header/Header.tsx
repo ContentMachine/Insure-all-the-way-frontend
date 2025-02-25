@@ -2,7 +2,7 @@
 
 import { headerRoutes, routes } from "@/utilities/routes";
 import classes from "./Header.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ArrowDown from "@/assets/svgIcons/ArrowDown";
 import Button from "@/components/Button/Button";
@@ -11,10 +11,18 @@ import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
 import Logo from "@/components/Logo/Logo";
 import Hamburger from "@/assets/svgIcons/Hamburger";
 import Sidenav from "../SideNav/SideNav";
+import { AuthContext } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   // States
   const [navItemsState, setNavItemsState] = useState(headerRoutes);
+
+  // Router
+  const router = useRouter();
+
+  // Context
+  const { requestState, user } = useContext(AuthContext);
 
   // Refs
   const headerDropdownRef = useRef<HTMLDivElement | null>(null);
@@ -93,10 +101,15 @@ const Header = () => {
       <div className={classes.buttonSection}>
         <Button
           onClick={() => {
-            updateSearchParams("auth", "sign-in", "set");
+            if (!user) {
+              updateSearchParams("auth", "sign-in", "set");
+            } else {
+              router.push(routes.DASHBOARD);
+            }
           }}
+          loading={requestState?.isLoading}
         >
-          Sign in
+          {!user ? "Sign in" : "Dashboard"}
         </Button>
       </div>
 

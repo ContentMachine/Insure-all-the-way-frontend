@@ -2,8 +2,29 @@
 
 import RateCard from "@/components/RateCard/RateCard";
 import classes from "./EnhancedThirdPartyMotorInsuranceHero.module.css";
+import {
+  enhancedThirdPartyInsuranceFormTypes,
+  policySubtypeType,
+} from "@/utilities/types";
+import Loader from "@/components/Loader/Loader";
+import { Dispatch, SetStateAction } from "react";
+import { requestHandler } from "@/helpers/requestHandler";
 
-const EnhancedThirdPartyMotorInsuranceHero = () => {
+type EnhancedThirdPartyMotorInsuranceHeroType = {
+  data: policySubtypeType;
+  loading: boolean;
+  setData: Dispatch<SetStateAction<enhancedThirdPartyInsuranceFormTypes>>;
+};
+
+const EnhancedThirdPartyMotorInsuranceHero = ({
+  data,
+  loading,
+  setData,
+}: EnhancedThirdPartyMotorInsuranceHeroType) => {
+  // Requests
+  // Requests
+  const enhancedThirdPartySubmissionFormHandler = () => {};
+
   return (
     <section className={classes.container}>
       <h1>
@@ -16,8 +37,28 @@ const EnhancedThirdPartyMotorInsuranceHero = () => {
       </p>
 
       <div className={classes.rateSection}>
-        <RateCard />
-        <RateCard />
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            {data?.plans?.map((plan) => {
+              return (
+                <RateCard
+                  title={plan?.name}
+                  price={plan?.price}
+                  features={plan?.features}
+                  description={plan?.description}
+                  onClick={() => {
+                    setData((prevState) => {
+                      return { ...prevState, plan: data?.name };
+                    });
+                  }}
+                  key={data?.name}
+                />
+              );
+            })}
+          </>
+        )}
       </div>
 
       <div></div>

@@ -1,34 +1,37 @@
 "use client";
 
+import React, { useContext, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { AuthContext } from "@/context/AuthContext";
 import { routes } from "@/utilities/routes";
-import { useRouter } from "next/navigation";
-import React, { useContext, useEffect } from "react";
 import Loader from "../Loader/Loader";
+import { LOCAL_STORAGE_AUTH_KEY } from "@/utilities/constants";
 
-type RequireAuthTypes = {
+type RequireAuthProps = {
   children: React.ReactNode;
 };
 
-const RequireAuth = ({ children }: RequireAuthTypes) => {
+const RequireAuth = ({ children }: RequireAuthProps) => {
+  // Router
   const router = useRouter();
 
-  // COntext
-  const { requestState, user } = useContext(AuthContext);
+  // Context
+  const { requestState } = useContext(AuthContext);
+
+  // Local
+  const accessToken = localStorage.getItem(LOCAL_STORAGE_AUTH_KEY);
 
   useEffect(() => {
-    if (!requestState?.isLoading && !user && !requestState?.data) {
+    if (!requestState?.isLoading && !accessToken) {
       router.push(routes.BASE_URL);
     }
-  }, [user, requestState?.isLoading, requestState?.data]);
+  }, [accessToken, requestState?.isLoading, router]);
 
-  if (requestState?.isLoading || !requestState?.data) {
+  if (requestState.isLoading) {
     return <Loader />;
   }
 
-  console.log(user, "User10000");
-
-  return children;
+  return <>{children}</>;
 };
 
 export default RequireAuth;

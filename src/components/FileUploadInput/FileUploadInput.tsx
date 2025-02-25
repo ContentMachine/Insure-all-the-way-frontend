@@ -10,9 +10,15 @@ type FileUploadInputTypes = {
   files: File[];
   setFiles: Dispatch<SetStateAction<File[]>>;
   title: string;
+  id?: string;
 };
 
-const FileUploadInput = ({ files, setFiles, title }: FileUploadInputTypes) => {
+const FileUploadInput = ({
+  files,
+  setFiles,
+  title,
+  id,
+}: FileUploadInputTypes) => {
   // States
   const [isDraggingOver, setIsDraggingOver] = useState(false);
 
@@ -39,7 +45,6 @@ const FileUploadInput = ({ files, setFiles, title }: FileUploadInputTypes) => {
     setIsDraggingOver(false);
   };
 
-  // Handle file input change
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const selectedFiles = Array.from(e.target.files);
@@ -47,7 +52,6 @@ const FileUploadInput = ({ files, setFiles, title }: FileUploadInputTypes) => {
     }
   };
 
-  //   Handle files array filter
   const filterFiles = (name: string) => {
     const filteredFiles = files?.filter((data) => {
       return data?.name !== name;
@@ -71,10 +75,10 @@ const FileUploadInput = ({ files, setFiles, title }: FileUploadInputTypes) => {
         <Image src={upload} alt="Upload" />
 
         <h4>
-          Drag and drop files or <label htmlFor="file">Browse</label>
+          Drag and drop files or <label htmlFor={id || "file"}>Browse</label>
         </h4>
 
-        <input type="file" id="file" onChange={handleFileChange} />
+        <input type="file" id={id || "file"} onChange={handleFileChange} />
 
         <p>Supported formates: JPEG, PNG</p>
       </div>

@@ -21,27 +21,6 @@ export const headers = [
   "Actions",
 ];
 
-export const data = [
-  {
-    policyHeld: "Third Party Motor Insurance",
-    expirationDate: "18th June, 2025",
-    agent: "Eniola Martins",
-    status: "Active",
-  },
-  {
-    policyHeld: "Health Insurance",
-    expirationDate: "18th June, 2025",
-    agent: "Eniola Martins",
-    status: "Expired",
-  },
-  {
-    policyHeld: "Assurance",
-    expirationDate: "18th June, 2025",
-    agent: "Eniola Martins",
-    status: "Active",
-  },
-];
-
 type DashboardMainTypes = {
   userPolicies: userPoliciesType[];
 };
@@ -52,6 +31,7 @@ const DashboardMain = ({ userPolicies }: DashboardMainTypes) => {
     claims: false,
   });
   const [policies, setPolicies] = useState([]);
+  const [selectedPolicyId, setSelectedPolicyId] = useState<string | null>(null);
 
   // Effects
   useEffect(() => {
@@ -75,22 +55,26 @@ const DashboardMain = ({ userPolicies }: DashboardMainTypes) => {
   const options = [
     {
       text: "Claim",
-      action: () => {
+      action: (insuranceId?: string) => {
         setModalTrue(setModals, "claims");
+        if (insuranceId) {
+          setSelectedPolicyId(insuranceId);
+        }
       },
     },
-    {
-      text: "Renew Policy",
-      action: () => {},
-    },
+    // {
+    //   text: "Renew Policy",
+    //   action: () => {},
+    // },
     {
       text: "Download Policy",
       action: () => {},
+      isActive: true,
     },
-    {
-      text: "Renew Vehicle Papers",
-      action: () => {},
-    },
+    // {
+    //   text: "Renew Vehicle Papers",
+    //   action: () => {},
+    // },
   ];
 
   return (
@@ -98,7 +82,12 @@ const DashboardMain = ({ userPolicies }: DashboardMainTypes) => {
       {modals.claims && (
         <Modal
           onClick={() => setAllModalsFalse(setModals)}
-          body={<ClaimsForm onClose={() => setAllModalsFalse(setModals)} />}
+          body={
+            <ClaimsForm
+              onClose={() => setAllModalsFalse(setModals)}
+              selectedPolicyId={selectedPolicyId}
+            />
+          }
         />
       )}
       <section className={classes.container}>

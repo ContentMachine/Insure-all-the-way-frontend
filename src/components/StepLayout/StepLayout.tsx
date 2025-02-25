@@ -13,6 +13,7 @@ type UserOnboardingLayoutProps = {
   title?: string;
   caption?: string;
   notShowButton?: boolean;
+  disabled?: boolean;
 };
 
 const StepLayout = ({
@@ -21,6 +22,7 @@ const StepLayout = ({
   title,
   caption,
   notShowButton,
+  disabled,
 }: UserOnboardingLayoutProps) => {
   // Hooks
   const { updateSearchParams } = useUpdateSearchPRams();
@@ -84,6 +86,7 @@ const StepLayout = ({
                     );
                   }
                 }}
+                disabled={disabled}
               >
                 Next
               </Button>

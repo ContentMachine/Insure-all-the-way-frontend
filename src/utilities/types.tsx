@@ -28,7 +28,7 @@ export type navItemTypes = {
 
 export type tableOptionsType = {
   text: string;
-  action: () => void;
+  action: (insuranceId?: string) => void;
 };
 
 export type policyType = {
@@ -69,6 +69,28 @@ export type thirdPartyInsuranceFormTypes = {
   endDate: string;
 };
 
+export type enhancedThirdPartyInsuranceFormTypes = {
+  makeOfVehicle: string;
+  yearOfMake: string;
+  modelOfVehicle: string;
+  startDate: string;
+  endDate: string;
+  registrationNumber: string;
+  engineNumber: string;
+  chasisNumber: string;
+  color: string;
+  vehicleType: string;
+  proofOfOwnership: null | File;
+  plan: string;
+  id: null | File;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  address: string;
+  state: string;
+};
+
 export type userType = {
   email: string;
   firstName: string;
@@ -92,4 +114,11 @@ export type userPoliciesType = {
   _id: string;
   status: string;
   agent: "string";
+};
+
+export type claimsDataType = {
+  dateAndTime: string;
+  registrationNumber: string;
+  location: string;
+  narration: string;
 };

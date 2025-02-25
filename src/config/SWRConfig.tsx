@@ -2,10 +2,15 @@
 
 import axiosInstance from "@/services";
 import { AxiosResponse } from "axios";
-import { SWRConfig } from "swr";
+import { SWRConfig, SWRConfiguration } from "swr";
 
 type UseSWRConfigProps = {
   children: React.ReactNode;
+};
+
+export const swrConfigs: SWRConfiguration = {
+  revalidateOnFocus: false,
+  // revalidateOnMount: false,
 };
 
 type Fetcher = (

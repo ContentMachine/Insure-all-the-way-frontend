@@ -13,6 +13,7 @@ import { activeToggler } from "@/helpers/activeHandlers";
 import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
 import Modal from "../Modal/Modal";
 import PolicyInformationModalBody from "@/container/PolicyInformationModalBody/PolicyInformationModalBody";
+import moment from "moment";
 
 type TableType = {
   headers: string[];
@@ -31,6 +32,9 @@ const Table = ({ header, data, headers, options }: TableType) => {
 
   //   Ref
   const optionsDiv = useRef<HTMLDivElement | null>(null);
+
+  // Utils
+  const today = moment();
 
   //   Effects
   useEffect(() => {
@@ -102,6 +106,8 @@ const Table = ({ header, data, headers, options }: TableType) => {
               >
                 {headers.map((_, colIndex) => {
                   if (typeof Object.values(item)[colIndex] === "boolean") {
+                    const endDate = String(Object.values(item)[1]) as string;
+
                     return (
                       <span className={`${classes?.tableBody}`}>
                         <span
@@ -117,11 +123,26 @@ const Table = ({ header, data, headers, options }: TableType) => {
                             <div className={classes.options} ref={optionsDiv}>
                               {options?.map((option) => {
                                 return (
-                                  <span onClick={option.action}>
+                                  <span
+                                    onClick={() => {
+                                      option.action(
+                                        String(Object.values(item)[5])
+                                      );
+                                    }}
+                                  >
                                     {option.text}
                                   </span>
                                 );
                               })}
+                              {(
+                                String(Object.values(item)[0]) as string
+                              ).includes("Motor") && (
+                                <span>Renew Vehicle Papers</span>
+                              )}
+
+                              {moment(endDate).diff(today) < 14 && (
+                                <span>Renew Vehicle Papers</span>
+                              )}
                             </div>
                           )}
                         </span>
