@@ -185,14 +185,14 @@ const EnhancedThordPartyMortrInsuranceForm1 = ({
         name="engineNumber"
       />
       <Input
-        label="Chasis Number"
+        label="Chassis Number"
         isRequired
         value={data?.chasisNumber}
         onChange={(e) => inputChangeHandler(e, setData)}
         name="chasisNumber"
       />
       <Dropdown
-        label="Car Color"
+        label="Vehicle Color"
         options={carColors}
         isRequired
         selected={color}

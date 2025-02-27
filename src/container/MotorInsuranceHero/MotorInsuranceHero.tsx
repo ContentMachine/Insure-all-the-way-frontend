@@ -27,7 +27,7 @@ const MotorInsuranceHero = () => {
           Drive with <span>Confidence</span>
         </h1>
         <p>
-          Drive confidently with coverage for damage, flood, fire and and theft.
+          Drive confidently with coverage for damage, flood, fire and theft.
         </p>
 
         <div className={classes.buttonSection}>

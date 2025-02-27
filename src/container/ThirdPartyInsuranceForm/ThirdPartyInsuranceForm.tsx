@@ -170,7 +170,7 @@ const ThirdPartyInsuranceForm = ({
                 setAllModalsFalse(setModals);
                 setModalTrue(setModals, "success");
               }}
-              data={data}
+              data={data as any}
             />
           }
         />
@@ -197,8 +197,7 @@ const ThirdPartyInsuranceForm = ({
         <div className={classes.header}>
           <h4>Third Party Insurance Form</h4>
           <p>
-            Please ensure that all your information is correctly filled in,
-            failure to do so may render your policy void.
+            From Form to Coverage. Get Your Third Party Insurance in 5 Minutes
           </p>
         </div>
 
@@ -225,7 +224,7 @@ const ThirdPartyInsuranceForm = ({
             loading={requestState?.isLoading}
           />
           <Input
-            label="Chasis Number"
+            label="Chassis Number"
             placeholder="Eg: 12346"
             name="chasisNumber"
             value={data?.chasisNumber}

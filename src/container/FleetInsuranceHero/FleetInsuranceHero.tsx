@@ -1,6 +1,7 @@
 import Button from "@/components/Button/Button";
 import classes from "./FleetInsuranceHero.module.css";
 import CheckCircle from "@/assets/svgIcons/CheckCircle";
+import { useRouter } from "next/navigation";
 
 const features = [
   "Policy Management: Implementation and management of fleet insurance policies, including renewals and claims.",
@@ -10,6 +11,9 @@ const features = [
 ];
 
 const FleetInsuranceHero = () => {
+  // Router
+  const router = useRouter();
+
   return (
     <section className={classes.container}>
       <h1>
@@ -26,7 +30,13 @@ const FleetInsuranceHero = () => {
         );
       })}
 
-      <Button>Learn more</Button>
+      <Button
+        onClick={() => {
+          router.push("#insurance-form");
+        }}
+      >
+        Learn more
+      </Button>
     </section>
   );
 };

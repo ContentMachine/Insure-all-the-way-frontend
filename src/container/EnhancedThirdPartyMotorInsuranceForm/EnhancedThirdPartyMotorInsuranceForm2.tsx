@@ -40,6 +40,7 @@ const EnhancedThirdPartyMotorInsuranceForm2 = ({
           setFiles={setProofOfOwnership}
           title="Upload Proof of Ownership"
           id="proofOfOwnerShip"
+          accept=".pdf,.doc,.docx,image/*"
         />
       </div>
       <div>
@@ -48,6 +49,7 @@ const EnhancedThirdPartyMotorInsuranceForm2 = ({
           setFiles={setId}
           title="Upload Valid Means of ID"
           id="id"
+          accept=".pdf,.doc,.docx,image/*"
         />
       </div>
     </form>

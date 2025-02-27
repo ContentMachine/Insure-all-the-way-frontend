@@ -9,10 +9,7 @@ const CorporateHmoForm = () => {
     <section className={classes.container}>
       <div className={classes.header}>
         <h4>Corporate HMO Form</h4>
-        <p>
-          Please ensure that all your information is correctly filled in,
-          failure to do so may render your policy void.
-        </p>
+        <p>Effortless Corporate HMO Enrollment for a Healthier Workforce.</p>
       </div>
 
       <form>
@@ -24,12 +21,14 @@ const CorporateHmoForm = () => {
 
         <Input label="Phone" placeholder="Eg: +123 45 6789 0" />
 
-        <Input label="Location" placeholder="Eg: No 4. John Street," />
-
-        <Dropdown
-          label="Interstate Travel?"
-          options={["Yes", "No"]}
-          title="Select"
+        <Input
+          label="Name of Organisation or Group"
+          placeholder="Eg. Eniola & Sons"
+        />
+        <Input
+          label="Number of people in Organisation or Group"
+          placeholder="Eg. 10"
+          type="number"
         />
 
         <TextArea label="Talk To Us" placeholder="Tell us more" />

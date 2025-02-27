@@ -6,17 +6,25 @@ import EnhancedThirdPartyMotorInsuranceForm2 from "./EnhancedThirdPartyMotorInsu
 import EnhancedThirdPartyMotorInsuranceForm3 from "./EnhancedThirdPartyMotorInsuranceForm3";
 import EnhancedThirdPartyMotorInsurancePreview from "./EnhancedThirdPartyMotorInsurancePreview";
 import EnhancedThirdPartyMotorInsuranceForm0 from "./EnhancedThirdPartyMotorInsuranceForm0";
-import { enhancedThirdPartyInsuranceFormTypes } from "@/utilities/types";
+import {
+  enhancedThirdPartyInsuranceFormTypes,
+  requestType,
+} from "@/utilities/types";
 import { Dispatch, SetStateAction } from "react";
+import Modal from "@/components/Modal/Modal";
 
 type EnhancedThirdPartyMotorInsuranceFormTypes = {
   data: enhancedThirdPartyInsuranceFormTypes;
   setData: Dispatch<SetStateAction<enhancedThirdPartyInsuranceFormTypes>>;
+  submitForm: () => void;
+  requestState: requestType;
 };
 
 const EnhancedThirdPartyMotorInsuranceForm = ({
   data,
   setData,
+  submitForm,
+  requestState,
 }: EnhancedThirdPartyMotorInsuranceFormTypes) => {
   // Hooks
   const { updateSearchParams } = useUpdateSearchParams();
@@ -34,8 +42,6 @@ const EnhancedThirdPartyMotorInsuranceForm = ({
     "Make Payment",
   ];
 
-  console.log(data);
-
   let container;
 
   if (step === "2") {
@@ -47,9 +53,17 @@ const EnhancedThirdPartyMotorInsuranceForm = ({
       <EnhancedThirdPartyMotorInsuranceForm2 data={data} setData={setData} />
     );
   } else if (step === "4") {
-    container = <EnhancedThirdPartyMotorInsuranceForm3 />;
+    container = (
+      <EnhancedThirdPartyMotorInsuranceForm3 data={data} setData={setData} />
+    );
   } else if (step === "5") {
-    container = <EnhancedThirdPartyMotorInsurancePreview />;
+    container = (
+      <EnhancedThirdPartyMotorInsurancePreview
+        data={data}
+        submitForm={submitForm}
+        requestState={requestState}
+      />
+    );
   } else {
     container = (
       <EnhancedThirdPartyMotorInsuranceForm0 data={data} setData={setData} />
@@ -61,8 +75,8 @@ const EnhancedThirdPartyMotorInsuranceForm = ({
       <div className={classes.header}>
         <h4>Enhanced Third Party Insurance Form</h4>
         <p>
-          Please ensure that all your information is correctly filled in,
-          failure to do so may render your policy void.
+          Maximize Your Coverage with Enhanced Third Party Protection. Get
+          Started Today.
         </p>
       </div>
 
@@ -89,6 +103,12 @@ const EnhancedThirdPartyMotorInsuranceForm = ({
               !data?.vehicleType
             : step === "3"
             ? !data?.proofOfOwnership || !data?.id
+            : step === "4"
+            ? !data?.inspectionState ||
+              !data?.inspectionAddress ||
+              !data?.dateForInspection ||
+              !data?.contactName ||
+              !data?.contactPhone
             : true
         }
       >

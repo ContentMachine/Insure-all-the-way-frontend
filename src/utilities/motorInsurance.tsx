@@ -19,7 +19,7 @@ export const motorInsuranceTypes = [
     ],
     list: [
       "Type A Cover is for private use only.",
-      "Type B Cover  is for privately used buses and pickups, it is designed for staff and student transport, not for public ",
+      "Type B Cover  is for privately used buses and pickups, it is designed for staff and student transport, not for public.",
       "Type C Cover  is for privately owned goods-carrying vehicles used exclusively for the insured’s business transportation.",
     ],
     image:
@@ -40,7 +40,7 @@ export const motorInsuranceTypes = [
     title: "Fleet Motor Insurance",
     route: routes.ENHANCED_THIRD_PARTY_MOTOR_INSURANCE,
     descriptions: [
-      "With our fleet insurance, you can cover your entire fleet of business vehicles. The policy allows you to insure all vehicles under a single policy rather than separately, and it allows you to either insure all drivers or assign names to all drivers.",
+      "With our fleet insurance, you can cover your entire fleet of vehicles. The policy allows you to insure all vehicles under a single policy rather than separately.",
     ],
     list: null,
     image:
@@ -63,7 +63,7 @@ export const healthInsuranceTypes = [
     title: "Corporate & Group <br /> HMO ",
     route: routes.CORPORATE_HMO,
     descriptions: [
-      "Our plans are for 29 people, for SMEs, cooperative societies, or small groups. In addition, we also offer plans designed for companies with a large workforce as well as associations.",
+      "Our plans are for SMEs, cooperative societies, or small groups. In addition, we also offer plans designed for companies with a large workforce as well as associations.",
     ],
     list: null,
     image:

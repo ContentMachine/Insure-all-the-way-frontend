@@ -4,6 +4,8 @@ import Input from "@/components/Input/Input";
 import Button from "@/components/Button/Button";
 import Close from "@/assets/svgIcons/Close";
 import {
+  comprehensiveeFormDataTypes,
+  enhancedThirdPartyInsuranceFormTypes,
   policySubTypePlansType,
   thirdPartyInsuranceFormTypes,
 } from "@/utilities/types";
@@ -13,7 +15,9 @@ import { formatCurrency } from "@/helpers/formatAmount";
 
 type PaymentModalBodyType = {
   onSuccess: () => void;
-  data: thirdPartyInsuranceFormTypes;
+  data: thirdPartyInsuranceFormTypes &
+    enhancedThirdPartyInsuranceFormTypes &
+    comprehensiveeFormDataTypes;
 };
 
 const PaymentModalBody = ({ onSuccess, data }: PaymentModalBodyType) => {
@@ -27,7 +31,8 @@ const PaymentModalBody = ({ onSuccess, data }: PaymentModalBodyType) => {
   const policyData = useMemo(
     () =>
       policySubtypeData?.data?.plans?.find(
-        (plan: policySubTypePlansType) => plan?.name === data?.product
+        (plan: policySubTypePlansType) =>
+          plan?.name === data?.product || plan?.name === data?.plan
       ),
     [policySubtypeData]
   );
@@ -53,11 +58,16 @@ const PaymentModalBody = ({ onSuccess, data }: PaymentModalBodyType) => {
         readOnly
         value={data?.email}
       />
-      <Input label="Phone" type="phone" readOnly value={data?.phoneNumber} />
+      <Input
+        label="Phone"
+        type="phone"
+        readOnly
+        value={data?.phoneNumber || data?.phone}
+      />
       <Input
         label="Amount"
         readOnly
-        value={`₦${formatCurrency(policyData?.price)}`}
+        value={`₦${formatCurrency(policyData?.price || data?.premium)}`}
       />
 
       <Button type="secondary" onClick={onSuccess}>

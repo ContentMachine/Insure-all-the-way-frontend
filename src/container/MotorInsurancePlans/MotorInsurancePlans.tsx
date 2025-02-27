@@ -16,7 +16,7 @@ const MotorInsurancePlans = ({ plans, loading }: MotorInsurancePlansType) => {
   return (
     <section className={classes.container} id="plans">
       <h4>
-        Here's an overview of our <span>Motor Insurance plans</span>
+        Here's an overview of our <span>Motor Insurance Plans</span>
       </h4>
 
       {loading ? (

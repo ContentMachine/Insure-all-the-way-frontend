@@ -89,6 +89,38 @@ export type enhancedThirdPartyInsuranceFormTypes = {
   phoneNumber: string;
   address: string;
   state: string;
+  inspectionState: string;
+  inspectionAddress: string;
+  dateForInspection: string;
+  contactName: string;
+  contactPhone: string;
+};
+
+export type comprehensiveeFormDataTypes = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  state: string;
+  registrationNumber: string;
+  coverPeriod: string;
+  vehicleValue: string;
+  premium: string;
+  startDate: string;
+  endDate: string;
+};
+
+export type fleetFormDataTypes = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  state: string;
+  address: string;
+  propertyType: string;
+  comment: string;
+  startDate: string;
+  endDate: string;
 };
 
 export type userType = {

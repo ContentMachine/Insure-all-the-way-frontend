@@ -24,7 +24,7 @@
   font-weight: 500;
   line-height: 36px;
   text-align: left;
-  margin-bottom: 82px;
+  margin-bottom: 42px;
   color: var(--grey4);
 }
 
@@ -79,6 +79,7 @@
   line-height: 32px;
   text-align: left;
   color: var(--grey4);
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 767px) {

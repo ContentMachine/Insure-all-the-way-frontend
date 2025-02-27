@@ -15,13 +15,13 @@ const howWeWorkList = [
   {
     title: "Get a Quote",
     description:
-      "Use the quote calculator to get an instant estimate of your premium",
+      "Use the quote calculator to get an instant estimate of your premium.",
     icon: <RequestQuote />,
   },
   {
     title: "Speak With a Rep",
     description:
-      "Feel free to speak with a sales representative before you proceed",
+      "Feel free to speak with a sales representative before you proceed.",
     icon: <SpeakWithRep />,
   },
   {
@@ -36,11 +36,7 @@ const HomeHowWeWork = () => {
     <section className={classes.container}>
       <div>
         <h2>How We Work</h2>
-        <p>
-          We believe that the best way to create successful marketing campaigns
-          is to work closely with our clients to understand their goals and
-          challenges.
-        </p>
+        <p>A Simple Four-Step Process to Get You Covered with Confidence.</p>
 
         <Image
           src="https://res.cloudinary.com/dfilepe0f/image/upload/v1739547123/how_It_Works_lzblpu.svg"

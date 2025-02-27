@@ -21,7 +21,6 @@
 
 .container > div:nth-child(1) > h1 > span {
   color: var(--yellow);
-  display: block;
 }
 
 .container > div:first-child > p {

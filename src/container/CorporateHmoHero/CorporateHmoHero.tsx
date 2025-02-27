@@ -12,8 +12,8 @@ const CorporateHmoHero = () => {
           <span> Corporate & Small Businesses </span>
         </h1>
         <p>
-          A health insurance plan from us will make your employees happier and
-          healthier.
+          A health insurance plan from us will make your employees healthier and
+          more productive.
         </p>
         <Button>
           <span>Get a Quote</span>

@@ -1,20 +1,19 @@
+"use client";
+
 import Button from "@/components/Button/Button";
 import classes from "./ComprehensiveMotorInsuranceHero.module.css";
-import Image from "next/image";
-import {
-  MotorInsuranceHeroDecoration1,
-  MotorInsuranceHeroDecoration2,
-  MotorInsuranceHeroDecoration3,
-} from "@/assets/svgIcons/MotorInsuranceHeroDecorations";
 import CheckCircle from "@/assets/svgIcons/CheckCircle";
+import { useRouter } from "next/navigation";
 
 const stepsInfo = [
   "Fill out the Comprehensive Motor Insurance Form and get a quote",
-  "Make a payment",
-  "Complete our Insurance Proposal Form, and you are Insured all the way!",
+  "Make payment",
+  "Complete our Insurance Proposal Form, and you are Insured All The Way!",
 ];
 
 const ComprehensiveMotorInsuranceHero = () => {
+  // Router
+  const router = useRouter();
   return (
     <section className={classes.container}>
       <h1>
@@ -31,7 +30,7 @@ const ComprehensiveMotorInsuranceHero = () => {
         );
       })}
 
-      <Button>Buy Now</Button>
+      <Button onClick={() => router.push("#insurance-form")}>Buy Now</Button>
     </section>
   );
 };

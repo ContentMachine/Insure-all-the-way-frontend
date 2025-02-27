@@ -14,7 +14,7 @@ const HomeGetAQuote = () => {
         <hr />
       </h4>
       <p>Click on one of the products below to get an instant quote. </p>
-      <p>If it's a unique circumstance, give us a call</p>
+      <p>If it's a unique situation, give us a call.</p>
 
       <div>
         {insuranceProducts?.map((data, i) => (

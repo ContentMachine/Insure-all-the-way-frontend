@@ -8,10 +8,7 @@ const IndividualAndFamilyHmoForm = () => {
     <section className={classes.container}>
       <div className={classes.header}>
         <h4>HMO Recommendation Form</h4>
-        <p>
-          Please ensure that all your information is correctly filled in,
-          failure to do so may render your policy void.
-        </p>
+        <p>Chart Your Path to Better Health with Expert HMO Recommendations.</p>
       </div>
 
       <form>
@@ -56,7 +53,7 @@ const IndividualAndFamilyHmoForm = () => {
         />
 
         <Dropdown
-          label="Do you need coverage for specialized care?"
+          label="Do you need coverage for specialised care?"
           options={[
             "Fertility",
             "ENT (Ear, Nose, Throat",

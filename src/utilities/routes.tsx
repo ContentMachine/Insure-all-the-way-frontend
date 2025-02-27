@@ -1,6 +1,7 @@
 import Car from "@/assets/svgIcons/Car";
 import Health from "@/assets/svgIcons/Health";
 import Play from "@/assets/svgIcons/Play";
+import Property from "@/assets/svgIcons/Property";
 import LetsPlayHeader from "@/container/LetsPlayHeader/LetsPlayHeader";
 import ProductHeader from "@/container/ProductHeader/ProductHeader";
 
@@ -25,6 +26,8 @@ export const routes = Object.freeze({
   DASHBOARD: "/dashboard",
   POLICIES: "/policies",
   LETS_PLAY: "/lets-play",
+  ALL_RISK: "/all-risk",
+  BUILDING: "/building",
 });
 
 export const headerRoutes = [
@@ -109,19 +112,19 @@ export const headerRoutes = [
         children: [
           {
             title: "Building",
-            route: routes.THIRD_PARTY_MOTOR_INSURANCE,
-            icon: <Car color="#1b3a57" />,
+            route: routes.BUILDING,
+            icon: <Property color="#1b3a57" />,
             description:
-              "Providing Quality Health Insurance For Corporate & Small Businesses",
+              "Whether it's your home, office, or a rental property, we help you stay protected so you can focus on what matters most.",
             isActive: false,
           },
 
           {
-            title: "Electronics & Gadgets",
-            route: routes.ENHANCED_THIRD_PARTY_MOTOR_INSURANCE,
-            icon: <Car color="#3a506b" />,
+            title: "All Risks",
+            route: routes.ALL_RISK,
+            icon: <Property color="#f5b7b1" />,
             description:
-              "Drive confidently with coverage for damage, flood, fire, and theft.",
+              "Your valuable possessions deserve all-round protection, no matter where they are.",
             isActive: false,
           },
         ],

@@ -23,7 +23,7 @@ const ContactUsModalBody = ({ onClose }: ContactUsModalBodyTypes) => {
         <Whatsapp />
         <span>
           <a href="https://wa.link/achd56" rel="noreferrer" target="_blank">
-            Text an Agent
+            Send a Message
           </a>
         </span>
       </div>

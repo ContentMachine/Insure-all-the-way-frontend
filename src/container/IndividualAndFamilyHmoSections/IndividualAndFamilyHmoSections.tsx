@@ -14,19 +14,19 @@ const sections: Section[] = [
   {
     title: "Plans that work for you",
     caption:
-      "Depending on your requirements, we have monthly, quarterly, and yearly payment plans.",
+      "Depending on your requirements, we have monthly, quarterly, and yearly plans.",
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1739276724/settings-1-150x150_fyaa96.png",
   },
   {
     title: "Payment made easy",
-    caption: "Simply enter your card details and pay online.",
+    caption: "Payments without the hassle. Just click and go!",
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1739276723/credit_mn3q3l.png",
   },
   {
     title: "Easy care",
-    caption: "A representative will contact you shortly.",
+    caption: "Care made effortless because you deserve the best.",
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1739276724/heart_upja59.png",
   },

@@ -18,7 +18,7 @@ const HomeHero = () => {
         </h1>
         <p>
           <b>Insure All The Way</b> provides you with quality insurance products
-          and services
+          and services.
         </p>
 
         <form className={classes.textSection}>

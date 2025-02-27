@@ -11,16 +11,23 @@ import { requestHandler } from "@/helpers/requestHandler";
 import useError from "@/hooks/useError";
 import {
   enhancedThirdPartyInsuranceFormTypes,
+  modalGenericType,
   requestType,
 } from "@/utilities/types";
+import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
+import Modal from "@/components/Modal/Modal";
+import PaymentModalBody from "../PaymentModalBody/PaymentModalBody";
+import SuccessModalBody from "@/components/SuccessModalBody/SuccessModalBody";
 
 const EnhancedThirdPartyMotorInsurance = () => {
   // Hooks
-  const { updateSearchParams } = useUpdateSearchParams();
   const { isLoading, data } = usePolicyTypeBySubtype(
     "motor-insurance",
     "enhanced-third-party-motor-insurance"
   );
+  const { updateSearchParams } = useUpdateSearchParams();
+
+  // States
   const [enhancedThirdPartyFormData, setEnhancedThirdPartyFormData] =
     useState<enhancedThirdPartyInsuranceFormTypes>({
       makeOfVehicle: "",
@@ -42,12 +49,23 @@ const EnhancedThirdPartyMotorInsurance = () => {
       phoneNumber: "",
       address: "",
       state: "",
+      inspectionState: "",
+      inspectionAddress: "",
+      dateForInspection: "",
+      contactName: "",
+      contactPhone: "",
     });
 
   const [requestState, setRequestState] = useState<requestType>({
     isLoading: false,
     data: null,
     error: null,
+  });
+  // Modals
+  const [modals, setModals] = useState<modalGenericType>({
+    insuranceCreated: false,
+    payment: false,
+    success: false,
   });
 
   // Hooks
@@ -61,7 +79,7 @@ const EnhancedThirdPartyMotorInsurance = () => {
   // Requests
   const enhancedThirdPartySubmissionFOrmHandler = () => {
     requestHandler({
-      url: "/policies/policy/motor-insurance/third-party-motor-insurance",
+      url: "/policies/policy/motor-insurance/enhanced-third-party-motor-insurance",
       isMultipart: true,
       method: "POST",
       id: "submit-form",
@@ -70,6 +88,7 @@ const EnhancedThirdPartyMotorInsurance = () => {
       setState: setRequestState,
       successFunction(res) {
         console.log(res);
+        setModalTrue(setModals, "payment");
       },
       errorFunction(err) {
         console.log(err);
@@ -80,8 +99,6 @@ const EnhancedThirdPartyMotorInsurance = () => {
 
   // MEmos
   const policySubType = useMemo(() => data?.data, [data]);
-
-  console.log(policySubType, "Ppp");
 
   // Effects
   useEffect(() => {
@@ -97,6 +114,12 @@ const EnhancedThirdPartyMotorInsurance = () => {
       "makeOfVehicle",
       enhancedThirdPartyFormData?.makeOfVehicle
     );
+
+    subEnhancedThirdPartyFormData.append(
+      "modelOfVehicle",
+      enhancedThirdPartyFormData?.modelOfVehicle
+    );
+
     subEnhancedThirdPartyFormData.append(
       "yearOfMake",
       enhancedThirdPartyFormData?.yearOfMake
@@ -163,17 +186,30 @@ const EnhancedThirdPartyMotorInsurance = () => {
       "address",
       enhancedThirdPartyFormData?.address
     );
-    subEnhancedThirdPartyFormData.append(
-      "startDate",
-      enhancedThirdPartyFormData?.startDate
-    );
-    subEnhancedThirdPartyFormData.append(
-      "endDate",
-      enhancedThirdPartyFormData?.endDate
-    );
+
     subEnhancedThirdPartyFormData.append(
       "state",
       enhancedThirdPartyFormData?.state
+    );
+    subEnhancedThirdPartyFormData.append(
+      "inspectionState",
+      enhancedThirdPartyFormData?.inspectionState
+    );
+    subEnhancedThirdPartyFormData.append(
+      "inspectionAddress",
+      enhancedThirdPartyFormData?.inspectionAddress
+    );
+    subEnhancedThirdPartyFormData.append(
+      "dateForInspection",
+      enhancedThirdPartyFormData?.dateForInspection
+    );
+    subEnhancedThirdPartyFormData.append(
+      "contactName",
+      enhancedThirdPartyFormData?.contactName
+    );
+    subEnhancedThirdPartyFormData.append(
+      "contactPhone",
+      enhancedThirdPartyFormData?.contactPhone
     );
 
     setEnhancedThirdPartyFormDataFormdata(subEnhancedThirdPartyFormData);
@@ -181,6 +217,54 @@ const EnhancedThirdPartyMotorInsurance = () => {
 
   return (
     <ApppLayout>
+      {modals.insuranceCreated && (
+        <Modal
+          onClick={() => setAllModalsFalse(setModals)}
+          body={
+            <SuccessModalBody
+              title="Your Insurance Policy has been successfully created!"
+              caption="Please pay so we can walk you through the last step of this process"
+              onClose={() => setAllModalsFalse(setModals)}
+              onClick={() => {
+                setAllModalsFalse(setModals);
+                setModalTrue(setModals, "payment");
+              }}
+            />
+          }
+        />
+      )}
+
+      {modals.payment && (
+        <Modal
+          onClick={() => setAllModalsFalse(setModals)}
+          body={
+            <PaymentModalBody
+              onSuccess={() => {
+                setAllModalsFalse(setModals);
+                setModalTrue(setModals, "success");
+              }}
+              data={data as any}
+            />
+          }
+        />
+      )}
+
+      {modals.success && (
+        <Modal
+          onClick={() => setAllModalsFalse(setModals)}
+          body={
+            <SuccessModalBody
+              title="Your have successfully applied for a Third Party Motor Insurance Policy!"
+              caption="Please check your mail to get your dashboard login details. Make sure you change your temporary password as soon as possible. "
+              onClose={() => setAllModalsFalse(setModals)}
+              onClick={() => {
+                setAllModalsFalse(setModals);
+              }}
+              buttontext="Okay"
+            />
+          }
+        />
+      )}
       <EnhancedThirdPartyMotorInsuranceHero
         data={policySubType}
         loading={isLoading}
@@ -189,6 +273,8 @@ const EnhancedThirdPartyMotorInsurance = () => {
       <EnhancedThirdPartyMotorInsuranceForm
         data={enhancedThirdPartyFormData}
         setData={setEnhancedThirdPartyFormData}
+        submitForm={enhancedThirdPartySubmissionFOrmHandler}
+        requestState={requestState}
       />
     </ApppLayout>
   );
