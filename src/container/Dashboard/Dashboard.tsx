@@ -24,8 +24,10 @@ const Dashboard = () => {
         <Loader className={classes.loader} />
       ) : (
         <>
-          <DashboardPoliciesReview userPolicies={userPolicies} />
-          <DashboardMain userPolicies={userPolicies} />
+          {userPolicies?.length > 0 && (
+            <DashboardPoliciesReview userPolicies={userPolicies} />
+          )}
+          <DashboardMain userPolicies={userPolicies} className={classes.main} />
         </>
       )}
     </DashboardLayout>

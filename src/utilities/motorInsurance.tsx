@@ -71,6 +71,29 @@ export const healthInsuranceTypes = [
   },
 ];
 
+export const propertyInsuranceTypes = [
+  {
+    title: "Building",
+    route: routes.BUILDING,
+    descriptions: [
+      "Building Insurance covers the structure of a property, including walls, roofs, and permanent fixtures, against risks like fire, storms, and vandalism. It ensures property owners can repair or rebuild after damage but doesn’t cover contents inside, which require separate insurance",
+    ],
+    list: null,
+    image:
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1740666393/building_demgkj.jpg",
+  },
+  {
+    title: "All Risks",
+    route: routes.ALL_RISK,
+    descriptions: [
+      "All Risks Insurance provides broad coverage for loss or damage to insured property from various unforeseen events, except those specifically excluded. It offers more comprehensive protection than standard policies, covering risks like theft, fire, and accidental damage",
+    ],
+    list: null,
+    image:
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1740666640/building2_duvnyh.jpg",
+  },
+];
+
 export const letsPlay = [
   {
     title: "Health and Insurance Friendly Match  ",

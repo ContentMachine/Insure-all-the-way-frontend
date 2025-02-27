@@ -4,12 +4,16 @@
   width: 100%;
 }
 
-.container > section:first-child:not(.loader) {
+.container > section:first-child:not(.loader, .main) {
   flex-basis: 354px;
 }
 
 .loader {
   width: 100%;
+}
+
+.main {
+  flex: 1;
 }
 
 .container > section:nth-child(2) {

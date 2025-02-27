@@ -4,11 +4,12 @@ import Image from "next/image";
 import classes from "./HomeHero.module.css";
 import Input from "@/components/Input/Input";
 import Button from "@/components/Button/Button";
+import Phone from "@/assets/svgIcons/Phone";
+import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
 
 const HomeHero = () => {
-  // Utils
-  const isMobile =
-    typeof window !== "undefined" && window.innerWidth < 767 ? true : false;
+  // Hooks
+  const { updateSearchParams } = useUpdateSearchParams();
 
   return (
     <section className={classes.container}>
@@ -21,17 +22,15 @@ const HomeHero = () => {
           and services.
         </p>
 
-        <form className={classes.textSection}>
-          <Input placeholder="Enter your Email" />
-          <Button>Let's Talk</Button>
-        </form>
+        <Button onClick={() => updateSearchParams("contact-us", "true", "set")}>
+          <Phone />
+          <span>Speak to an Agent</span>
+        </Button>
       </div>
       <div>
         <Image
           src={
-            isMobile
-              ? "https://res.cloudinary.com/dfilepe0f/image/upload/v1739979253/IATW_Sub-banner_ww0ow0.svg"
-              : "https://res.cloudinary.com/dfilepe0f/image/upload/v1740418277/IATW_Sub-banner_owq7qc.svg"
+            "https://res.cloudinary.com/dfilepe0f/image/upload/v1740418277/IATW_Sub-banner_owq7qc.svg"
           }
           alt="Hero Image"
           width={500}

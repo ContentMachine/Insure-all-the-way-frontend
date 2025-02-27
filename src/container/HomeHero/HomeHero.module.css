@@ -51,8 +51,8 @@
   gap: 12px;
 }
 
-.textSection > button {
-  width: 146px;
+.container > div > button {
+  margin-top: 2rem;
 }
 
 .textSection > div {

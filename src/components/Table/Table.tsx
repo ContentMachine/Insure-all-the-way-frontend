@@ -84,6 +84,7 @@ const Table = ({ header, data, headers, options }: TableType) => {
       )}
       <div>
         <div className={classes.header}>{header}</div>
+
         <div className={classes.tableHeaderContainer}>
           {headers.map((header, index) => {
             return (
@@ -93,78 +94,93 @@ const Table = ({ header, data, headers, options }: TableType) => {
             );
           })}
         </div>
-        <div>
-          {dataState?.map((item: any, rowIndex: number) => {
-            return (
-              <div
-                className={classes.tableBodyContainer}
-                key={Math.random()}
-                onClick={() => {
-                  setActiveId(item?.id);
-                  setModalTrue(setModals, "info");
-                }}
-              >
-                {headers.map((_, colIndex) => {
-                  if (typeof Object.values(item)[colIndex] === "boolean") {
-                    const endDate = String(Object.values(item)[1]) as string;
+        {data?.length > 0 ? (
+          <>
+            <div>
+              {dataState?.map((item: any, rowIndex: number) => {
+                return (
+                  <div
+                    className={classes.tableBodyContainer}
+                    key={Math.random()}
+                    onClick={() => {
+                      setActiveId(item?.id);
+                      setModalTrue(setModals, "info");
+                    }}
+                  >
+                    {headers.map((_, colIndex) => {
+                      if (typeof Object.values(item)[colIndex] === "boolean") {
+                        const endDate = String(
+                          Object.values(item)[1]
+                        ) as string;
 
-                    return (
-                      <span className={`${classes?.tableBody}`}>
-                        <span
-                          className={classes.button}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            activeToggler(rowIndex, dataState, setDataState);
-                          }}
-                        >
-                          <span>Options</span>
-                          <ArrowDown dimensions="16px" />
-                          {item?.isActive && (
-                            <div className={classes.options} ref={optionsDiv}>
-                              {options?.map((option) => {
-                                return (
-                                  <span
-                                    onClick={() => {
-                                      option.action(
-                                        String(Object.values(item)[5])
-                                      );
-                                    }}
-                                  >
-                                    {option.text}
-                                  </span>
+                        return (
+                          <span className={`${classes?.tableBody}`}>
+                            <span
+                              className={classes.button}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                activeToggler(
+                                  rowIndex,
+                                  dataState,
+                                  setDataState
                                 );
-                              })}
-                              {(
-                                String(Object.values(item)[0]) as string
-                              ).includes("Motor") && (
-                                <span>Renew Vehicle Papers</span>
-                              )}
+                              }}
+                            >
+                              <span>Options</span>
+                              <ArrowDown dimensions="16px" />
+                              {item?.isActive && (
+                                <div
+                                  className={classes.options}
+                                  ref={optionsDiv}
+                                >
+                                  {options?.map((option) => {
+                                    return (
+                                      <span
+                                        onClick={() => {
+                                          option.action(
+                                            String(Object.values(item)[5])
+                                          );
+                                        }}
+                                      >
+                                        {option.text}
+                                      </span>
+                                    );
+                                  })}
+                                  {(
+                                    String(Object.values(item)[0]) as string
+                                  ).includes("Motor") && (
+                                    <span>Renew Vehicle Papers</span>
+                                  )}
 
-                              {moment(endDate).diff(today) < 14 && (
-                                <span>Renew Vehicle Papers</span>
+                                  {moment(endDate).diff(today) < 14 && (
+                                    <span>Renew Vehicle Papers</span>
+                                  )}
+                                </div>
                               )}
-                            </div>
-                          )}
+                            </span>
+                          </span>
+                        );
+                      }
+                      return (
+                        <span key={colIndex} className={classes?.tableBody}>
+                          <span>
+                            {capitalize(
+                              String(
+                                Object.values(item)[colIndex] as string
+                              ) as string
+                            )}
+                          </span>
                         </span>
-                      </span>
-                    );
-                  }
-                  return (
-                    <span key={colIndex} className={classes?.tableBody}>
-                      <span>
-                        {capitalize(
-                          String(
-                            Object.values(item)[colIndex] as string
-                          ) as string
-                        )}
-                      </span>
-                    </span>
-                  );
-                })}
-              </div>
-            );
-          })}
-        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <p className={classes.paragraph}>No data available</p>
+        )}
       </div>
     </>
   );

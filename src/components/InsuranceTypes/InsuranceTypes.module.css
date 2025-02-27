@@ -48,6 +48,7 @@
 .item > div:nth-child(2) {
   align-self: center;
   align-content: center;
+  height: 500px;
 }
 
 .item > div:nth-child(2) > img {

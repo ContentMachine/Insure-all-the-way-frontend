@@ -23,9 +23,10 @@ export const headers = [
 
 type DashboardMainTypes = {
   userPolicies: userPoliciesType[];
+  className?: string;
 };
 
-const DashboardMain = ({ userPolicies }: DashboardMainTypes) => {
+const DashboardMain = ({ userPolicies, className }: DashboardMainTypes) => {
   // States
   const [modals, setModals] = useState<modalGenericType>({
     claims: false,
@@ -90,7 +91,7 @@ const DashboardMain = ({ userPolicies }: DashboardMainTypes) => {
           }
         />
       )}
-      <section className={classes.container}>
+      <section className={`${classes.container} ${className}`}>
         <GreetingComponent />
         <DashboardPoliciesSummary />
         <Table

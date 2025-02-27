@@ -92,6 +92,14 @@
   background-color: var(--grey);
 }
 
+.paragraph {
+  text-align: center;
+  font-size: 16px;
+  color: var(--black);
+  margin-top: 2rem;
+  color: var(--grey4);
+}
+
 @media screen and (max-width: 767px) {
   .tableHeaderContainer {
     display: flex;

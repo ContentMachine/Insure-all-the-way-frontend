@@ -48,7 +48,7 @@ export const headerRoutes = [
           },
 
           {
-            title: "Corporate & Grpup HMO",
+            title: "Corporate & Group HMO",
             route: routes.CORPORATE_HMO,
             icon: <Health color="#f5b7b1" />,
 

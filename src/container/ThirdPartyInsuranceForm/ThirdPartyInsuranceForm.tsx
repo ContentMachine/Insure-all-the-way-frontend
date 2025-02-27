@@ -313,7 +313,7 @@ const ThirdPartyInsuranceForm = ({
             label="State"
             options={states}
             title="Select State"
-            selected={state}
+            selected={state || data?.state}
             setSelected={setState}
           />
 

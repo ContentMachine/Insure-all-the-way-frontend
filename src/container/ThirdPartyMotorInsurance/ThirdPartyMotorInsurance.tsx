@@ -1,13 +1,14 @@
 "use client";
 
 import ApppLayout from "@/layouts/ApppLayout/ApppLayout";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import ThirdPartyMotorInsuranceHero from "../ThirdPartyMotorInsuranceHero/ThirdPartyMotorInsuranceHero";
 import ThirdPartyInsuranceForm from "../ThirdPartyInsuranceForm/ThirdPartyInsuranceForm";
 import { usePolicyTypeBySubtype } from "@/hooks/usePolicies";
 import { requestType, thirdPartyInsuranceFormTypes } from "@/utilities/types";
 import { requestHandler } from "@/helpers/requestHandler";
 import useError from "@/hooks/useError";
+import { AuthContext } from "@/context/AuthContext";
 
 const ThirdPartyMotorInsurance = () => {
   // Requests
@@ -25,6 +26,9 @@ const ThirdPartyMotorInsurance = () => {
   const [thirdPartyFormDataFormdata, setThirdPartyFormDataFormdata] = useState(
     new FormData()
   );
+
+  // COntext
+  const { user } = useContext(AuthContext);
 
   // Hooks
   const { errorFlowFunction } = useError();
@@ -106,6 +110,22 @@ const ThirdPartyMotorInsurance = () => {
 
     setThirdPartyFormDataFormdata(subThirdPartyFormData);
   }, [thirdPartyFormData]);
+
+  useEffect(() => {
+    if (user) {
+      setthirdPartyFormData((prevState) => {
+        return {
+          ...prevState,
+          firstName: user?.firstName,
+          lastName: user?.lastName,
+          email: user?.email,
+          phoneNumber: user?.phone,
+          address: user?.address,
+          state: user?.state,
+        };
+      });
+    }
+  }, [user]);
 
   return (
     <ApppLayout>
