@@ -3,7 +3,7 @@ import { LOCAL_STORAGE_AUTH_KEY } from "@/utilities/constants";
 import axios from "axios";
 
 const getToken = () => {
-  if (localStorage) {
+  if (typeof window !== "undefined" && window.localStorage) {
     return localStorage.getItem(LOCAL_STORAGE_AUTH_KEY);
   }
 };
