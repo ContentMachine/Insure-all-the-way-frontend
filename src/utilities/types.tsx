@@ -128,7 +128,7 @@ export type userType = {
   firstName: string;
   lastName: string;
   phone: string;
-  firstLogin: string;
+  firstLogin?: string;
   address: string;
   state: string;
 };
@@ -145,7 +145,8 @@ export type userPoliciesType = {
   user: string;
   _id: string;
   status: string;
-  agent: "string";
+  agent: { name: string; phoneNumber: string; email: string };
+  isTrackerInstalled?: boolean;
 };
 
 export type claimsDataType = {
@@ -153,4 +154,20 @@ export type claimsDataType = {
   registrationNumber: string;
   location: string;
   narration: string;
+};
+
+export type allRiskDataTypes = userType & {
+  deviceType: string;
+  valueOfDevice: string;
+  quantityOfDevice: string;
+  premium: string;
+  startDate: string;
+  endDate: string;
+};
+
+export type buildingDataTypes = userType & {
+  locationOfProperty: string;
+  valueOfProperty: string;
+  startDate: string;
+  endDate: string;
 };

@@ -1,0 +1,19 @@
+.container {
+  height: 100%;
+  position: relative;
+}
+
+.container > div {
+  height: 500px;
+}
+
+.container > div > div:nth-child(2) {
+  min-height: calc(100vh - 54px - var(--headerHeight));
+  border-radius: 10px;
+}
+
+.container > section:last-child {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}

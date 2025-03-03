@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { routes } from "@/utilities/routes";
 import { useContext, useState } from "react";
 import { inputChangeHandler } from "@/helpers/inputChangeHandler";
-import { areAllValuesFilled } from "@/helpers/validateObjectValues";
 import { requestHandler } from "@/helpers/requestHandler";
 import { requestType } from "@/utilities/types";
 import useError from "@/hooks/useError";
@@ -88,7 +87,6 @@ const SignIn = () => {
         setScreen("login");
       },
       errorFunction(err) {
-        console.log(err);
         errorFlowFunction(err);
 
         if (err?.status === 403) {

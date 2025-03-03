@@ -28,6 +28,7 @@ export const routes = Object.freeze({
   LETS_PLAY: "/lets-play",
   ALL_RISK: "/all-risk",
   BUILDING: "/building",
+  TRACKER: "/dashboard/tracker",
 });
 
 export const headerRoutes = [

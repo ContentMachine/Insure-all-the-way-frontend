@@ -41,10 +41,11 @@ const DashboardMain = ({ userPolicies, className }: DashboardMainTypes) => {
         return {
           policyHeld: structureWords(data?.insuranceType),
           exporationDate: moment(data?.endDate)?.format("Do MMMM, YYYY"),
-          agent: "No agent",
+          agent: data?.agent?.name,
           status: data?.status || "pending",
           isActive: false,
           id: data?._id,
+          tracker: data?.isTrackerInstalled,
         };
       });
 

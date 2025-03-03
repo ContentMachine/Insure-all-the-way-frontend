@@ -32,12 +32,6 @@ const DashboardPoliciesSummary = () => {
         amount={stats?.policiesOverdue}
         notAmount
       />
-
-      <PoliciesSummaryCard
-        title="Pending Policies"
-        amount={stats?.pendingPolicies}
-        notAmount
-      />
     </section>
   );
 };

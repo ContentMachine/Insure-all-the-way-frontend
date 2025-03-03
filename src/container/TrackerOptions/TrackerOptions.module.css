@@ -1,0 +1,16 @@
+.container {
+  min-height: calc(100vh - 80px - var(--headerHeight));
+  width: 350px;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem 1rem;
+}
+
+.container > h4 {
+  font-family: General Sans;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 150%;
+  margin-bottom: 1rem;
+}

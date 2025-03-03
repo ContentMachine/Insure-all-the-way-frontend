@@ -48,10 +48,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--grey6);
+  color: var(--black);
   font-family: "General Sans";
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 19.2px;
   letter-spacing: -0.03em;
   cursor: pointer;

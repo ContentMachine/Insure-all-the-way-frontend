@@ -167,6 +167,6 @@
   }
 
   .info:hover {
-    scale: 0;
+    scale: none;
   }
 }

@@ -14,6 +14,9 @@ import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
 import Modal from "../Modal/Modal";
 import PolicyInformationModalBody from "@/container/PolicyInformationModalBody/PolicyInformationModalBody";
 import moment from "moment";
+import { useRouter } from "next/navigation";
+import { routes } from "@/utilities/routes";
+import ClaimsForm from "@/container/ClaimsForm/ClaimsForm";
 
 type TableType = {
   headers: string[];
@@ -27,6 +30,7 @@ const Table = ({ header, data, headers, options }: TableType) => {
   const [dataState, setDataState] = useState<any>([]);
   const [modals, setModals] = useState<modalGenericType>({
     info: false,
+    claim: false,
   });
   const [activeId, setActiveId] = useState<string | null>(null);
 
@@ -35,6 +39,9 @@ const Table = ({ header, data, headers, options }: TableType) => {
 
   // Utils
   const today = moment();
+
+  // Router
+  const router = useRouter();
 
   //   Effects
   useEffect(() => {
@@ -78,6 +85,22 @@ const Table = ({ header, data, headers, options }: TableType) => {
             <PolicyInformationModalBody
               onClose={() => setAllModalsFalse(setModals)}
               id={activeId as string}
+              onClaim={() => {
+                setAllModalsFalse(setModals);
+                setModalTrue(setModals, "claims");
+              }}
+            />
+          }
+        />
+      )}
+
+      {modals.claims && (
+        <Modal
+          onClick={() => setAllModalsFalse(setModals)}
+          body={
+            <ClaimsForm
+              onClose={() => setAllModalsFalse(setModals)}
+              selectedPolicyId={activeId}
             />
           }
         />
@@ -154,6 +177,17 @@ const Table = ({ header, data, headers, options }: TableType) => {
 
                                   {moment(endDate).diff(today) < 14 && (
                                     <span>Renew Vehicle Papers</span>
+                                  )}
+
+                                  {String(Object.values(item)[6]) ===
+                                    "true" && (
+                                    <span
+                                      onClick={() => {
+                                        router.push(routes?.TRACKER);
+                                      }}
+                                    >
+                                      Track Vehicle
+                                    </span>
                                   )}
                                 </div>
                               )}

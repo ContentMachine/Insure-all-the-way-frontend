@@ -148,5 +148,6 @@
   .container > div:nth-child(2) > div > div:nth-child(2) > p {
     font-size: 14px;
     line-height: 120%;
+    white-space: break-spaces;
   }
 }
