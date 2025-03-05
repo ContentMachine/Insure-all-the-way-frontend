@@ -6,9 +6,9 @@ import React, { Suspense } from "react";
 const page = () => {
   return (
     <Suspense fallback={<Loader />}>
-      {/* <RequireAuth> */}
-      <Dashboard />
-      {/* </RequireAuth> */}
+      <RequireAuth>
+        <Dashboard />
+      </RequireAuth>
     </Suspense>
   );
 };

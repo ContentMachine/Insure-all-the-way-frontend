@@ -96,7 +96,6 @@ const ComprehensiveMotorInsuranceForm = ({
         <Input
           label="Registration Number"
           placeholder="Eg: 12346"
-          type="number"
           value={data?.registrationNumber}
           onChange={(e) => inputChangeHandler(e, setData)}
           name="registrationNumber"

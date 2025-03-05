@@ -1,7 +1,8 @@
 import Button from "@/components/Button/Button";
-import classes from "./FleetInsuranceHero.module.css";
+import classes from "../ComprehensiveMotorInsuranceHero/ComprehensiveMotorInsuranceHero.module.css";
 import CheckCircle from "@/assets/svgIcons/CheckCircle";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const features = [
   "Policy Management: Implementation and management of fleet insurance policies, including renewals and claims.",
@@ -15,28 +16,37 @@ const FleetInsuranceHero = () => {
   const router = useRouter();
 
   return (
-    <section className={classes.container}>
-      <h1>
-        Our fleet insurance policies provide <span>Your Organisation </span>{" "}
-        with the following:
-      </h1>
+    <section className={classes.outerContainer}>
+      <div className={classes.container}>
+        <h1>
+          Our fleet insurance policies provide <span>Your Organisation </span>{" "}
+          with the following:
+        </h1>
 
-      {features.map((data, i) => {
-        return (
-          <p key={i}>
-            <CheckCircle />
-            <span>{data}</span>
-          </p>
-        );
-      })}
+        {features.map((data, i) => {
+          return (
+            <p key={i}>
+              <CheckCircle />
+              <span>{data}</span>
+            </p>
+          );
+        })}
 
-      <Button
-        onClick={() => {
-          router.push("#insurance-form");
-        }}
-      >
-        Learn more
-      </Button>
+        <Button
+          onClick={() => {
+            router.push("#insurance-form");
+          }}
+        >
+          Learn more
+        </Button>
+      </div>
+      <div>
+        <Image
+          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1738920158/Fleet-Banner_n0k1s3.jpg"
+          fill
+          alt="Motor Insurance"
+        />
+      </div>
     </section>
   );
 };

@@ -85,10 +85,6 @@ const Table = ({ header, data, headers, options }: TableType) => {
             <PolicyInformationModalBody
               onClose={() => setAllModalsFalse(setModals)}
               id={activeId as string}
-              onClaim={() => {
-                setAllModalsFalse(setModals);
-                setModalTrue(setModals, "claims");
-              }}
             />
           }
         />

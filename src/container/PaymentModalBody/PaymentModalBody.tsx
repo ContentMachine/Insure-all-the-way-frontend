@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useMemo } from "react";
 import classes from "./PaymentModalBody.module.css";
 import Input from "@/components/Input/Input";

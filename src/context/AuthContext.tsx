@@ -49,7 +49,8 @@ const AuthContextProvider = ({ children }: AuthContextProviderType) => {
         setUser(res?.data?.user);
       },
       errorFunction(err) {
-        logout();
+        setUser(null);
+        localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY);
         setUser(null);
       },
     });
