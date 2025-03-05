@@ -68,12 +68,6 @@ const ThirdPartyInsuranceForm = ({
       state: requestState,
       setState: setRequestState,
       requestCleanup: false,
-      successFunction(res) {
-        console.log(res);
-      },
-      errorFunction(err) {
-        console.log(err);
-      },
     });
   };
 

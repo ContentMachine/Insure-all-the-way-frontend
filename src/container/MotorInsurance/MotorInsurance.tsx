@@ -21,8 +21,6 @@ const MotorInsurance = () => {
     [policyTypeData]
   );
 
-  console.log(policy);
-
   return (
     <ApppLayout>
       <MotorInsuranceHero />

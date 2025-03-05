@@ -1,7 +1,6 @@
 "use client";
 
 import ApppLayout from "@/layouts/ApppLayout/ApppLayout";
-import classes from "./ComprehensiveMotorInsurance.module.css";
 import ComprehensiveMotorInsuranceHero from "../ComprehensiveMotorInsuranceHero/ComprehensiveMotorInsuranceHero";
 import ComprehensiveMotorInsuranceForm from "../ComprehensiveMotorInsuranceForm/ComprehensiveMotorInsuranceForm";
 import { useContext, useEffect, useState } from "react";
@@ -64,11 +63,9 @@ const ComprehensiveMotorInsurance = () => {
       state: requestState,
       setState: setRequestState,
       successFunction(res) {
-        console.log(res);
         setModalTrue(setModals, "payment");
       },
       errorFunction(err) {
-        console.log(err);
         errorFlowFunction(err);
       },
     });

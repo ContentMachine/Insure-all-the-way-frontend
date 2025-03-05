@@ -20,8 +20,6 @@ const EnhancedThirdPartyMotorInsurancePreview = ({
   // Hooks
   const { updateSearchParams } = useUpdateSearchParams();
 
-  console.log(data, "Data");
-
   return (
     <div>
       <div className={classes.info}>

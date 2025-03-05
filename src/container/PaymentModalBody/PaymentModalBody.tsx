@@ -14,8 +14,13 @@ import {
 import { usePolicyTypeBySubtype } from "@/hooks/usePolicies";
 import Loader from "@/components/Loader/Loader";
 import { formatCurrency } from "@/helpers/formatAmount";
-import { PaystackButton } from "react-paystack";
 import { PAYSTACK_PUBLIC_KEY } from "@/config/paystack";
+import dynamic from "next/dynamic";
+
+const PaystackButton = dynamic(
+  () => import("react-paystack").then((mod) => mod.PaystackButton),
+  { ssr: false }
+);
 
 type PaymentModalBodyType = {
   onSuccess: () => void;

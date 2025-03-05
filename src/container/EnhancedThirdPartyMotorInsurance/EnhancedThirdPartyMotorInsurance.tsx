@@ -86,11 +86,9 @@ const EnhancedThirdPartyMotorInsurance = () => {
       state: requestState,
       setState: setRequestState,
       successFunction(res) {
-        console.log(res);
         setModalTrue(setModals, "payment");
       },
       errorFunction(err) {
-        console.log(err);
         errorFlowFunction(err);
       },
     });

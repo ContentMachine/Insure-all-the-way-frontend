@@ -74,7 +74,6 @@ const FleetInsurance = () => {
         });
       },
       errorFunction(err) {
-        console.log(err);
         errorFlowFunction(err);
       },
     });

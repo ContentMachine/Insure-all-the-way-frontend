@@ -85,7 +85,6 @@ const AllRiskForm = () => {
         });
       },
       errorFunction(err) {
-        console.log(err);
         errorFlowFunction(err);
       },
     });

@@ -64,11 +64,7 @@ const ThirdPartyMotorInsurance = () => {
       data: thirdPartyFormDataFormdata,
       state: requestState,
       setState: setRequestState,
-      successFunction(res) {
-        console.log(res);
-      },
       errorFunction(err) {
-        console.log(err);
         errorFlowFunction(err);
       },
     });

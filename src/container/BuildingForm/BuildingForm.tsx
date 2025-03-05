@@ -79,7 +79,6 @@ const BuildingForm = () => {
         });
       },
       errorFunction(err) {
-        console.log(err);
         errorFlowFunction(err);
       },
     });
