@@ -1,3 +1,5 @@
+"use client";
+
 import classes from "./SectionsHero.module.css";
 
 type SectionsHeroTypes = {

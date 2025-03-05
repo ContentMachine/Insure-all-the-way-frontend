@@ -1,9 +1,11 @@
+"use client";
+
 import { BASE_API_URL } from "@/config";
 import { LOCAL_STORAGE_AUTH_KEY } from "@/utilities/constants";
 import axios from "axios";
 
 const getToken = () => {
-  if (typeof window !== "undefined" && window.localStorage) {
+  if (typeof window !== "undefined") {
     return localStorage.getItem(LOCAL_STORAGE_AUTH_KEY);
   }
 };
