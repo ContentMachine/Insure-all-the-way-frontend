@@ -41,7 +41,7 @@ const EnhancedThirdPartyMotorInsuranceHero = ({
           <Loader />
         ) : (
           <>
-            {data?.plans?.map((plan) => {
+            {data?.plans?.map((plan, i) => {
               return (
                 <RateCard
                   title={plan?.name}
@@ -53,7 +53,7 @@ const EnhancedThirdPartyMotorInsuranceHero = ({
                       return { ...prevState, plan: data?.name };
                     });
                   }}
-                  key={data?.name}
+                  key={i}
                 />
               );
             })}

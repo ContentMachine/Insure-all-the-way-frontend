@@ -6,7 +6,6 @@ import EnhancedThirdPartyMotorInsuranceForm from "../EnhancedThirdPartyMotorInsu
 import { useEffect, useMemo, useState } from "react";
 import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
 import { usePolicyTypeBySubtype } from "@/hooks/usePolicies";
-import { vehicleTypes } from "@/utilities/motorInsuranceData";
 import { requestHandler } from "@/helpers/requestHandler";
 import useError from "@/hooks/useError";
 import {
