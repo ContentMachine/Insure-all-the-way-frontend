@@ -51,8 +51,6 @@ const ComprehensiveMotorInsuranceForm = ({
     }
   }, [coverPeriod, state, data.vehicleValue]);
 
-  // console.log(data, "Check");
-
   return (
     <section className={classes.container} id="insurance-form">
       <div className={classes.header}>

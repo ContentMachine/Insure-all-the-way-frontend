@@ -179,12 +179,12 @@ const ComprehensiveMotorInsurance = () => {
       )}
       <ApppLayout>
         <ComprehensiveMotorInsuranceHero />
-        <ComprehensiveMotorInsuranceForm
+        {/* <ComprehensiveMotorInsuranceForm
           data={comprehensiveFormData}
           setData={setComprehensiveFormData}
           onSubmit={comprenhensiveSubmissionFormHandler}
           requestState={requestState}
-        />
+        /> */}
       </ApppLayout>
     </>
   );
