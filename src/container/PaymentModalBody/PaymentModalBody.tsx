@@ -12,6 +12,8 @@ import {
 import { usePolicyTypeBySubtype } from "@/hooks/usePolicies";
 import Loader from "@/components/Loader/Loader";
 import { formatCurrency } from "@/helpers/formatAmount";
+import { PaystackButton } from "react-paystack";
+import { PAYSTACK_PUBLIC_KEY } from "@/config/paystack";
 
 type PaymentModalBodyType = {
   onSuccess: () => void;
@@ -36,6 +38,22 @@ const PaymentModalBody = ({ onSuccess, data }: PaymentModalBodyType) => {
       ),
     [policySubtypeData]
   );
+
+  // Utils
+  const componentProps = {
+    email: data?.email,
+    amount: Number(policyData?.price) * 100,
+    metadata: {
+      name: `${data?.lastName} ${data?.firstName}`,
+      phone: data?.phone,
+      custom_fields: [],
+    },
+    text: "Pay",
+    onSuccess: () => {
+      onSuccess();
+    },
+    publicKey: PAYSTACK_PUBLIC_KEY as string,
+  };
 
   if (isLoading) {
     return <Loader />;
@@ -70,9 +88,16 @@ const PaymentModalBody = ({ onSuccess, data }: PaymentModalBodyType) => {
         value={`₦${formatCurrency(policyData?.price || data?.premium)}`}
       />
 
-      <Button type="secondary" onClick={onSuccess}>
-        Pay
-      </Button>
+      <PaystackButton
+        {...componentProps}
+        disabled={
+          !data?.firstName ||
+          !data?.lastName ||
+          policySubtypeData?.price ||
+          !data?.email
+        }
+        className={classes.paystackButton}
+      />
     </div>
   );
 };

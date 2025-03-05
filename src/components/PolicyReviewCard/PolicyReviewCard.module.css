@@ -11,6 +11,7 @@
   gap: 0.75rem;
   flex-wrap: wrap;
   transition: all 0.2s ease-in-out;
+  overflow: hidden;
 }
 
 .policyReview:hover {
@@ -60,6 +61,8 @@
   height: 0.5rem;
   border-radius: calc(infinity * 1px);
   background-color: var(--grey2WithOpacity);
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .policyReview > div:last-child > div {

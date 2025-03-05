@@ -13,8 +13,6 @@ const DashboardPoliciesSummary = () => {
   // Memos
   const stats = useMemo(() => data?.data, [data]);
 
-  console.log(stats, "Hmm");
-
   if (isLoading) {
     return <Loader />;
   }

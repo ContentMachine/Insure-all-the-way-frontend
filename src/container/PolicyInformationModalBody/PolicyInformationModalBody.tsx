@@ -1,26 +1,23 @@
 import Button from "@/components/Button/Button";
 import classes from "./PolicyInformationModalBody.module.css";
-import Phone from "@/assets/svgIcons/Phone";
 import Close from "@/assets/svgIcons/Close";
-import Draft from "@/assets/svgIcons/Draft";
 import { useUserPolicyById } from "@/hooks/usePolicies";
-import { userPoliciesType } from "@/utilities/types";
 import { useMemo } from "react";
 import Loader from "@/components/Loader/Loader";
-import { structureWords } from "@/helpers/capitalize";
+import { capitalize, structureWords } from "@/helpers/capitalize";
 import moment from "moment";
 import { formatObject } from "@/helpers/validateObjectValues";
+import { downloadFile } from "@/helpers/download";
+import { formatCurrency } from "@/helpers/formatAmount";
 
 type PolicyInformationModalBodyTypes = {
   onClose?: () => void;
   id: string;
-  onClaim: () => void;
 };
 
 const PolicyInformationModalBody = ({
   onClose,
   id,
-  onClaim,
 }: PolicyInformationModalBodyTypes) => {
   // Requests
   const { isLoading, data } = useUserPolicyById(id);
@@ -34,11 +31,11 @@ const PolicyInformationModalBody = ({
           "__v",
           "user",
           "createdAt",
+          "agent",
+          "isTrackerInstalled",
         ]);
       }
     }, [data]);
-
-  console.log(policyInfo, 1000);
 
   if (isLoading) {
     return <Loader />;
@@ -51,6 +48,29 @@ const PolicyInformationModalBody = ({
 
       <div className={classes.body}>
         {policyInfo?.map((data, i) => {
+          if (data?.title.includes("Date")) {
+            return (
+              <div key={i}>
+                <h4>{data?.title}</h4>
+                <p>{capitalize(data?.value)}</p>
+              </div>
+            );
+          }
+
+          if (data?.value.includes("Https")) {
+            return (
+              <div key={i}>
+                <h4>{data?.title}</h4>
+                <p
+                  onClick={() => downloadFile(data?.value, data?.title)}
+                  className={classes.url}
+                >
+                  {capitalize(`Download ${data?.title}`)}
+                </p>
+              </div>
+            );
+          }
+
           return (
             <div key={i}>
               <h4>{data?.title}</h4>
@@ -62,12 +82,7 @@ const PolicyInformationModalBody = ({
 
       <div className={classes.buttonContainer}>
         <Button type="bordered" onClick={onClose}>
-          <Phone />
-          <span>Speak to an Agent</span>
-        </Button>
-        <Button onClick={onClaim}>
-          <Draft />
-          <span>File a Claim</span>
+          Close
         </Button>
       </div>
     </div>

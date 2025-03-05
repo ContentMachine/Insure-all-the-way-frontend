@@ -2,10 +2,7 @@ import ApppLayout from "@/layouts/ApppLayout/ApppLayout";
 import React from "react";
 import PropertyInsuranceHero from "../PropertyInsuranceHero/PropertyInsuranceHero";
 import InsuranceTypes from "@/components/InsuranceTypes/InsuranceTypes";
-import {
-  motorInsuranceTypes,
-  propertyInsuranceTypes,
-} from "@/utilities/motorInsurance";
+import { propertyInsuranceTypes } from "@/utilities/motorInsurance";
 import ContactUsBanner from "../ContactUsBanner/ContactUsBanner";
 import Faqs from "../Faqs/Faqs";
 
