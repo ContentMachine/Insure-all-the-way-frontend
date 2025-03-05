@@ -183,7 +183,7 @@ const AllRiskForm = () => {
           }
         />
       )}
-      <section className={classes.container}>
+      <section className={classes.container} id="insurance-form">
         <div className={classes.header}>
           <h4>All Risks Policy Form</h4>
           <p>

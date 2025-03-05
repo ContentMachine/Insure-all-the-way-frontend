@@ -70,6 +70,7 @@ const Sidenav = ({ onClose }: SidenavTypes) => {
                             });
                           }}
                         >
+                          <span>{data?.icon}</span>
                           <span>{data?.title}</span>
                           <ArrowDown />
 

@@ -1,7 +1,7 @@
 .container {
   display: flex;
   align-items: center;
-  padding: 80px 100px;
+  padding: 50px 100px;
   gap: 40px;
 }
 
@@ -44,13 +44,13 @@
 @media screen and (max-width: 767px) {
   .container {
     flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 20px;
+    padding: 1rem 1rem;
+    gap: 0px;
   }
 
   .container > div {
     flex: 1;
-    margin-top: 2rem;
+    margin-top: 0rem;
   }
   .container > div:nth-child(1) > h1 {
     font-size: 35px;

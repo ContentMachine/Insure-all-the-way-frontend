@@ -1,9 +1,9 @@
 .container {
-  min-height: 800px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   gap: 72px;
-  padding: 100px 141px 81px 141px;
+  padding: 20px 141px 81px 141px;
 }
 
 .container > div {
@@ -70,7 +70,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0px;
-    padding: 32px 16px;
+    padding: 0px 16px;
   }
 
   .container > div {
@@ -94,7 +94,7 @@
   .container > div:nth-child(2) {
     height: 350px;
     overflow: hidden;
-    background-image: url("https://res.cloudinary.com/dfilepe0f/image/upload/v1739979253/IATW_Sub-banner_ww0ow0.svg");
+    background-image: url("https://res.cloudinary.com/dfilepe0f/image/upload/v1741163614/IATW_Sub-banner_c4fzvf.svg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;

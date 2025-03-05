@@ -1,9 +1,14 @@
+"use client";
+
 import Button from "@/components/Button/Button";
 import classes from "../BuildingHero/BuildingHero.module.css";
 import ArrowRight from "@/assets/svgIcons/ArrowRight";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const AllRiskHero = () => {
+  // ROuter
+  const router = useRouter();
   return (
     <section className={classes.container}>
       <div>
@@ -17,14 +22,14 @@ const AllRiskHero = () => {
           It offers more comprehensive protection than standard policies,
           covering risks like theft, fire, and accidental damage.
         </p>
-        <Button>
+        <Button onClick={() => router.push("#insurance-form")}>
           <span>Book Now</span>
           <ArrowRight />
         </Button>
       </div>
       <div>
         <Image
-          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1740666640/building2_duvnyh.jpg"
+          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1741190843/All_Risks_PI_usiyes.svg"
           width={500}
           height={500}
           alt="Hero Image"

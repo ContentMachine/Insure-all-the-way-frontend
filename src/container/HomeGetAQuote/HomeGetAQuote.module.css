@@ -1,6 +1,6 @@
 .container {
   padding: 50px 100px;
-  background-color: var(--biege);
+  background-color: var(--white);
 }
 
 .container > h4 {

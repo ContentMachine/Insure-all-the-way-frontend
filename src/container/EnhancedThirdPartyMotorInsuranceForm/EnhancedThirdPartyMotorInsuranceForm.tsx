@@ -71,7 +71,7 @@ const EnhancedThirdPartyMotorInsuranceForm = ({
   }
 
   return (
-    <section className={classes.container}>
+    <section className={classes.container} id="insurance-form">
       <div className={classes.header}>
         <h4>Enhanced Third Party Insurance Form</h4>
         <p>

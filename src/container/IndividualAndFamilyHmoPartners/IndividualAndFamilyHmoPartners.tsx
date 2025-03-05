@@ -11,7 +11,7 @@ const partners = [
 
 const IndividualAndFamilyHmoPartners = () => {
   return (
-    <section className={classes.container}>
+    <section className={classes.container} id="partners">
       <div className={classes.header}>
         <p>Our Partners</p>
         <h2>Meet Our Policy Providers</h2>

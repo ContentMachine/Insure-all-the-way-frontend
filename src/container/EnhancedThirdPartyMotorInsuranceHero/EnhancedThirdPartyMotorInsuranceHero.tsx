@@ -21,10 +21,6 @@ const EnhancedThirdPartyMotorInsuranceHero = ({
   loading,
   setData,
 }: EnhancedThirdPartyMotorInsuranceHeroType) => {
-  // Requests
-  // Requests
-  const enhancedThirdPartySubmissionFormHandler = () => {};
-
   return (
     <section className={classes.container}>
       <h1>

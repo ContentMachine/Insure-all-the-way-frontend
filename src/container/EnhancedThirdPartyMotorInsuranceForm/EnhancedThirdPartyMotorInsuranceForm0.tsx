@@ -34,7 +34,7 @@ const EnhancedThirdPartyMotorInsuranceForm0 = ({
   }, [user]);
 
   return (
-    <form id="insurance-form">
+    <form>
       <Input
         label="First name"
         placeholder="Eg. John"

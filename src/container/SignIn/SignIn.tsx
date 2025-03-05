@@ -131,6 +131,7 @@ const SignIn = () => {
           login();
         }}
         disabled={!loginData?.email || !loginData?.password}
+        type="secondary"
       >
         Sign In
       </Button>

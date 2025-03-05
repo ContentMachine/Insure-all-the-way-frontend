@@ -1,9 +1,15 @@
+"use client";
+
 import Button from "@/components/Button/Button";
 import classes from "./IndividualAndFamilyHmoHero.module.css";
 import ArrowRight from "@/assets/svgIcons/ArrowRight";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const IndividualAndFamilyHmoHero = () => {
+  // Router
+  const router = useRouter();
+
   return (
     <section className={classes.container}>
       <div>
@@ -12,8 +18,12 @@ const IndividualAndFamilyHmoHero = () => {
           Welcome to our Individual & Family HMO plans, designed to provide
           comprehensive, affordable healthcare for you and your loved ones.
         </p>
-        <Button>
-          <span>Book Now</span>
+        <Button
+          onClick={() => {
+            router.push("#partners");
+          }}
+        >
+          <span>Pick Now</span>
           <ArrowRight />
         </Button>
       </div>

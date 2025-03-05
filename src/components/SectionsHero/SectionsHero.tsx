@@ -14,7 +14,7 @@ const SectionsHero = ({
   mobileBannerImage,
 }: SectionsHeroTypes) => {
   // Utils
-  const isMobile = typeof window !== "undefined" && window?.innerHeight;
+  const isMobile = typeof window !== "undefined" && window?.innerWidth < 767;
 
   const image = isMobile ? mobileBannerImage : bannerImage;
 

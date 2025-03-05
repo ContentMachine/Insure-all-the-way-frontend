@@ -82,7 +82,7 @@ const MotorClaimsForm = ({
         <div className={classes.buttonSection}>
           <Button type="bordered">
             <Phone />
-            <span>Call your Agent</span>
+            <span>Call Your Agent</span>
           </Button>
           <Button
             disabled={!areAllValuesFilled(claimsData)}
@@ -93,7 +93,7 @@ const MotorClaimsForm = ({
             loading={requestState?.isLoading}
           >
             <Draft />
-            <span>Submit your Motor Claim</span>
+            <span>Submit Your Motor Claim</span>
           </Button>
         </div>
       </form>

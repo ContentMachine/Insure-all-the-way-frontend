@@ -8,6 +8,8 @@
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 0.5px;
+  transition: transform 0.2s ease-in-out;
+  z-index: 30;
 }
 
 .container > nav {
@@ -71,7 +73,7 @@
 }
 
 .sidenav {
-  height: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
   right: 0;
@@ -79,7 +81,15 @@
   background-color: var(--white);
   overflow: hidden;
   width: 0%;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+.visible {
+  transform: translateY(0);
 }
 
 @media screen and (max-width: 767px) {

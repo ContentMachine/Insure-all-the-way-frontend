@@ -19,7 +19,7 @@ const FleetInsuranceHero = () => {
     <section className={classes.outerContainer}>
       <div className={classes.container}>
         <h1>
-          Our fleet insurance policies provide <span>Your Organisation </span>{" "}
+          Our fleet insurance policies provide <span>your organisation </span>{" "}
           with the following:
         </h1>
 

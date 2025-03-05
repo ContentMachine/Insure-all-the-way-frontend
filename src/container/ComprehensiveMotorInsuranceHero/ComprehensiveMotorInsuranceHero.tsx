@@ -19,8 +19,8 @@ const ComprehensiveMotorInsuranceHero = () => {
     <section className={classes.outerContainer}>
       <div className={classes.container}>
         <h1>
-          Buy our comprehensive policy and get a gift and{" "}
-          <span>Added-value Services</span> as a reward for your trust.
+          Buy our <span>comprehensive</span> policy and get a gift and{" "}
+          <span>added-value services</span> as a reward for your trust.
         </h1>
 
         {stepsInfo.map((data, i) => {

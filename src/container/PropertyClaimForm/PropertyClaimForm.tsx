@@ -35,11 +35,11 @@ const PropertyClaimForm = ({ onClose }: PropertyClaimFormType) => {
         <div className={classes.buttonSection}>
           <Button type="bordered">
             <Phone />
-            <span>Call your Agent</span>
+            <span>Call Your Agent</span>
           </Button>
           <Button>
             <Draft />
-            <span>Submit your Claim</span>
+            <span>Submit Your Claim</span>
           </Button>
         </div>
       </form>

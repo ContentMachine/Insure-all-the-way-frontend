@@ -5,6 +5,7 @@ import Image from "next/image";
 import classes from "./InsuranceTypes.module.css";
 import Button from "../Button/Button";
 import { usePathname, useRouter } from "next/navigation";
+import { scrollToTop } from "@/helpers/scrollToTop";
 
 type InsuranceTypesTypes = {
   data: insuranceTypes[];
@@ -34,6 +35,7 @@ const InsuranceTypes = ({ data }: InsuranceTypesTypes) => {
               <Button
                 onClick={() => {
                   router.push(`${pathname}/${item?.route}`);
+                  scrollToTop();
                 }}
               >
                 Learn more

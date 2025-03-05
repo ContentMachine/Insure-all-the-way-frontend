@@ -33,12 +33,14 @@ const Header = () => {
   const handleSidenavOpen = () => {
     if (sideNavRef?.current) {
       sideNavRef.current.style.width = "100vw";
+      sideNavRef.current.style.height = "100vh";
     }
   };
 
   const handleSidenavClose = () => {
     if (sideNavRef?.current) {
       sideNavRef.current.style.width = "0%";
+      sideNavRef.current.style.height = "0%";
     }
   };
 
@@ -69,8 +71,28 @@ const Header = () => {
     }
   }, []);
 
+  const [visible, setVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    // If scrolling down, hide the header; if scrolling up, show it
+    setVisible(currentScrollPos < prevScrollPos || currentScrollPos < 50);
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
+
   return (
-    <header className={classes.container}>
+    <header
+      className={`${classes.container} ${
+        visible ? classes.visible : classes.hidden
+      }`}
+    >
       <Logo />
 
       <nav>
@@ -108,6 +130,7 @@ const Header = () => {
             }
           }}
           loading={requestState?.isLoading}
+          type="secondary"
         >
           {!user ? "Sign in" : "Dashboard"}
         </Button>

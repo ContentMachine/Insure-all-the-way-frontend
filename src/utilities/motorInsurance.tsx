@@ -2,7 +2,7 @@ import { routes } from "./routes";
 
 export const motorInsuranceTypes = [
   {
-    title: "Third Party <br />Motor Insurance",
+    title: "3rd Party <br />Motor Insurance",
     route: routes.THIRD_PARTY_MOTOR_INSURANCE,
     descriptions: [
       "With this insurance policy, you are covered for any damage or liability caused to a third party, including accidental deaths or bodily injuries caused by you.",
@@ -38,7 +38,7 @@ export const motorInsuranceTypes = [
   },
   {
     title: "Fleet Motor Insurance",
-    route: routes.ENHANCED_THIRD_PARTY_MOTOR_INSURANCE,
+    route: routes.FLEET_MOTOR_INSURANCE,
     descriptions: [
       "With our fleet insurance, you can cover your entire fleet of vehicles. The policy allows you to insure all vehicles under a single policy rather than separately.",
     ],
@@ -99,7 +99,7 @@ export const propertyInsuranceTypes = [
     ],
     list: null,
     image:
-      "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Health-Banners-50.50-a-1_c399vk.jpg",
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1740666393/building_demgkj.jpg",
   },
   {
     title: "All Risks",
@@ -109,6 +109,6 @@ export const propertyInsuranceTypes = [
     ],
     list: null,
     image:
-      "https://res.cloudinary.com/dfilepe0f/image/upload/v1740666640/building2_duvnyh.jpg",
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1741190843/All_Risks_PI_usiyes.svg",
   },
 ];

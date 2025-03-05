@@ -7,10 +7,7 @@ import classes from "../TheTechTitans/TheTechTitans.module.css";
 const HealthAndInsuranceFriendlyMatch = () => {
   return (
     <ApppLayout>
-      <SectionsHero
-        title="Health and Insurance Friendly Match"
-        bannerImage="https://res.cloudinary.com/dfilepe0f/image/upload/v1741161315/healthAndInsuranceBanner_mscbpc.jpg"
-      />
+      <SectionsHero bannerImage="https://res.cloudinary.com/dfilepe0f/image/upload/v1741161315/healthAndInsuranceBanner_mscbpc.jpg" />
       <div className={classes.content}>
         <div>
           <h4>WHY WE ARE HERE</h4>

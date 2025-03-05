@@ -35,7 +35,7 @@ const ContactUsBanner = ({ title, caption }: ContactUsBannerTypes) => {
       <div>
         <p>
           {caption ||
-            "Whether you want to get a quote, make a claim, or have enquiries, give us a call today our expert team is ready to help!"}
+            "Whether you want to get a quote, make a claim, or you have any enquiries, give us a call today our expert team is ready to help!"}
         </p>
         <Button type="tertiary">
           <Phone />

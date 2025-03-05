@@ -159,7 +159,7 @@ const BuildingForm = () => {
           }
         />
       )}
-      <section className={classes.container}>
+      <section className={classes.container} id="insurance-form">
         <div className={classes.header}>
           <h4>Building Insurance Policy Form</h4>
           <p>

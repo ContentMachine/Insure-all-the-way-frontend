@@ -58,7 +58,7 @@ export const headerRoutes = [
           },
         ],
         route: routes.HEALTH_INSURANCE,
-        icon: null,
+        icon: <Health color="#d4a5e6" />,
         description: null,
         isActive: false,
         image:
@@ -103,7 +103,7 @@ export const headerRoutes = [
           },
         ],
         route: routes.MOTOR_INSURANCE,
-        icon: null,
+        icon: <Car color="#1b3a57" />,
         description: null,
         image:
           "https://res.cloudinary.com/dfilepe0f/image/upload/v1738947903/Car_Insurance_Hero_Image_t3gbim.svg",
@@ -131,7 +131,7 @@ export const headerRoutes = [
         ],
         route: routes.PROPERTY_INSURANCE,
         isActive: false,
-        icon: null,
+        icon: <Property color="#f5b7b1" />,
         description: null,
         image:
           "https://res.cloudinary.com/dfilepe0f/image/upload/v1737384645/samples/ecommerce/leather-bag-gray.jpg",

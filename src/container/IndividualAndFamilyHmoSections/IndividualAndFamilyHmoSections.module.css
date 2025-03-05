@@ -102,10 +102,11 @@
   }
 
   .container > div {
-    width: 100%;
+    width: 90%;
     padding: 1rem 2rem;
     border-radius: 10px;
     box-shadow: 5px 4px 30px 0px #0000001a;
     transition: all 0.2s ease-in-out;
+    margin-inline: auto;
   }
 }

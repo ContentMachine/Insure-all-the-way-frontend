@@ -39,7 +39,7 @@ const HomeHowWeWork = () => {
         <p>A Simple Four-Step Process to Get You Covered with Confidence.</p>
 
         <Image
-          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1739547123/how_It_Works_lzblpu.svg"
+          src="https://res.cloudinary.com/dfilepe0f/image/upload/v1741178154/How_We_Work_h4bxia.svg"
           alt="How we work"
           width={487}
           height={311}

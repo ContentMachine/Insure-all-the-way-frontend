@@ -14,9 +14,9 @@ const Homepage = () => {
     <ApppLayout>
       <HomeHero />
       <HomeStats />
+      <HomeGetAQuote />
       <HomeHowWeWork />
       <HomeParters />
-      <HomeGetAQuote />
       <ContactUsBanner />
       <HomeTestimonoals />
       <Faqs />
