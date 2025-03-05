@@ -1,3 +1,5 @@
+"use client";
+
 import Loader from "@/components/Loader/Loader";
 import ThirdPartyMotorInsurance from "@/container/ThirdPartyMotorInsurance/ThirdPartyMotorInsurance";
 import React, { Suspense } from "react";

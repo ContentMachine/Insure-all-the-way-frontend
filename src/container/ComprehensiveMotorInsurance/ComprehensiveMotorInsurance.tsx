@@ -178,7 +178,7 @@ const ComprehensiveMotorInsurance = () => {
         />
       )}
       <ApppLayout>
-        {/* <ComprehensiveMotorInsuranceHero /> */}
+        <ComprehensiveMotorInsuranceHero />
         <ComprehensiveMotorInsuranceForm
           data={comprehensiveFormData}
           setData={setComprehensiveFormData}
