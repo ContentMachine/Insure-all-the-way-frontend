@@ -1,9 +1,14 @@
+"use client";
+
 import Button from "@/components/Button/Button";
 import classes from "./CorporateHmoHero.module.css";
 import Image from "next/image";
 import ArrowRight from "@/assets/svgIcons/ArrowRight";
+import { useRouter } from "next/navigation";
 
 const CorporateHmoHero = () => {
+  // ROuter
+  const router = useRouter();
   return (
     <section className={classes.container}>
       <div>
@@ -15,7 +20,7 @@ const CorporateHmoHero = () => {
           A health insurance plan from us will make your employees healthier and
           more productive.
         </p>
-        <Button>
+        <Button onClick={() => router.push("#insurance-form")}>
           <span>Get a Quote</span>
           <ArrowRight />
         </Button>

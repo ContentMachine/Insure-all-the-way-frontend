@@ -1,12 +1,12 @@
 .container {
-  min-height: 450px;
-  padding-top: calc(var(--headerHeight) + 2rem);
+  min-height: 650px;
+  padding-top: calc(var(--headerHeight) + 5rem);
   text-align: center;
   padding-bottom: 2rem;
   position: relative;
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;

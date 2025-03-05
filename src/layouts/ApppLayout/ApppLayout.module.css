@@ -18,7 +18,7 @@
 }
 
 .container > section > section:first-child {
-  padding-top: 88px;
+  margin-top: 88px;
 }
 
 @media screen and (max-width: 767px) {

@@ -5,9 +5,7 @@ import Link from "next/link";
 const LetsPlayHeader = () => {
   return (
     <section className={classes.container}>
-      <h2>
-        <Link href={routes.LETS_PLAY}>Let's Play</Link>
-      </h2>
+      <h2>Let's Play</h2>
 
       <div className={classes.productsSection}>
         {headerRoutes[headerRoutes?.length - 1].children?.map((datum, i) => {

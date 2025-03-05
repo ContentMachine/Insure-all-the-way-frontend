@@ -1,7 +1,7 @@
 import classes from "./SectionsHero.module.css";
 
 type SectionsHeroTypes = {
-  title: string;
+  title?: string;
   bannerImage?: string;
   mobileBannerImage?: string;
 };

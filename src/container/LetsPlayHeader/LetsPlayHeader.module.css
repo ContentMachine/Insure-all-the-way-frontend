@@ -52,8 +52,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.productsSection > div > a:hover,
-.container > h2:hover {
+.productsSection > div > a:hover {
   background-color: var(--grey1);
 }
 

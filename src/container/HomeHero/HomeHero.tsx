@@ -30,7 +30,7 @@ const HomeHero = () => {
       <div>
         <Image
           src={
-            "https://res.cloudinary.com/dfilepe0f/image/upload/v1740418277/IATW_Sub-banner_owq7qc.svg"
+            "https://res.cloudinary.com/dfilepe0f/image/upload/v1741163614/IATW_Sub-banner_c4fzvf.svg"
           }
           alt="Hero Image"
           width={500}

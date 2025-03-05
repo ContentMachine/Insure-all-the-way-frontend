@@ -1,0 +1,60 @@
+.content {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 100px 100px 81px 100px;
+}
+
+.content > div,
+.content > section {
+  flex-basis: 100%;
+}
+
+.content > div:nth-child(1) {
+  order: 0;
+}
+
+.content > div > h4 {
+  font-family: General Sans;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 98.5px;
+  letter-spacing: -2px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.content > div > p {
+  font-family: General Sans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+@media screen and (max-width: 767px) {
+  .content {
+    flex-direction: column;
+    gap: 16px;
+    padding: 2rem 1rem;
+  }
+
+  .content > div:nth-child(1) {
+    order: 0;
+  }
+
+  .content > div > h4 {
+    font-family: General Sans;
+    font-size: 30px;
+    line-height: 200%;
+    letter-spacing: -1px;
+  }
+
+  .content > div > p {
+    font-size: 15px;
+    line-height: 150%;
+  }
+}
