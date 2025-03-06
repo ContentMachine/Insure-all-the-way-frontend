@@ -15,6 +15,7 @@ export type insuranceTypes = {
   descriptions: string[] | null;
   list: null | string[];
   image: string;
+  bgImage?: string;
 };
 
 export type navItemTypes = {

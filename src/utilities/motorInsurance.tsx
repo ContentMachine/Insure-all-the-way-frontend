@@ -9,7 +9,9 @@ export const motorInsuranceTypes = [
     ],
     list: null,
     image:
-      "https://res.cloudinary.com/dfilepe0f/image/upload/v1738920159/thirdParty_kjhbqv.jpg",
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1741276272/Third_Party_1_sfidlp.svg",
+    bgImage:
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1741274340/Third_Party_Icon_2_wxgfwq.svg",
   },
   {
     title: "Enhanced Third Party <br /> Motor Insurance",
@@ -24,6 +26,8 @@ export const motorInsuranceTypes = [
     ],
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1738920159/Enhanced-Third-Party-Images-1536x1024_eudk4c.jpg",
+    bgImage:
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1741274339/Enhanced_Icon_Black_dtopyx.svg",
   },
   {
     title: "Comprehensive <br /> Motor Insurance",
@@ -34,7 +38,9 @@ export const motorInsuranceTypes = [
     ],
     list: null,
     image:
-      "https://res.cloudinary.com/dfilepe0f/image/upload/v1738920159/Car-Insurance-Banner-a-e1673007271251_npbmqe.jpg",
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1741276260/Comprehensive_1_o4u03j.svg",
+    bgImage:
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1741275437/Comprehensive_qoulxs.svg",
   },
   {
     title: "Fleet Motor Insurance",
@@ -45,6 +51,8 @@ export const motorInsuranceTypes = [
     list: null,
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1738920158/Fleet-Banner_n0k1s3.jpg",
+    bgImage:
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1741276024/Fleet_Icon_u7wn6f.svg",
   },
 ];
 
@@ -58,6 +66,7 @@ export const healthInsuranceTypes = [
     list: null,
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Health-Banners-50.50-a-1_c399vk.jpg",
+    bgImage: "",
   },
   {
     title: "Corporate & Group <br /> HMO ",
@@ -68,6 +77,7 @@ export const healthInsuranceTypes = [
     list: null,
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Co-workers-having-lunch-1280x854-1_c1y64v.jpg",
+    bgImage: "",
   },
 ];
 
@@ -79,6 +89,7 @@ export const letsPlay = [
     list: null,
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Health-Banners-50.50-a-1_c399vk.jpg",
+    bgImage: "",
   },
   {
     title: "The Tech Titans Tournament",
@@ -87,6 +98,7 @@ export const letsPlay = [
     list: null,
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Co-workers-having-lunch-1280x854-1_c1y64v.jpg",
+    bgImage: "",
   },
 ];
 
@@ -100,6 +112,7 @@ export const propertyInsuranceTypes = [
     list: null,
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1740666393/building_demgkj.jpg",
+    bgImage: "",
   },
   {
     title: "All Risks",
@@ -110,5 +123,6 @@ export const propertyInsuranceTypes = [
     list: null,
     image:
       "https://res.cloudinary.com/dfilepe0f/image/upload/v1741190843/All_Risks_PI_usiyes.svg",
+    bgImage: "",
   },
 ];

@@ -9,18 +9,26 @@ import { scrollToTop } from "@/helpers/scrollToTop";
 
 type InsuranceTypesTypes = {
   data: insuranceTypes[];
+  isNotHover?: boolean;
 };
 
-const InsuranceTypes = ({ data }: InsuranceTypesTypes) => {
+const InsuranceTypes = ({ data, isNotHover }: InsuranceTypesTypes) => {
   // Router
   const pathname = usePathname();
   const router = useRouter();
 
+  console.log(isNotHover, "1000");
+
   return (
-    <section className={classes.container} id="types">
+    <section className={`${classes.container}`} id="types">
       {data?.map((item) => {
         return (
-          <div key={item.title} className={classes.item}>
+          <div
+            key={item.title}
+            className={`${classes.item} ${
+              isNotHover ? classes.notHover : undefined
+            }`}
+          >
             <div>
               <h4 dangerouslySetInnerHTML={{ __html: item.title }}></h4>
               {item.descriptions?.map((data) => (
@@ -50,6 +58,15 @@ const InsuranceTypes = ({ data }: InsuranceTypesTypes) => {
                 height={408}
               />
             </div>
+
+            {item?.bgImage && (
+              <Image
+                src={item.bgImage}
+                alt={item.title}
+                width={612}
+                height={408}
+              />
+            )}
           </div>
         );
       })}

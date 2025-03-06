@@ -25,7 +25,7 @@ const MotorInsurance = () => {
     <ApppLayout>
       <MotorInsuranceHero />
       <MotorInsurancePlans plans={policy?.types} loading={isLoading} />
-      <InsuranceTypes data={motorInsuranceTypes} />
+      <InsuranceTypes data={motorInsuranceTypes} isNotHover />
       <div className={classes.contact}>
         <ContactUsBanner
           title="Let's Talk Motor Insurance"
