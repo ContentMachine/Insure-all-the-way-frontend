@@ -25,7 +25,7 @@ const RequireAuth = ({ children }: RequireAuthProps) => {
 
   useEffect(() => {
     if (!requestState?.isLoading && !accessToken) {
-      router.push(routes.SIGN_IN);
+      router.push(routes.BASE_URL);
     }
   }, [accessToken, requestState?.isLoading, router]);
 
