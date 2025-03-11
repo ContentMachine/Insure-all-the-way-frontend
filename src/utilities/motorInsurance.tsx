@@ -65,7 +65,7 @@ export const healthInsuranceTypes = [
     ],
     list: null,
     image:
-      "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Health-Banners-50.50-a-1_c399vk.jpg",
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1741709679/Individual_Family_HMO_naq9a0.svg",
     bgImage: "",
   },
   {
@@ -76,7 +76,7 @@ export const healthInsuranceTypes = [
     ],
     list: null,
     image:
-      "https://res.cloudinary.com/dfilepe0f/image/upload/v1738930648/Co-workers-having-lunch-1280x854-1_c1y64v.jpg",
+      "https://res.cloudinary.com/dfilepe0f/image/upload/v1741709661/Corporate_Group_HMO_yv6fdq.svg",
     bgImage: "",
   },
 ];

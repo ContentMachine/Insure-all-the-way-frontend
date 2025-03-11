@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   gap: 72px;
-  padding: 30px 141px 30px 141px;
+  padding: 0px 141px 30px 141px;
 }
 
 .container > div {
